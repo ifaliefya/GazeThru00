@@ -54,9 +54,11 @@
     </Compile>
     <Compile Include="FormInformasi.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="FormInformasi.Designer.cs">
       <DependentUpon>FormInformasi.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="FormKegiatan.cs">
       <SubType>Form</SubType>
@@ -95,6 +97,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInformasi.resx">
       <DependentUpon>FormInformasi.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKegiatan.resx">
       <DependentUpon>FormKegiatan.cs</DependentUpon>
