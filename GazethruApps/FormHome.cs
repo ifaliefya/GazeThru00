@@ -75,5 +75,10 @@ namespace GazethruApps
             FormUser.Show();
             this.Hide();
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
