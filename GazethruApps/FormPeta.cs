@@ -48,10 +48,10 @@ namespace GazethruApps
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            btnDua.Location = new Point((int)wx[0], (int)wy[0]);
-            btnTiga.Location = new Point((int)wx[1], (int)wy[1]);
-            btnBack.Location = new Point((int)wx[2], (int)wy[2]);
-            btnHome.Location = new Point((int)wx[3], (int)wy[3]);
+            //btnDua.Location = new Point((int)wx[0], (int)wy[0]);
+            //btnTiga.Location = new Point((int)wx[1], (int)wy[1]);
+            //btnBack.Location = new Point((int)wx[2], (int)wy[2]);
+            //btnHome.Location = new Point((int)wx[3], (int)wy[3]);
         }
     }
 }

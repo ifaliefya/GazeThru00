@@ -60,7 +60,7 @@
             this.btnPeta.FlatAppearance.BorderSize = 0;
             this.btnPeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPeta.ForeColor = System.Drawing.Color.White;
-            this.btnPeta.Location = new System.Drawing.Point(1130, 215);
+            this.btnPeta.Location = new System.Drawing.Point(1076, 215);
             this.btnPeta.Name = "btnPeta";
             this.btnPeta.Size = new System.Drawing.Size(104, 39);
             this.btnPeta.TabIndex = 6;
@@ -88,7 +88,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(399, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(388, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(504, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -98,7 +98,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(235, 148);
+            this.pictureBox2.Location = new System.Drawing.Point(225, 148);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(825, 426);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1322, 655);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnBack);

@@ -32,7 +32,7 @@ namespace GazethruApps
 
             wx[0] = 70;//posisi awal btnPrev
             wy[0] = 300;
-            wx[1] = 1150; //posisi awal btnNext
+            wx[1] = 1106; //posisi awal btnNext
             wy[1] = 300;
             wx[2] = 100; //posisi awal btnBack
             wy[2] = 620;

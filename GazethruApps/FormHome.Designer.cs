@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1338, 39);
+            this.panel1.Size = new System.Drawing.Size(1280, 39);
             this.panel1.TabIndex = 0;
             // 
             // btnAdmin
@@ -60,7 +60,7 @@
             this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnAdmin.FlatAppearance.BorderSize = 0;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Location = new System.Drawing.Point(1154, 0);
+            this.btnAdmin.Location = new System.Drawing.Point(1096, 0);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(104, 39);
             this.btnAdmin.TabIndex = 1;
@@ -72,7 +72,7 @@
             this.btnMinimize.BackColor = System.Drawing.Color.White;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Location = new System.Drawing.Point(1259, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1201, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(39, 39);
             this.btnMinimize.TabIndex = 3;
@@ -85,7 +85,7 @@
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1299, 0);
+            this.btnClose.Location = new System.Drawing.Point(1241, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(39, 39);
             this.btnClose.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             // btnUser
             // 
-            this.btnUser.BackColor = System.Drawing.Color.Red;
+            this.btnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnUser.FlatAppearance.BorderSize = 0;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.ForeColor = System.Drawing.Color.White;
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 694);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnUser);
             this.Controls.Add(this.pictureBox1);

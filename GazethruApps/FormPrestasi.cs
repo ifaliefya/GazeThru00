@@ -32,7 +32,7 @@ namespace GazethruApps
 
             wx[0] = 70; //prev
             wy[0] = 300;
-            wx[1] = 1150; //next
+            wx[1] = 1106; //next
             wy[1] = 300;
             wx[2] = 100; //back
             wy[2] = 620;

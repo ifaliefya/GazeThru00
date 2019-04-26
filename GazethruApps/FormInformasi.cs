@@ -32,12 +32,12 @@ namespace GazethruApps
             wx.Add(0); //add btHome
             wy.Add(0);
 
-            wx[0] = 100; //posisi awal btnTentang
+            wx[0] = 100; //posisi awal btnTentang //300
             wy[0] = 215;
-            wx[1] = 1130; //posisi awal btnKegiatan
+            wx[1] = 980; //posisi awal btnKegiatan
             wy[1] = 215;
             wx[2] = 620; //posisi awal btnPrestasi
-            wy[2] = 130;
+            wy[2] = 200;
             wx[3] = 100; //posisi awal btnBack
             wy[3] = 620;
             wx[4] = 1130; //posisi awal btnHome
@@ -95,25 +95,31 @@ namespace GazethruApps
 
             if(lap==0)
             {
-                wy[0]++;
-                wy[1]--;
-                wx[2]++;
+                wx[0]++;
+                wy[0] = wy[0] - 0.60f;
+                //wy[1]--;
+                wx[1]++;
+                wy[1] = wy[1] + 0.60f;
+                wy[2]--;
                 wx[3]++;
                 wx[4]--;
             }
             if(lap==1)
             {
-                wy[0]--;
-                wy[1]++;
-                wx[2]--;
+                wx[0]--;
+                wy[0] = wy[0] + 0.60f;
+                //wy[1]++;
+                wx[1]--;
+                wy[1] = wy[1] - 0.60f;
+                wy[2]++;
                 wx[3]--;
                 wx[4]++;
             }
-            if (wy[0] == 260)
+            if (wx[3] == 180)
             {
                 lap = 1;
             }
-            if (wy[0] == 180)
+            if (wx[3] == 100)
             {
                 lap = 0;
             }

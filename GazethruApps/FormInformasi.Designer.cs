@@ -58,11 +58,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(613, 9);
+            this.label1.Location = new System.Drawing.Point(578, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "INFORMASI";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnHome
             // 
@@ -110,7 +111,7 @@
             this.btnPrestasi.FlatAppearance.BorderSize = 0;
             this.btnPrestasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrestasi.ForeColor = System.Drawing.Color.White;
-            this.btnPrestasi.Location = new System.Drawing.Point(620, 130);
+            this.btnPrestasi.Location = new System.Drawing.Point(582, 200);
             this.btnPrestasi.Name = "btnPrestasi";
             this.btnPrestasi.Size = new System.Drawing.Size(104, 39);
             this.btnPrestasi.TabIndex = 25;
