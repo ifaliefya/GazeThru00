@@ -31,12 +31,12 @@ namespace GazethruApps
             wy.Add(0);
 
             wx[0] = 70;//posisi awal btnPrev
-            wy[0] = 300;
-            wx[1] = 1106; //posisi awal btnNext
-            wy[1] = 300;
+            wy[0] = 170;
+            wx[1] = 1080; //posisi awal btnNext
+            wy[1] = 400;
             wx[2] = 100; //posisi awal btnBack
             wy[2] = 620;
-            wx[3] = 1130; //posisi awal btnHome
+            wx[3] = 1080; //posisi awal btnHome
             wy[3] = 620;
         }
 
@@ -50,7 +50,7 @@ namespace GazethruApps
         {
             formInformasi formInformasi = new formInformasi();
             formInformasi.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -74,11 +74,11 @@ namespace GazethruApps
                 wx[2]--;
                 wx[3]++;
             }
-            if(wy[0]==340)
+            if(wy[0]==400)
             {
                 lap = 1;
             }
-            if(wy[0]==260)
+            if(wy[0]==170)
             {
                 lap = 0;
             }
@@ -86,9 +86,14 @@ namespace GazethruApps
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            formHome FormHome = new formHome();
-            FormHome.Show();
-            this.Hide();
+            formUser Home = new formUser(); //home user = formUser, bukan formAwal
+            Home.Show();
+            this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

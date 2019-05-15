@@ -46,7 +46,7 @@
             this.btnInfo.FlatAppearance.BorderSize = 0;
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfo.ForeColor = System.Drawing.Color.White;
-            this.btnInfo.Location = new System.Drawing.Point(100, 215);
+            this.btnInfo.Location = new System.Drawing.Point(100, 200);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(104, 39);
             this.btnInfo.TabIndex = 5;
@@ -60,7 +60,7 @@
             this.btnPeta.FlatAppearance.BorderSize = 0;
             this.btnPeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPeta.ForeColor = System.Drawing.Color.White;
-            this.btnPeta.Location = new System.Drawing.Point(1076, 215);
+            this.btnPeta.Location = new System.Drawing.Point(1076, 430);
             this.btnPeta.Name = "btnPeta";
             this.btnPeta.Size = new System.Drawing.Size(104, 39);
             this.btnPeta.TabIndex = 6;
@@ -70,10 +70,11 @@
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(528, 580);
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(460, 580);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(104, 39);
             this.btnBack.TabIndex = 7;
@@ -109,6 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pictureBox1);

@@ -52,11 +52,11 @@
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHome.cs">
+    <Compile Include="FormAwal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHome.Designer.cs">
-      <DependentUpon>FormHome.cs</DependentUpon>
+    <Compile Include="FormAwal.Designer.cs">
+      <DependentUpon>FormAwal.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInformasi.cs">
       <SubType>Form</SubType>
@@ -71,6 +71,24 @@
     </Compile>
     <Compile Include="FormKegiatan.Designer.cs">
       <DependentUpon>FormKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLantai1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLantai1.Designer.cs">
+      <DependentUpon>FormLantai1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLantai2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLantai2.Designer.cs">
+      <DependentUpon>FormLantai2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLantai3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLantai3.Designer.cs">
+      <DependentUpon>FormLantai3.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPeta.cs">
       <SubType>Form</SubType>
@@ -101,8 +119,8 @@
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHome.resx">
-      <DependentUpon>FormHome.cs</DependentUpon>
+    <EmbeddedResource Include="FormAwal.resx">
+      <DependentUpon>FormAwal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInformasi.resx">
       <DependentUpon>FormInformasi.cs</DependentUpon>
@@ -110,6 +128,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKegiatan.resx">
       <DependentUpon>FormKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLantai1.resx">
+      <DependentUpon>FormLantai1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLantai2.resx">
+      <DependentUpon>FormLantai2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLantai3.resx">
+      <DependentUpon>FormLantai3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPeta.resx">
       <DependentUpon>FormPeta.cs</DependentUpon>
