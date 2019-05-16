@@ -15,9 +15,12 @@ namespace GazethruApps
         List<double> wx;
         List<double> wy;
         int lap = 0;
+
+        KendaliTombol kendali;
         public formHome()
         {
             InitializeComponent();
+            kendali = new KendaliTombol();
 
             wx = new List<double>();
             wy = new List<double>();
@@ -26,6 +29,10 @@ namespace GazethruApps
 
             wx[0] = 870; //lokasi awal
             wy[0] = 520;
+
+            kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
+
+            kendali.Start();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -63,10 +70,12 @@ namespace GazethruApps
                 lap = 1; //titik akhir
             }
 
-            if (wx[0] == 870)
+            if (wx[0] == 770)
             {
                 lap = 0;
             }
+
+            kendali.CekTombol();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -79,6 +88,16 @@ namespace GazethruApps
         private void btnAdmin_Click(object sender, EventArgs e)
         {
 
+        }
+
+        void TombolUserTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                formUser FormUser = new formUser();
+                FormUser.Show();
+                this.Hide();
+            }
         }
     }
 }

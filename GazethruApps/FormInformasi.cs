@@ -16,6 +16,7 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
+        KendaliTombol kendali;
         public formInformasi()
         {
             InitializeComponent();
@@ -42,6 +43,16 @@ namespace GazethruApps
             wy[3] = 620;
             wx[4] = 1130; //posisi awal btnHome
             wy[4] = 620;
+
+            kendali = new KendaliTombol();
+
+            kendali.TambahTombol(btnBack, new FungsiTombol(BackTekan));
+            kendali.TambahTombol(btnHome, new FungsiTombol(HomeTekan));
+            kendali.TambahTombol(btnKegiatan, new FungsiTombol(KegiatanTekan));
+            kendali.TambahTombol(btnPrestasi, new FungsiTombol(PrestasiTekan));
+            kendali.TambahTombol(btnTentang, new FungsiTombol(TentangTekan));
+
+            kendali.Start();
         }
 
         private void FormInformasi_Load(object sender, EventArgs e)
@@ -109,13 +120,61 @@ namespace GazethruApps
                 wx[3]--;
                 wx[4]++;
             }
-            if (wy[0] == 260)
+            if (wy[0] == 360)
             {
                 lap = 1;
             }
             if (wy[0] == 180)
             {
                 lap = 0;
+            }
+
+            kendali.CekTombol();
+        }
+
+        void BackTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formUser FormUser = new formUser();
+                FormUser.Show();
+                this.Hide();
+            }
+        }
+        void HomeTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formHome FormHome = new formHome();
+                FormHome.Show();
+                this.Hide();
+            }
+        }
+        void KegiatanTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formKegiatan FormKegiatan = new formKegiatan();
+                FormKegiatan.Show();
+                this.Hide();
+            }
+        }
+        void PrestasiTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formPrestasi FormPrestasi = new formPrestasi();
+                FormPrestasi.Show();
+                this.Hide();
+            }
+        }
+        void TentangTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formTentang FormTentang = new formTentang();
+                FormTentang.Show();
+                this.Hide();
             }
         }
     }
