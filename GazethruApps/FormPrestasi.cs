@@ -90,5 +90,15 @@ namespace GazethruApps
             Home.Show();
             this.Close();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            prestasi21.BringToFront();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            prestasi11.BringToFront();
+        }
     }
 }

@@ -42,18 +42,18 @@ namespace GazethruApps
         {
             timer1.Interval = 1;
             timer1.Start();
-            //timer2.Interval = 3;
+            //timer2.Interval = 1;
             //timer2.Start();
         }
 
         //private int imageNumber = 1;
         //private void LoadNextImage()
         //{
-        //    if(imageNumber==4)
+        //    if (imageNumber == 4)
         //    {
         //        imageNumber = 1;
         //    }
-        //    pictureBox1.ImageLocation=string.Format(@"images\{0}.jpg", imageNumber);
+        //    pictureBox1.ImageLocation = string.Format(@"images\{0}.jpg", imageNumber);
         //    imageNumber++;
         //}
 
@@ -99,7 +99,7 @@ namespace GazethruApps
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-         //   LoadNextImage();
+           // LoadNextImage();
 
         }
 

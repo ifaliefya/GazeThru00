@@ -95,5 +95,15 @@ namespace GazethruApps
         {
 
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            kegiatan21.BringToFront();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            kegiatan11.BringToFront();
+        }
     }
 }

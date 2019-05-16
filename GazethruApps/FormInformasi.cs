@@ -106,11 +106,11 @@ namespace GazethruApps
                 wx[3]--;
             }
 
-            if (wx[3] == 330)
+            if (wx[3] == 730)
             {
                 lap = 1;
             }
-            if (wx[3] == 100)
+            if (wx[3] == 500)
             {
                 lap = 0;
             }

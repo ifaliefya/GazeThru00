@@ -90,5 +90,20 @@ namespace GazethruApps
                 lap = 0;
             }
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            visiElektro2.BringToFront();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            visiTeti2.BringToFront();
+        }
+
+        private void visiElektro2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
