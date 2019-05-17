@@ -29,10 +29,10 @@ namespace GazethruApps
             wy.Add(0);
 
             wx[0] = 100; //lokasi awal btnInformasi
-            wy[0] = 215;
+            wy[0] = 200;
             wx[1] = 1130; //lokasi awal btnPeta
-            wy[1] = 215;
-            wx[2] = 528; //lokasi awal btnBack
+            wy[1] = 430;
+            wx[2] = 460; //lokasi awal btnBack
             wy[2] = 580;
 
 
@@ -62,11 +62,11 @@ namespace GazethruApps
                 wy[1]++;
                 wx[2]--;
             }
-            if (wy[0] == 260)
+            if (wy[0] == 430)
             {
                 lap = 1;
             }
-            if (wy[0] == 180)
+            if (wy[0] == 200)
             {
                 lap = 0;
             }
@@ -74,30 +74,30 @@ namespace GazethruApps
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            formHome FormHome = new formHome();
+            formAwal FormHome = new formAwal();
             FormHome.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
             formInformasi FormInformasi = new formInformasi();
             FormInformasi.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnPeta_Click(object sender, EventArgs e)
         {
             formPeta FormPeta = new formPeta();
             FormPeta.Show();
-            this.Hide();
+            this.Close();
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            formHome FormHome = new formHome();
-            FormHome.Show();
-            this.Hide();
-        }
+        //private void btnHome_Click(object sender, EventArgs e)
+        //{
+        //    formAwal FormHome = new formAwal();
+        //    FormHome.Show();
+        //    this.Close();
+        //}
     }
 }
