@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminInfoNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminInfoNew.Designer.cs">
+      <DependentUpon>AdminInfoNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminInfoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminInfoEdit.Designer.cs">
+      <DependentUpon>AdminInfoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminInformasi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminInformasi.Designer.cs">
+      <DependentUpon>AdminInformasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +122,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminInfoNew.resx">
+      <DependentUpon>AdminInfoNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminInfoEdit.resx">
+      <DependentUpon>AdminInfoEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminInformasi.resx">
+      <DependentUpon>AdminInformasi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>

@@ -18,5 +18,7 @@ namespace GazethruApps
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new formHome());
         }
+
+        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
     }
 }

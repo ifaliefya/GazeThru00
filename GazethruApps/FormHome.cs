@@ -78,7 +78,9 @@ namespace GazethruApps
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-
+            AdminLogin LoginAdmin = new AdminLogin();
+            LoginAdmin.Show();
+            this.Hide();
         }
     }
 }
