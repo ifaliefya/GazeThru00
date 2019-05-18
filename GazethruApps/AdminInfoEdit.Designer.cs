@@ -124,6 +124,7 @@
             this.buttonUpdate.TabIndex = 8;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonPreview
             // 
@@ -144,6 +145,7 @@
             this.buttonBrowsePict.TabIndex = 10;
             this.buttonBrowsePict.Text = "Browse";
             this.buttonBrowsePict.UseVisualStyleBackColor = true;
+            this.buttonBrowsePict.Click += new System.EventHandler(this.buttonBrowsePict_Click);
             // 
             // AdminInfoEdit
             // 
@@ -163,6 +165,7 @@
             this.Controls.Add(this.labelNo);
             this.Name = "AdminInfoEdit";
             this.Text = "AdminInfoEdit";
+            this.Load += new System.EventHandler(this.AdminInfoEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

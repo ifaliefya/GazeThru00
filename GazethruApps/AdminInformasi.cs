@@ -87,7 +87,7 @@ namespace GazethruApps
             addInfo.Show();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        protected void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
             // Ignore clicks that are not on button cells. 
@@ -97,19 +97,22 @@ namespace GazethruApps
             // Retrieve the content info ID.
             //int infoID = (Int32)dataGridView1[0, e.RowIndex].Value;
 
-            //int selected = 0;
-            //Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(), out selected);
-            //infoIDchoose = selected;
+            int selected = 0;
+            Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+            infoIDchoose = selected;
 
-            if (e.RowIndex>0) { 
-                string InfoID = dataGridView1.SelectedRows[1].Cells["No"].Value.ToString();
-                string JudulInfo = dataGridView1.SelectedRows[1].Cells["Judul"].Value.ToString();
-                string IsiInfo = dataGridView1.SelectedRows[1].Cells["Isi"].Value.ToString();
-                Image imgInfo = (Image)dataGridView1.SelectedRows[1].Cells["Gambar"].Value;
+            AdminInfoEdit editInfo = new AdminInfoEdit();
+            editInfo.Show();
 
-                AdminInfoEdit editInfo = new AdminInfoEdit(InfoID, JudulInfo,IsiInfo, imgInfo);
-                editInfo.Show();
-            }
+            //if (e.RowIndex>0) { 
+            //    string InfoID = dataGridView1.SelectedRows[1].Cells["No"].Value.ToString();
+            //    string JudulInfo = dataGridView1.SelectedRows[1].Cells["Judul"].Value.ToString();
+            //    string IsiInfo = dataGridView1.SelectedRows[1].Cells["Isi"].Value.ToString();
+            //   Image imgInfo = (Image)dataGridView1.SelectedRows[1].Cells["Gambar"].Value;
+
+            //    AdminInfoEdit editInfo = new AdminInfoEdit(InfoID, JudulInfo,IsiInfo, imgInfo);
+            //    editInfo.Show();
+           // }
         }
     }
 }
