@@ -31,12 +31,12 @@ namespace GazethruApps
             wy.Add(0);
 
             wx[0] = 70;//prev
-            wy[0] = 300;
-            wx[1] = 1150;//next
-            wy[1] = 300;
+            wy[0] = 170;
+            wx[1] = 1080;//next
+            wy[1] = 400;
             wx[2] = 100;//back
             wy[2] = 620;
-            wx[3] = 1130; //home
+            wx[3] = 1080; //home
             wy[3] = 620;
         }
 
@@ -44,14 +44,14 @@ namespace GazethruApps
         {
             formInformasi FormInformasi = new formInformasi();
             FormInformasi.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            formHome FormHome = new formHome();
-            FormHome.Show();
-            this.Hide();
+            formUser Home = new formUser();
+            Home.Show();
+            this.Close();
         }
 
         private void formTentang_Load(object sender, EventArgs e)
@@ -81,14 +81,29 @@ namespace GazethruApps
                 wx[2]--;
                 wx[3]++;
             }
-            if(wy[0]==340)
+            if(wy[0]==400)
             {
                 lap = 1;
             }
-            if(wy[0]==260)
+            if(wy[0]==170)
             {
                 lap = 0;
             }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            visiElektro2.BringToFront();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            visiTeti2.BringToFront();
+        }
+
+        private void visiElektro2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
