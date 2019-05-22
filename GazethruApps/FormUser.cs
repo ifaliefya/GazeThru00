@@ -16,6 +16,8 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
+        KendaliTombol kendali;
+
         public formUser()
         {
             InitializeComponent();
@@ -35,7 +37,12 @@ namespace GazethruApps
             wx[2] = 460; //lokasi awal btnBack
             wy[2] = 580;
 
+            kendali = new KendaliTombol();
+            kendali.TambahTombol(btnInfo, new FungsiTombol(InfoTekan));
+            kendali.TambahTombol(btnPeta, new FungsiTombol(PetaTekan));
+            kendali.TambahTombol(btnBack, new FungsiTombol(BackTekan));
 
+            kendali.Start();
         }
 
         private void FormUser_Load(object sender, EventArgs e)
@@ -70,6 +77,8 @@ namespace GazethruApps
             {
                 lap = 0;
             }
+
+            kendali.CekTombol();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -93,11 +102,38 @@ namespace GazethruApps
             this.Close();
         }
 
-        //private void btnHome_Click(object sender, EventArgs e)
-        //{
-        //    formAwal FormHome = new formAwal();
-        //    FormHome.Show();
-        //    this.Close();
-        //}
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            formHome FormHome = new formHome();
+            FormHome.Show();
+            this.Hide();
+        }
+        void InfoTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                formInformasi FormInformasi = new formInformasi();
+                FormInformasi.Show();
+                this.Hide();
+            }
+        }
+        void PetaTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                formPeta FormPeta = new formPeta();
+                FormPeta.Show();
+                this.Hide();
+            }
+        }
+        void BackTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formHome FormHome = new formHome();
+                FormHome.Show();
+                this.Hide();
+            }
+        }
     }
 }
