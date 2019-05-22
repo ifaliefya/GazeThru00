@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace GazethruApps
 {
-    public partial class formHome : Form
+    public partial class formAwal : Form
     {
         List<double> wx;
         List<double> wy;
         int lap = 0;
 
         KendaliTombol kendali;
-        public formHome()
+        public formAwal()
         {
             InitializeComponent();
             kendali = new KendaliTombol();
@@ -45,7 +45,7 @@ namespace GazethruApps
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void formHome_Load(object sender, EventArgs e)
+        private void formAwal_Load(object sender, EventArgs e)
         {
             timer1.Interval = 1;
             timer1.Start();
@@ -87,8 +87,12 @@ namespace GazethruApps
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-
+            AdminLogin LoginAdmin = new AdminLogin();
+            LoginAdmin.Show();
+            this.Hide();
         }
+
+    }
 
         void TombolUserTekan(ArgumenKendaliTombol e)
         {
@@ -100,4 +104,4 @@ namespace GazethruApps
             }
         }
     }
-}
+

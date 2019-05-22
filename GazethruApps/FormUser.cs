@@ -104,7 +104,7 @@ namespace GazethruApps
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            formHome FormHome = new formHome();
+            formAwal FormHome = new formAwal();
             FormHome.Show();
             this.Hide();
         }
