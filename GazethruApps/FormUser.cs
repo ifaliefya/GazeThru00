@@ -130,7 +130,7 @@ namespace GazethruApps
         {
             if(e.status)
             {
-                formHome FormHome = new formHome();
+                formAwal FormHome = new formAwal();
                 FormHome.Show();
                 this.Hide();
             }

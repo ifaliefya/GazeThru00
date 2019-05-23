@@ -35,6 +35,16 @@ namespace GazethruApps
             kendali.Start();
         }
 
+        void TombolUserTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                formUser FormUser = new formUser();
+                FormUser.Show();
+                this.Hide();
+            }
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -91,17 +101,6 @@ namespace GazethruApps
             LoginAdmin.Show();
             this.Hide();
         }
-
-    }
-
-        void TombolUserTekan(ArgumenKendaliTombol e)
-        {
-            if (e.status)
-            {
-                formUser FormUser = new formUser();
-                FormUser.Show();
-                this.Hide();
-            }
-        }
-    }
+    }           
+}
 
