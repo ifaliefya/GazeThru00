@@ -15,6 +15,23 @@ namespace GazethruApps
         public AdminAwal()
         {
             InitializeComponent();
+            Sidepanel.Height = btn_Slideshow.Height;
+            Sidepanel.Top = btn_Slideshow.Top;
+            adminSlideshow1.BringToFront();
+        }
+
+        private void btn_Slideshow_Click(object sender, EventArgs e)
+        {
+            Sidepanel.Height = btn_Slideshow.Height;
+            Sidepanel.Top = btn_Slideshow.Top;
+            adminSlideshow1.BringToFront();
+        }
+
+        private void btn_Tentang_Click(object sender, EventArgs e)
+        {
+            Sidepanel.Height = btn_Tentang.Height;
+            Sidepanel.Top = btn_Tentang.Top;
+            adminInformasi1.BringToFront();
         }
     }
 }

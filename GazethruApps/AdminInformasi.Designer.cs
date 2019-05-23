@@ -96,7 +96,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Name = "AdminInformasi";
-            this.Size = new System.Drawing.Size(1435, 801);
+            this.Size = new System.Drawing.Size(1449, 742);
             this.Load += new System.EventHandler(this.AdminInformasi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

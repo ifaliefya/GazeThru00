@@ -91,7 +91,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "AdminSlideshow";
-            this.Size = new System.Drawing.Size(1435, 801);
+            this.Size = new System.Drawing.Size(1449, 742);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
