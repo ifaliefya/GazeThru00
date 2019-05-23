@@ -94,6 +94,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(69, 146);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(295, 221);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -122,7 +123,7 @@
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(103, 39);
             this.buttonUpdate.TabIndex = 8;
-            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.Text = "Simpan ";
             this.buttonUpdate.UseVisualStyleBackColor = true;
             // 
             // buttonPreview
@@ -163,7 +164,7 @@
             this.Controls.Add(this.NoInfo);
             this.Controls.Add(this.labelNo);
             this.Name = "AdminInfoNew";
-            this.Text = "AdminInfoEdit";
+            this.Text = "Tambahkan Konten Baru";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -94,7 +94,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(69, 146);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(295, 236);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -165,7 +165,7 @@
             this.Controls.Add(this.NoInfo);
             this.Controls.Add(this.labelNo);
             this.Name = "AdminInfoEdit";
-            this.Text = "AdminInfoEdit";
+            this.Text = "Edit Konten";
             this.Load += new System.EventHandler(this.AdminInfoEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -46,6 +46,7 @@ namespace GazethruApps
 
             CreateImageColumn();
             CreateButtonColumn();
+            CreateDeleteButton();
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -76,6 +77,25 @@ namespace GazethruApps
 
         }
 
+
+        //Add a delete button column. 
+        private void CreateDeleteButton()
+        {
+            DataGridViewButtonColumn deleteBtn = new DataGridViewButtonColumn();
+            deleteBtn.HeaderText = "";
+            deleteBtn.Name = "Delete";
+            deleteBtn.Text = "Delete";
+
+            // Use the Text property for the button text for all cells rather
+            // than using each cell's value as the text for its own button.
+            deleteBtn.UseColumnTextForButtonValue = true;
+
+            // Add the button column to the control.
+            //dataGridView1.Columns.Insert(4, buttonCol);
+            dataGridView1.Columns.Add(deleteBtn);
+
+        }
+
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             InfoContent(textBoxSearch.Text);
@@ -90,6 +110,34 @@ namespace GazethruApps
         protected void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            int selected = 0;
+            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+                infoIDchoose = selected;
+
+                AdminInfoEdit editInfo = new AdminInfoEdit();
+                editInfo.Show();
+            }
+            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+
+                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+                infoIDchoose = selected;
+                SqlCommand command = new SqlCommand("DELETE FROM Info WHERE No=" + infoIDchoose, con);
+
+                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ExecMyQuery(command, "Data Deleted");
+                }
+
+            }
+            else
+            {
+                return;
+            }
+
+
             // Ignore clicks that are not on button cells. 
             if (e.RowIndex < 0 || e.ColumnIndex !=
                 dataGridView1.Columns["edit"].Index) return;
@@ -97,22 +145,34 @@ namespace GazethruApps
             // Retrieve the content info ID.
             //int infoID = (Int32)dataGridView1[0, e.RowIndex].Value;
 
-            int selected = 0;
-            Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-            infoIDchoose = selected;
+            //int selected = 0;
+            //Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+            //infoIDchoose = selected;
 
-            AdminInfoEdit editInfo = new AdminInfoEdit();
-            editInfo.Show();
+            //AdminInfoEdit editInfo = new AdminInfoEdit();
+            //editInfo.Show();
 
-            //if (e.RowIndex>0) { 
-            //    string InfoID = dataGridView1.SelectedRows[1].Cells["No"].Value.ToString();
-            //    string JudulInfo = dataGridView1.SelectedRows[1].Cells["Judul"].Value.ToString();
-            //    string IsiInfo = dataGridView1.SelectedRows[1].Cells["Isi"].Value.ToString();
-            //   Image imgInfo = (Image)dataGridView1.SelectedRows[1].Cells["Gambar"].Value;
+        }
 
-            //    AdminInfoEdit editInfo = new AdminInfoEdit(InfoID, JudulInfo,IsiInfo, imgInfo);
-            //    editInfo.Show();
-           // }
+        // message box
+        public void ExecMyQuery(SqlCommand mcomd, string myMsg)
+        {
+            con.Open();
+            if (mcomd.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show(myMsg);
+
+            }
+            else
+            {
+
+                MessageBox.Show("Query Not Executed");
+
+            }
+
+            con.Close();
+            InfoContent("");
+
         }
     }
 }
