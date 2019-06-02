@@ -20,17 +20,6 @@ namespace GazethruApps
         public AdminInfoEdit()
         {
             InitializeComponent();
-            //NoInfo.Text = InfoID;
-            //textBoxJudul.Text = JudulInfo;
-           // String[] descs = { IsiInfo };
-           // foreach (String desc in descs)
-            //{
-              //  textBoxIsi.Text = desc;
-               // Int32 offset = textBoxIsi.Rtf.IndexOf(@"\f0\fs17") + 8;
-               // Int32 len = textBoxIsi.Rtf.LastIndexOf(@"\par") - offset;
-               // Console.WriteLine("{0,-15} : {1}", desc, textBoxIsi.Rtf.Substring(offset, len).Trim());
-           // }
-           // pictureBox1.Image = img; 
         }
 
         private void AdminInfoEdit_Load(object sender, EventArgs e)
@@ -89,7 +78,7 @@ namespace GazethruApps
             command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
             command.Parameters.Add("@gambar", SqlDbType.Image).Value = img; 
 
-            ExecMyQuery(command, "Data Inserted");
+            ExecMyQuery(command, "Data Updated");
         }
 
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)

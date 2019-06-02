@@ -77,7 +77,6 @@ namespace GazethruApps
 
         }
 
-
         //Add a delete button column. 
         private void CreateDeleteButton()
         {
@@ -161,18 +160,20 @@ namespace GazethruApps
             if (mcomd.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show(myMsg);
-
             }
             else
             {
-
                 MessageBox.Show("Query Not Executed");
-
             }
 
             con.Close();
             InfoContent("");
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            InfoContent("");
         }
     }
 }

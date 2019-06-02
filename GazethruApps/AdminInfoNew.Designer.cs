@@ -36,7 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelIsi = new System.Windows.Forms.Label();
             this.textBoxIsi = new System.Windows.Forms.RichTextBox();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonPreview = new System.Windows.Forms.Button();
             this.buttonBrowsePict = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,15 +116,16 @@
             this.textBoxIsi.TabIndex = 7;
             this.textBoxIsi.Text = "";
             // 
-            // buttonUpdate
+            // buttonInsert
             // 
-            this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdate.Location = new System.Drawing.Point(1024, 457);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(103, 39);
-            this.buttonUpdate.TabIndex = 8;
-            this.buttonUpdate.Text = "Simpan ";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInsert.Location = new System.Drawing.Point(1024, 457);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(103, 39);
+            this.buttonInsert.TabIndex = 8;
+            this.buttonInsert.Text = "Insert";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // buttonPreview
             // 
@@ -154,7 +155,7 @@
             this.ClientSize = new System.Drawing.Size(1199, 536);
             this.Controls.Add(this.buttonBrowsePict);
             this.Controls.Add(this.buttonPreview);
-            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.textBoxIsi);
             this.Controls.Add(this.labelIsi);
             this.Controls.Add(this.pictureBox1);
@@ -165,6 +166,7 @@
             this.Controls.Add(this.labelNo);
             this.Name = "AdminInfoNew";
             this.Text = "Tambahkan Konten Baru";
+            this.Load += new System.EventHandler(this.AdminInfoNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,7 +183,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelIsi;
         private System.Windows.Forms.RichTextBox textBoxIsi;
-        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.Button buttonPreview;
         private System.Windows.Forms.Button buttonBrowsePict;
     }

@@ -30,7 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,14 +58,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnDelete
+            // btnRefresh
             // 
-            this.btnDelete.Location = new System.Drawing.Point(490, 31);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(160, 42);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Hapus";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(490, 31);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(160, 42);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // textBoxSearch
             // 
@@ -93,7 +94,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAdd);
             this.Name = "AdminInformasi";
             this.Size = new System.Drawing.Size(1449, 742);
@@ -108,7 +109,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
     }
