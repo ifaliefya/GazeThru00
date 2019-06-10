@@ -18,6 +18,8 @@ namespace GazethruApps
             Sidepanel.Height = btn_Slideshow.Height;
             Sidepanel.Top = btn_Slideshow.Top;
             adminSlideshow1.BringToFront();
+            AdminSlideshow OpenAdmin = new AdminSlideshow();
+            OpenAdmin.SlideList("");
         }
 
         private void btn_Slideshow_Click(object sender, EventArgs e)
@@ -25,6 +27,8 @@ namespace GazethruApps
             Sidepanel.Height = btn_Slideshow.Height;
             Sidepanel.Top = btn_Slideshow.Top;
             adminSlideshow1.BringToFront();
+            AdminSlideshow Slideshow = new AdminSlideshow();
+            Slideshow.SlideList("");
         }
 
         private void btn_Tentang_Click(object sender, EventArgs e)
@@ -32,6 +36,8 @@ namespace GazethruApps
             Sidepanel.Height = btn_Tentang.Height;
             Sidepanel.Top = btn_Tentang.Top;
             adminInformasi1.BringToFront();
+            AdminInformasi Tentang = new AdminInformasi();
+            Tentang.InfoContent("");
         }
     }
 }

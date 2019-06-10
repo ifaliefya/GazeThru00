@@ -24,7 +24,7 @@ namespace GazethruApps
 
         public void SlideList(string valueToSearch)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Slider WHERE CONCAT(Id, Judul, Tanggal) LIKE '%" + valueToSearch + "%'", con);
+            SqlCommand command = new SqlCommand("SELECT * FROM Slider WHERE CONCAT(Id, Judul, Tanggal, Show) LIKE '%" + valueToSearch + "%'", con);
             SqlDataAdapter adapter = new SqlDataAdapter(command); //adapter perintah query sql
 
             DataTable table = new DataTable(); //bikin DataTable namanya table                  
@@ -88,6 +88,16 @@ namespace GazethruApps
         {
             AdminSlideNew addSlider = new AdminSlideNew();
             addSlider.Show();
+        }
+
+        //Add checkbox hide show
+        private void CreateShowCheckbox ()
+        {
+            DataGridViewCheckBoxColumn showCheck = new DataGridViewCheckBoxColumn();
+            showCheck.HeaderText = "Show/Hide";
+            showCheck.Name = "ShowCheck";
+
+            dataGridView1.Columns.Add(showCheck);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
