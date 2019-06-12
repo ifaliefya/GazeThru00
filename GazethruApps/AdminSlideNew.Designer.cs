@@ -35,7 +35,7 @@
             this.labelTgl = new System.Windows.Forms.Label();
             this.TanggalNOW = new System.Windows.Forms.Label();
             this.buttonInsert = new System.Windows.Forms.Button();
-            this.checkShowHide = new System.Windows.Forms.CheckBox();
+            this.ShowHide = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,23 +102,22 @@
             this.buttonInsert.UseVisualStyleBackColor = true;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
-            // checkShowHide
+            // ShowHide
             // 
-            this.checkShowHide.AutoSize = true;
-            this.checkShowHide.Location = new System.Drawing.Point(380, 29);
-            this.checkShowHide.Name = "checkShowHide";
-            this.checkShowHide.Size = new System.Drawing.Size(97, 21);
-            this.checkShowHide.TabIndex = 7;
-            this.checkShowHide.Text = "Show/Hide";
-            this.checkShowHide.UseVisualStyleBackColor = true;
-            this.checkShowHide.CheckedChanged += new System.EventHandler(this.checkShowHide_CheckedChanged);
+            this.ShowHide.AutoSize = true;
+            this.ShowHide.Location = new System.Drawing.Point(380, 29);
+            this.ShowHide.Name = "ShowHide";
+            this.ShowHide.Size = new System.Drawing.Size(97, 21);
+            this.ShowHide.TabIndex = 7;
+            this.ShowHide.Text = "Show/Hide";
+            this.ShowHide.UseVisualStyleBackColor = true;
             // 
             // AdminSlideNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 687);
-            this.Controls.Add(this.checkShowHide);
+            this.Controls.Add(this.ShowHide);
             this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.TanggalNOW);
             this.Controls.Add(this.labelTgl);
@@ -143,6 +142,6 @@
         private System.Windows.Forms.Label labelTgl;
         private System.Windows.Forms.Label TanggalNOW;
         private System.Windows.Forms.Button buttonInsert;
-        private System.Windows.Forms.CheckBox checkShowHide;
+        private System.Windows.Forms.CheckBox ShowHide;
     }
 }

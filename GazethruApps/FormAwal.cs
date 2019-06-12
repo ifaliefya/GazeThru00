@@ -101,6 +101,15 @@ namespace GazethruApps
             LoginAdmin.Show();
             this.Hide();
         }
+
+        private void buttonAdmin2_Click(object sender, EventArgs e)
+        {
+            //AdminLogin LoginAdmin = new AdminLogin();
+            //LoginAdmin.Show();
+            AdminAwal test = new AdminAwal();
+            test.Show();
+            this.Hide();
+        }
     }           
 }
 

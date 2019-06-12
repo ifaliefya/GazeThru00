@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 
+
 namespace GazethruApps
 {
     public partial class AdminSlideNew : Form
@@ -17,6 +18,20 @@ namespace GazethruApps
         public AdminSlideNew()
         {
             InitializeComponent();
+            if (AdminSlideshow.EditMode == "Edit")
+            {
+                buttonInsert.Text = "Update";
+                this.Text = "Edit Konten";
+                //Update();
+            }
+            else if (AdminSlideshow.EditMode == "New")
+            {
+                buttonInsert.Text = "Insert";
+                this.Text = "Tambahkan Konten";
+                TanggalNOW.Text = DateTime.Now.ToShortDateString();
+                ShowHide.Checked = true;
+                //Insert();
+            }
         }
 
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
@@ -31,21 +46,6 @@ namespace GazethruApps
                 pictureBox1.Image = Image.FromFile(opf.FileName);
             }
         }
-
-        private void buttonInsert_Click(object sender, EventArgs e)
-        {
-            MemoryStream ms = new MemoryStream();
-            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-            byte[] img = ms.ToArray();
-
-            SqlCommand command = new SqlCommand("INSERT INTO Slider(Judul, Gambar) VALUES (@judul , @gambar)", con);
-
-            command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
-            command.Parameters.Add("@gambar", SqlDbType.Image).Value = img;
-
-            ExecMyQuery(command, "Data Inserted");
-        }
-
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
         {
             con.Open();
@@ -60,15 +60,27 @@ namespace GazethruApps
 
             con.Close();
             this.Close();
-            //??
-            AdminInformasi load = new AdminInformasi();
-            load.InfoContent("");
-
+            AdminAwal load = new AdminAwal();
+            load.Show();
         }
 
-        private void checkShowHide_CheckedChanged(object sender, EventArgs e)
+        private void buttonInsert_Click(object sender, EventArgs e)
         {
+            MemoryStream ms = new MemoryStream();
+            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+            byte[] img = ms.ToArray();
 
+            SqlCommand command = new SqlCommand("INSERT INTO Slider(Tanggal, Judul, Show, Gambar) VALUES (@tanggal, @judul , @show, @gambar)", con);
+
+            command.Parameters.Add("@tanggal", SqlDbType.Date).Value = Convert.ToDateTime(TanggalNOW.Text);
+            command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
+            command.Parameters.Add("@show", SqlDbType.Bit).Value = ShowHide.Checked;
+            command.Parameters.Add("@gambar", SqlDbType.Image).Value = img;
+
+            ExecMyQuery(command, "Data Inserted");
         }
+
+       
+
     }
 }

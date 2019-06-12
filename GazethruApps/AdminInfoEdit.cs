@@ -39,6 +39,7 @@ namespace GazethruApps
                 NoInfo.Text = (read["No"].ToString());
                 textBoxJudul.Text = (read["Judul"].ToString());
                 textBoxIsi.Text = (read["Isi"].ToString());
+                ShowHide.Checked = Convert.ToBoolean(read["Show"].ToString());
                 if (!Convert.IsDBNull(read["Gambar"]))
                 {
                     Byte[] img = (Byte[])(read["Gambar"]);
@@ -72,10 +73,11 @@ namespace GazethruApps
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
             byte[] img = ms.ToArray();
 
-            SqlCommand command = new SqlCommand("UPDATE Info SET Judul=@judul, Isi=@isi, Gambar=@gambar WHERE No="+ AdminInformasi.infoIDchoose, con);
+            SqlCommand command = new SqlCommand("UPDATE Info SET Judul=@judul, Isi=@isi, Gambar=@gambar, Show=@show WHERE No="+ AdminInformasi.infoIDchoose, con);
 
             command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
             command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
+            command.Parameters.Add("@show", SqlDbType.Bit).Value = ShowHide.Checked;
             command.Parameters.Add("@gambar", SqlDbType.Image).Value = img; 
 
             ExecMyQuery(command, "Data Updated");

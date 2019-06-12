@@ -13,6 +13,17 @@ namespace GazethruApps
 {
     public partial class AdminInformasi : UserControl
     {
+        private static AdminInformasi _instance;
+        public static AdminInformasi Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new AdminInformasi();
+                return _instance;
+            }
+        }
+
         public AdminInformasi()
         {
             InitializeComponent();
@@ -22,7 +33,7 @@ namespace GazethruApps
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
 
         SqlConnection con = new SqlConnection(connectionString);
-        
+
 
         private void AdminInformasi_Load(object sender, EventArgs e)
         {
@@ -40,7 +51,7 @@ namespace GazethruApps
 
             dataGridView1.RowTemplate.Height = 60;
             dataGridView1.AllowUserToAddRows = false;
-      
+
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = table; //datagrid datasourcenya dari table
 
@@ -49,7 +60,6 @@ namespace GazethruApps
             CreateDeleteButton();
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
         }
 
         private void CreateImageColumn()
@@ -102,7 +112,7 @@ namespace GazethruApps
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AdminInfoNew addInfo = new AdminInfoNew();
+            AdminInfoNew addInfo = new AdminInfoNew(this);
             addInfo.Show();
         }
 
@@ -138,8 +148,8 @@ namespace GazethruApps
 
 
             // Ignore clicks that are not on button cells. 
-            if (e.RowIndex < 0 || e.ColumnIndex !=
-                dataGridView1.Columns["edit"].Index) return;
+            //if (e.RowIndex < 0 || e.ColumnIndex !=
+            // dataGridView1.Columns["edit"].Index) return;
 
             // Retrieve the content info ID.
             //int infoID = (Int32)dataGridView1[0, e.RowIndex].Value;
@@ -174,6 +184,43 @@ namespace GazethruApps
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             InfoContent("");
+        }
+
+        // This event handler manually raises the CellValueChanged event
+        // by calling the CommitEdit method.
+        void dataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.IsCurrentCellDirty)
+            {
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        // If a check box cell is clicked, this event handler disables  
+        // or enables the button in the same row as the clicked cell.
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int selected = 0;
+            
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Show")
+            {
+                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+                infoIDchoose = selected;
+
+                SqlCommand command = new SqlCommand("UPDATE Info SET Show=@show WHERE No=" + infoIDchoose, con);
+                Boolean check = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value.ToString());
+
+                if (check == true)
+                {
+                    command.Parameters.Add("@show", SqlDbType.Bit).Value = check;
+                    ExecMyQuery(command, "Data Show");
+                }
+                else if (check==false)
+                {
+                    command.Parameters.Add("@show", SqlDbType.Bit).Value = check;
+                    ExecMyQuery(command, "Data Hide");
+                }
+            }
         }
     }
 }

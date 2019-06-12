@@ -17,27 +17,54 @@ namespace GazethruApps
             InitializeComponent();
             Sidepanel.Height = btn_Slideshow.Height;
             Sidepanel.Top = btn_Slideshow.Top;
-            adminSlideshow1.BringToFront();
-            AdminSlideshow OpenAdmin = new AdminSlideshow();
-            OpenAdmin.SlideList("");
+            if (!panelUC.Controls.Contains(AdminSlideshow.Instance))
+            {
+                panelUC.Controls.Add(AdminSlideshow.Instance);
+                AdminSlideshow.Instance.Dock = DockStyle.Fill;
+                AdminSlideshow.Instance.BringToFront();
+                AdminSlideshow Slideshow = new AdminSlideshow();
+                Slideshow.SlideList("");
+            }
+            else
+                AdminSlideshow.Instance.BringToFront();
         }
 
         private void btn_Slideshow_Click(object sender, EventArgs e)
         {
             Sidepanel.Height = btn_Slideshow.Height;
             Sidepanel.Top = btn_Slideshow.Top;
-            adminSlideshow1.BringToFront();
-            AdminSlideshow Slideshow = new AdminSlideshow();
-            Slideshow.SlideList("");
+            //adminSlideshow1.BringToFront();
+            //AdminSlideshow Slideshow = new AdminSlideshow();
+            //Slideshow.SlideList("");
+            if (!panelUC.Controls.Contains(AdminSlideshow.Instance))
+            {
+                panelUC.Controls.Add(AdminSlideshow.Instance);
+                AdminSlideshow.Instance.Dock = DockStyle.Fill;
+                AdminSlideshow.Instance.BringToFront();
+                AdminSlideshow Slideshow = new AdminSlideshow();
+                Slideshow.SlideList("");
+            }
+            else
+                AdminSlideshow.Instance.BringToFront();
         }
 
         private void btn_Tentang_Click(object sender, EventArgs e)
         {
             Sidepanel.Height = btn_Tentang.Height;
             Sidepanel.Top = btn_Tentang.Top;
-            adminInformasi1.BringToFront();
-            AdminInformasi Tentang = new AdminInformasi();
-            Tentang.InfoContent("");
+            //adminInformasi1.BringToFront();
+            //AdminInformasi Tentang = new AdminInformasi();
+            //Tentang.InfoContent("");
+            if (!panelUC.Controls.Contains(AdminInformasi.Instance))
+            {
+                panelUC.Controls.Add(AdminInformasi.Instance);
+                AdminInformasi.Instance.Dock = DockStyle.Fill;
+                AdminInformasi.Instance.BringToFront();
+                AdminInformasi Tentang = new AdminInformasi();
+                Tentang.InfoContent("");
+            }
+            else
+                AdminInformasi.Instance.BringToFront();
         }
     }
 }

@@ -49,6 +49,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(540, 570);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // labelSearch
             // 
@@ -129,6 +130,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "AdminSlideshow";
             this.Size = new System.Drawing.Size(1449, 742);
+            this.Load += new System.EventHandler(this.AdminSlideshow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
