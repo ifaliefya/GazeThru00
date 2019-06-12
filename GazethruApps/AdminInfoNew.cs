@@ -38,13 +38,12 @@ namespace GazethruApps
 
         private void AdminInfoNew_Load(object sender, EventArgs e)
         {
-            HasRows(con);
+            GetLastID(con);
             NoInfo.Text = infoIDlast.ToString();
-            //NoInfo.Text = "";
         }
 
 
-        public void HasRows(SqlConnection connection)
+        public void GetLastID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
               "SELECT MAX(No) FROM Info", connection);
@@ -56,8 +55,6 @@ namespace GazethruApps
                 while (reader.Read())
                 {
                     infoIDlast = reader.GetInt32(0) + 1;
-                    //Console.WriteLine("{0}\t{1}", reader.GetInt32(0),
-                    //    reader.GetString(1));
                 }
             }
             else
@@ -66,29 +63,6 @@ namespace GazethruApps
             }
             reader.Close();
             connection.Close();
-        }
-
-        public void GetLastID()
-        {
-            con.Open();
-            string SelectQuery = "SELECT MAX(No) + 1 as maxVal FROM Info";
-            //string GetID =
-            //  "DECLARE @maxVal INT;" +
-            //  "SELECT @maxVal = ISNULL(MAX(No), 0) + 1 FROM Info;";
-            SqlCommand command = new SqlCommand(SelectQuery, con);
-            //command.Parameters.Add("MaxNo", SqlDbType.Int);
-            //command.Parameters["@MaxNo"].Value = infoIDlast;
-            NoInfo.Text = command.ExecuteScalar().ToString();
-            //SqlDataReader read = command.ExecuteReader();
-            //if (read.Read())
-            //{
-            //    NoInfo.Text = (read["@MaxNo"].ToString());
-            //}
-            //else
-            //{
-            //    NoInfo.Text = "";
-            //}
-            con.Close();
         }
 
         private byte[] GetPic(Image img)
@@ -106,11 +80,9 @@ namespace GazethruApps
         
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-
+            int last = infoIDlast - 1; 
             string InsertQuery =
-                //"DECLARE @maxVal INT;"+
-                //"SELECT @maxVal = ISNULL(MAX(No), 0) + 1 FROM Info;"+
-                //"DBCC CHECKIDENT (Info, RESEED, @maxVal); " +
+                "DBCC CHECKIDENT (Info, RESEED," + last + "); " + //DBCC adalah menyalahi aturan increment dan unique, semoga tidak error
                 "INSERT INTO Info(Judul, Isi, Show, Gambar) VALUES (@judul , @isi, @show, @gambar);";
             SqlCommand command = new SqlCommand(InsertQuery, con);
 
@@ -131,19 +103,19 @@ namespace GazethruApps
 
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
         {
-                con.Open();
-                if (mcomd.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show(myMsg, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Query Not Executed", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            con.Open();
+            if (mcomd.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show(myMsg, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Query Not Executed", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-                con.Close();
-                _InfoAwal.InfoContent("");
-                this.Close();
+            con.Close();
+            _InfoAwal.InfoContent("");
+            this.Close();
         }
     }
 }
