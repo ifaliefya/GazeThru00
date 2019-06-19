@@ -21,27 +21,19 @@ namespace GazethruApps
             InitializeComponent();
             wx = new List<double>();
             wy = new List<double>();
-            wx.Add(0); //point1
+            wx.Add(0); //next
             wy.Add(0);
-            wx.Add(0); //point2
-            wy.Add(0);
-            wx.Add(0); //point3
-            wy.Add(0);
-            wx.Add(0); //point4
+            wx.Add(0); //prev
             wy.Add(0);
             wx.Add(0); //back
             wy.Add(0);
 
-            wx[0] = 50; //point1
-            wy[0] = 45;
-            wx[1] = 420; //point2
-            wy[1] = 95;
-            wx[2] = 500; //point3
-            wy[2] = 350;
-            wx[3] = 50; //point4
-            wy[3] = 500;
-            wx[4] = 330; //back
-            wy[4] = 620;
+            wx[0] = 1030; //next
+            wy[0] = 370;
+            wx[1] = 255; //prev
+            wy[1] = 140;
+            wx[2] = 470; //back
+            wy[2] = 640;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -59,38 +51,42 @@ namespace GazethruApps
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            point1.Location = new Point((int)wx[0], (int)wy[0]);
-            point2.Location = new Point((int)wx[1], (int)wy[1]);
-            point3.Location = new Point((int)wx[2], (int)wy[2]);
-            point4.Location = new Point((int)wx[3], (int)wy[3]);
-            btnBack.Location = new Point((int)wx[4], (int)wy[4]);
+            btnNext.Location = new Point((int)wx[0], (int)wy[0]);
+            btnPrev.Location = new Point((int)wx[1], (int)wy[1]);
+            btnBack.Location = new Point((int)wx[2], (int)wy[2]);
 
             if (lap == 0)
             {
-                wy[0]++;
-                wx[1]--;
-                wy[2]--;
-                wx[3]++;
-                wy[3] = wy[3] - 0.60f;
-                wx[4]++;
+                wy[0]--;
+                wy[1]++;
+                wx[2]++;
             }
             if (lap == 1)
             {
-                wy[0]--;
-                wx[1]++;
-                wy[2]++;
-                wx[3]--;
-                wy[3] = wy[3] + 0.60f;
-                wx[4]--;
+                wy[0]++;
+                wy[1]--;
+                wx[2]--;
             }
-            if (wx[4] == 600)
+            if (wy[0] == 140)
             {
                 lap = 1;
             }
-            if (wx[4] == 330)
+            if (wy[0] == 370)
             {
                 lap = 0;
             }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            lantai2_021.BringToFront();
+            picPointer.Location = new Point(705, 220);
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            lantai2_011.BringToFront();
+            picPointer.Location = new Point(600, 215);
         }
     }
 }

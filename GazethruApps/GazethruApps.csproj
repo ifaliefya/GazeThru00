@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EyeXFramework">
-      <HintPath>D:\Kuliah\Skripsi\02Develop\Library\EyeXFramework.dll</HintPath>
+      <HintPath>E:\Library\EyeXFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,7 +54,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Tobii.EyeX.Client.Net20">
-      <HintPath>D:\Kuliah\Skripsi\02Develop\Library\Tobii.EyeX.Client.Net20.dll</HintPath>
+      <HintPath>E:\Library\Tobii.EyeX.Client.Net20.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +181,42 @@
     <Compile Include="Kegiatan2.Designer.cs">
       <DependentUpon>Kegiatan2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lantai1_01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai1_01.Designer.cs">
+      <DependentUpon>Lantai1_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai1_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai1_02.Designer.cs">
+      <DependentUpon>Lantai1_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai2_01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai2_01.Designer.cs">
+      <DependentUpon>Lantai2_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai2_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai2_02.Designer.cs">
+      <DependentUpon>Lantai2_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai3_01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai3_01.Designer.cs">
+      <DependentUpon>Lantai3_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai3_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai3_02.Designer.cs">
+      <DependentUpon>Lantai3_02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prestasi1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -267,6 +303,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kegiatan2.resx">
       <DependentUpon>Kegiatan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai1_01.resx">
+      <DependentUpon>Lantai1_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai1_02.resx">
+      <DependentUpon>Lantai1_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai2_01.resx">
+      <DependentUpon>Lantai2_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai2_02.resx">
+      <DependentUpon>Lantai2_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai3_01.resx">
+      <DependentUpon>Lantai3_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai3_02.resx">
+      <DependentUpon>Lantai3_02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prestasi1.resx">
       <DependentUpon>Prestasi1.cs</DependentUpon>

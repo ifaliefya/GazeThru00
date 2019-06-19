@@ -41,16 +41,18 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonAdmin2 = new System.Windows.Forms.Button();
+            this.btnMini = new System.Windows.Forms.Button();
+            this.btnTutup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 123);
+            this.panel1.Size = new System.Drawing.Size(1280, 38);
             this.panel1.TabIndex = 30;
             // 
             // btnAdmin
@@ -91,10 +93,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(88, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(66, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(637, 791);
+            this.pictureBox1.Size = new System.Drawing.Size(478, 643);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -105,10 +106,9 @@
             this.btnUser.FlatAppearance.BorderSize = 0;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.ForeColor = System.Drawing.Color.White;
-            this.btnUser.Location = new System.Drawing.Point(947, 640);
-            this.btnUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUser.Location = new System.Drawing.Point(710, 520);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(139, 48);
+            this.btnUser.Size = new System.Drawing.Size(104, 39);
             this.btnUser.TabIndex = 4;
             this.btnUser.Text = "Mulai";
             this.btnUser.UseVisualStyleBackColor = false;
@@ -118,10 +118,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(789, 81);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(592, 66);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(343, 126);
+            this.pictureBox2.Size = new System.Drawing.Size(257, 102);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -134,28 +133,54 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 874);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 710);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1707, 12);
+            this.panel2.Size = new System.Drawing.Size(1280, 10);
             this.panel2.TabIndex = 29;
             // 
             // buttonAdmin2
             // 
-            this.buttonAdmin2.Location = new System.Drawing.Point(789, 28);
+            this.buttonAdmin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
+            this.buttonAdmin2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdmin2.Location = new System.Drawing.Point(1074, 1);
+            this.buttonAdmin2.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdmin2.Name = "buttonAdmin2";
-            this.buttonAdmin2.Size = new System.Drawing.Size(155, 45);
+            this.buttonAdmin2.Size = new System.Drawing.Size(116, 37);
             this.buttonAdmin2.TabIndex = 31;
             this.buttonAdmin2.Text = "Login Admin";
-            this.buttonAdmin2.UseVisualStyleBackColor = true;
+            this.buttonAdmin2.UseVisualStyleBackColor = false;
             this.buttonAdmin2.Click += new System.EventHandler(this.buttonAdmin2_Click);
+            // 
+            // btnMini
+            // 
+            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMini.Location = new System.Drawing.Point(1205, 1);
+            this.btnMini.Name = "btnMini";
+            this.btnMini.Size = new System.Drawing.Size(37, 35);
+            this.btnMini.TabIndex = 32;
+            this.btnMini.Text = "-";
+            this.btnMini.UseVisualStyleBackColor = true;
+            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
+            // 
+            // btnTutup
+            // 
+            this.btnTutup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTutup.Location = new System.Drawing.Point(1242, 1);
+            this.btnTutup.Name = "btnTutup";
+            this.btnTutup.Size = new System.Drawing.Size(37, 35);
+            this.btnTutup.TabIndex = 33;
+            this.btnTutup.Text = "x";
+            this.btnTutup.UseVisualStyleBackColor = true;
+            this.btnTutup.Click += new System.EventHandler(this.button2_Click);
             // 
             // formAwal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1707, 886);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.btnTutup);
+            this.Controls.Add(this.btnMini);
             this.Controls.Add(this.buttonAdmin2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox2);
@@ -163,7 +188,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "formAwal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Halaman Awal";
@@ -187,6 +211,8 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonAdmin2;
+        private System.Windows.Forms.Button btnMini;
+        private System.Windows.Forms.Button btnTutup;
     }
 }
 
