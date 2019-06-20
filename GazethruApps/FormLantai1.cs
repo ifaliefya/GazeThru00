@@ -20,27 +20,19 @@ namespace GazethruApps
             InitializeComponent();
             wx = new List<double>();
             wy = new List<double>();
-            wx.Add(0); //down
+            wx.Add(0); //next
             wy.Add(0);
-            wx.Add(0); //left
-            wy.Add(0);
-            wx.Add(0); //up
-            wy.Add(0);
-            wx.Add(0); //right
+            wx.Add(0); //prev
             wy.Add(0);
             wx.Add(0); //kembali
             wy.Add(0);
 
-            wx[0] = 28; //down
-            wy[0] = 220;
-            wx[1] = 400; //left
-            wy[1] = 54;
-            wx[2] = 550; //up
-            wy[2] = 450;
-            wx[3] = 170; //right
-            wy[3] = 653;
-            wx[4] = 915; //back
-            wy[4] = 653;
+            wx[0] = 1030; //next
+            wy[0] = 370;
+            wx[1] = 255; //prev
+            wy[1] = 140;
+            wx[2] = 470; //back
+            wy[2] = 640;
         }
 
         private void FormLantai1_Load(object sender, EventArgs e)
@@ -51,37 +43,27 @@ namespace GazethruApps
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            btnDown.Location = new Point((int)wx[0], (int)wy[0]);
-            btnLeft.Location = new Point((int)wx[1], (int)wy[1]);
-            btnUp.Location = new Point((int)wx[2], (int)wy[2]);
-            btnRight.Location = new Point((int)wx[3], (int)wy[3]);
-            btnBack.Location = new Point((int)wx[4], (int)wy[4]);
+            btnNext.Location = new Point((int)wx[0], (int)wy[0]);
+            btnPrev.Location = new Point((int)wx[1], (int)wy[1]);
+            btnBack.Location = new Point((int)wx[2], (int)wy[2]);
 
             if (lap==0)
             {
-                wy[0]++;
-                wx[1]--;
-                wy[2]--;
-                wx[3]++;
-                wx[4]++;
-                wy[4] = wy[4] - 0.60f;
-                
+                wy[0]--;
+                wy[1]++;
+                wx[2]++;
             }
             if (lap == 1)
             {
-                wy[0]--;
-                wx[1]++;
-                wy[2]++;
-                wx[3]--;
-                wx[4]--;
-                wy[4] = wy[4] + 0.60f;
-                
+                wy[0]++;
+                wy[1]--;
+                wx[2]--;
             }
-            if(wy[0]==450)
+            if(wy[0]==140)
             {
                 lap = 1;
             }
-            if(wy[0]==220)
+            if(wy[0]==370)
             {
                 lap = 0;
             }
@@ -101,12 +83,24 @@ namespace GazethruApps
 
         private void point3_Click(object sender, EventArgs e)
         {
-
+            lantai1_011.BringToFront();
+            picPointer.Location = new Point(605, 206);
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void picPointer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            lantai1_021.BringToFront();
+            picPointer.Location = new Point(700, 225);
         }
     }
 }
