@@ -89,6 +89,7 @@ namespace GazethruApps
             command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
             command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
             command.Parameters.Add("@show", SqlDbType.Bit).Value = ShowHide.Checked;
+
             if (pictureBox1.Image == null)
             {
                 command.Parameters.Add("@gambar", SqlDbType.VarBinary).Value = DBNull.Value;

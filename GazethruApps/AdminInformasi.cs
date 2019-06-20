@@ -118,14 +118,13 @@ namespace GazethruApps
 
         protected void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             int selected = 0;
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
 
-                AdminInfoEdit editInfo = new AdminInfoEdit();
+                AdminInfoEdit editInfo = new AdminInfoEdit(this);
                 editInfo.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)

@@ -31,7 +31,6 @@ namespace GazethruApps
         }
 
         public static int infoIDchoose;
-        public static string EditMode;
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
         SqlConnection con = new SqlConnection(connectionString);
 
@@ -58,7 +57,6 @@ namespace GazethruApps
             CreateImageColumn();
             CreateButtonColumn();
             CreateDeleteButton();
-            //CreateShowCheckbox();
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -105,8 +103,7 @@ namespace GazethruApps
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            EditMode = "New";
-            AdminSlideNew addSlider = new AdminSlideNew();
+            AdminSlideNew addSlider = new AdminSlideNew(this);
             addSlider.Show();
         }
 
@@ -133,8 +130,7 @@ namespace GazethruApps
             {
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
-                EditMode = "Edit";
-                AdminSlideNew editInfo = new AdminSlideNew();
+                AdminSlideEdit editInfo = new AdminSlideEdit(this);
                 editInfo.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
@@ -142,7 +138,7 @@ namespace GazethruApps
 
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Info WHERE No=" + infoIDchoose, con);
+                SqlCommand command = new SqlCommand("DELETE FROM Slider WHERE No=" + infoIDchoose, con);
 
                 if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -171,6 +167,39 @@ namespace GazethruApps
             con.Close();
             SlideList("");
 
+        }
+
+        private void dataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.IsCurrentCellDirty)
+            {
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int selected = 0;
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Show")
+            {
+                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+                infoIDchoose = selected;
+
+                SqlCommand command = new SqlCommand("UPDATE Slider SET Show=@show WHERE No=" + infoIDchoose, con);
+                Boolean check = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value.ToString());
+
+                if (check == true)
+                {
+                    command.Parameters.Add("@show", SqlDbType.Bit).Value = check;
+                    ExecMyQuery(command, "Data Show");
+                }
+                else if (check == false)
+                {
+                    command.Parameters.Add("@show", SqlDbType.Bit).Value = check;
+                    ExecMyQuery(command, "Data Hide");
+                }
+            }
         }
     }
 
