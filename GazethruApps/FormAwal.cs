@@ -7,11 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
+
 
 namespace GazethruApps
 {
+
+
     public partial class formAwal : Form
     {
+        //private static formAwal _instance;
+        //public static formAwal Instance
+        //{
+        //    get
+        //    {
+        //        if (_instance == null)
+        //            _instance = new formAwal();
+        //        return _instance;
+        //    }
+        //}
+
         List<double> wx;
         List<double> wy;
         int lap = 0;
@@ -33,7 +49,13 @@ namespace GazethruApps
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
 
             kendali.Start();
+            GetLastID(con);
         }
+
+        private static int imageNumber = 1;
+        private static int LastID;
+        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
+        SqlConnection con = new SqlConnection(connectionString);
 
         void TombolUserTekan(ArgumenKendaliTombol e)
         {
@@ -59,6 +81,7 @@ namespace GazethruApps
         {
             timer1.Interval = 1;
             timer1.Start();
+            timer2.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -85,7 +108,7 @@ namespace GazethruApps
                 lap = 0;
             }
 
-            kendali.CekTombol();
+            //kendali.CekTombol();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -100,6 +123,90 @@ namespace GazethruApps
             AdminLogin LoginAdmin = new AdminLogin();
             LoginAdmin.Show();
             this.Hide();
+        }
+
+        private void buttonAdmin2_Click(object sender, EventArgs e)
+        {
+            //AdminLogin LoginAdmin = new AdminLogin();
+            //LoginAdmin.Show();
+            AdminAwal test = new AdminAwal();
+            test.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            LoadNextImage();
+        }
+
+        public void LoadNextImage ()
+        {
+            con.Open();
+            string SelectQuery = "SELECT * FROM Slider WHERE No=" + imageNumber;
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            if (read.Read())
+            {
+                //Boolean check = Convert.ToBoolean(read["Show"].ToString());
+                Boolean check = (Boolean)(read["Show"]);
+
+                if (check == true)
+                {
+                    Byte[] img = (Byte[])(read["Gambar"]);
+                    MemoryStream ms = new MemoryStream(img);
+                    pictureBox1.Image = Image.FromStream(ms);
+                }
+                //else
+                //{
+                //    imageNumber++;
+                //}
+            }
+            else
+            {
+                pictureBox1.Image = null;
+            }
+            con.Close();
+            if (imageNumber == LastID)
+            {
+                imageNumber = 1;
+            }
+            else
+            {
+                imageNumber++;
+            }
+        }
+
+        public void GetLastID(SqlConnection connection)
+        {
+
+            SqlCommand command = new SqlCommand(
+              "SELECT MAX(No) FROM Slider", connection);
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    LastID = reader.GetInt32(0)+1;
+                }
+            }
+            else
+            {
+                Console.WriteLine("No rows found.");
+            }
+            reader.Close();
+            connection.Close();
         }
     }           
 }

@@ -12,48 +12,47 @@ using System.IO;
 
 namespace GazethruApps
 {
-    public partial class AdminInfoEdit : Form
+    public partial class AdminSlideEdit : Form
     {
-        private readonly AdminInformasi _InfoAwal;
+        private readonly AdminSlideshow _SlideAwal;
 
-        public AdminInfoEdit(AdminInformasi InfoAwal)
+        public AdminSlideEdit(AdminSlideshow SlideAwal)
         {
-            _InfoAwal = InfoAwal;
+            _SlideAwal = SlideAwal;
             InitializeComponent();
         }
 
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
         SqlConnection con = new SqlConnection(connectionString);
 
-        private void AdminInfoEdit_Load(object sender, EventArgs e)
+        private void AdminSlideEdit_Load(object sender, EventArgs e)
         {
-            EditInfoContent();
+            EditSliderContent();
         }
 
-        public void EditInfoContent()
+        public void EditSliderContent()
         {
-            
             con.Open();
-            string SelectQuery = "SELECT * FROM Info WHERE No=" + AdminInformasi.infoIDchoose;
+            string SelectQuery = "SELECT * FROM Slider WHERE No=" + AdminSlideshow.infoIDchoose;
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
             if (read.Read())
             {
-                NoInfo.Text = (read["No"].ToString());
+                DateTime tanggal = read.GetDateTime(1);
+                TanggalNOW.Text = tanggal.ToShortDateString();
+
                 textBoxJudul.Text = (read["Judul"].ToString());
-                textBoxIsi.Text = (read["Isi"].ToString());
                 ShowHide.Checked = Convert.ToBoolean(read["Show"].ToString());
                 if (!Convert.IsDBNull(read["Gambar"]))
                 {
                     Byte[] img = (Byte[])(read["Gambar"]);
                     MemoryStream ms = new MemoryStream(img);
                     pictureBox1.Image = Image.FromStream(ms);
-                }               
+                }
             }
             else
             {
                 textBoxJudul.Text = "";
-                textBoxIsi.Text = "";
                 pictureBox1.Image = null;
             }
 
@@ -76,12 +75,11 @@ namespace GazethruApps
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
             byte[] img = ms.ToArray();
 
-            SqlCommand command = new SqlCommand("UPDATE Info SET Judul=@judul, Isi=@isi, Gambar=@gambar, Show=@show WHERE No="+ AdminInformasi.infoIDchoose, con);
+            SqlCommand command = new SqlCommand("UPDATE Slider SET Judul=@judul, Gambar=@gambar, Show=@show WHERE No=" + AdminSlideshow.infoIDchoose, con);
 
             command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
-            command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
             command.Parameters.Add("@show", SqlDbType.Bit).Value = ShowHide.Checked;
-            command.Parameters.Add("@gambar", SqlDbType.Image).Value = img; 
+            command.Parameters.Add("@gambar", SqlDbType.Image).Value = img;
 
             ExecMyQuery(command, "Data Updated");
         }
@@ -92,17 +90,14 @@ namespace GazethruApps
             if (mcomd.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show(myMsg);
-
             }
             else
             {
-
                 MessageBox.Show("Query Not Executed");
-
             }
 
             con.Close();
-            _InfoAwal.InfoContent("");
+            _SlideAwal.SlideList("");
             this.Close();
         }
     }

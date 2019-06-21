@@ -10,22 +10,30 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 
+
 namespace GazethruApps
 {
-    public partial class AdminInfoNew : Form
+    public partial class AdminSlideNew : Form
     {
-        private readonly  AdminInformasi _InfoAwal;
-        public AdminInfoNew(AdminInformasi InfoAwal)
+        private readonly AdminSlideshow _SlideAwal;
+
+        public AdminSlideNew(AdminSlideshow SlideAwal)
         {
-            _InfoAwal = InfoAwal;
+            _SlideAwal = SlideAwal;
             InitializeComponent();
+            TanggalNOW.Text = DateTime.Now.ToShortDateString();
             ShowHide.Checked = true;
         }
 
         public static int infoIDlast;
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
         SqlConnection con = new SqlConnection(connectionString);
-        
+
+        private void AdminSlideNew_Load(object sender, EventArgs e)
+        {
+            GetLastID(con);
+        }
+
         private void buttonBrowsePict_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -36,17 +44,10 @@ namespace GazethruApps
             }
         }
 
-        private void AdminInfoNew_Load(object sender, EventArgs e)
-        {
-            GetLastID(con);
-            NoInfo.Text = infoIDlast.ToString();
-        }
-
-
         public void GetLastID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM Info", connection);
+              "SELECT MAX(No) FROM Slider", connection);
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
@@ -54,7 +55,7 @@ namespace GazethruApps
             {
                 while (reader.Read())
                 {
-                    infoIDlast = reader.GetInt32(0) + 1;
+                    infoIDlast = reader.GetInt32(0);
                 }
             }
             else
@@ -77,29 +78,49 @@ namespace GazethruApps
                 return data;
             }
         }
-        
+
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            int last = infoIDlast - 1; 
-            string InsertQuery =
-                "DBCC CHECKIDENT (Info, RESEED," + last + "); " + //DBCC adalah menyalahi aturan increment dan unique, semoga tidak error
-                "INSERT INTO Info(Judul, Isi, Show, Gambar) VALUES (@judul , @isi, @show, @gambar);";
-            SqlCommand command = new SqlCommand(InsertQuery, con);
-
-            command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
-            command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
-            command.Parameters.Add("@show", SqlDbType.Bit).Value = ShowHide.Checked;
-
             if (pictureBox1.Image == null)
             {
-                command.Parameters.Add("@gambar", SqlDbType.VarBinary).Value = DBNull.Value;
-            }
-            else
-            {
-                command.Parameters.Add("@gambar", SqlDbType.Image).Value = GetPic(pictureBox1.Image);
+                MessageBox.Show("Masukkan gambar terlebih dahulu");
             }
 
-            ExecMyQuery(command, "Data Inserted");
+            else
+            {
+                try
+                {
+                    //SqlCommand command = new SqlCommand("INSERT INTO Slider(Tanggal, Judul, Show, Gambar) VALUES (@tanggal, @judul , @show, @gambar)", con);
+                    string InsertQuery =
+                    "DBCC CHECKIDENT (Slider, RESEED," + infoIDlast + "); " + //DBCC adalah menyalahi aturan increment dan unique, semoga tidak error
+                    "INSERT INTO Slider(Tanggal, Judul, Show, Gambar) VALUES (@tanggal, @judul, @show, @gambar);";
+                    SqlCommand command = new SqlCommand(InsertQuery, con);
+
+                    command.Parameters.Add("@tanggal", SqlDbType.Date).Value = Convert.ToDateTime(TanggalNOW.Text);
+                    command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
+                    command.Parameters.Add("@show", SqlDbType.Bit).Value = ShowHide.Checked;
+                    command.Parameters.Add("@gambar", SqlDbType.Image).Value = GetPic(pictureBox1.Image);
+                    ExecMyQuery(command, "Data Inserted");
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            //if (pictureBox1.Image == null)
+            //{
+            //    MessageBox.Show("Masukkan gambar terlebih dahulu");
+            //    AdminInfoNew.location.reload();
+            //    this.Show();
+            //}
+            //else
+            //{
+            //    command.Parameters.Add("@gambar", SqlDbType.Image).Value = GetPic(pictureBox1.Image);
+            //    ExecMyQuery(command, "Data Inserted");
+            //}
+
+
         }
 
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
@@ -115,8 +136,10 @@ namespace GazethruApps
             }
 
             con.Close();
-            _InfoAwal.InfoContent("");
+            _SlideAwal.SlideList("");
             this.Close();
         }
+
+
     }
 }

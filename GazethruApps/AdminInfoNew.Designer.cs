@@ -36,9 +36,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelIsi = new System.Windows.Forms.Label();
             this.textBoxIsi = new System.Windows.Forms.RichTextBox();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonPreview = new System.Windows.Forms.Button();
             this.buttonBrowsePict = new System.Windows.Forms.Button();
+            this.ShowHide = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             // 
             this.labelJudul.AutoSize = true;
             this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudul.Location = new System.Drawing.Point(183, 53);
+            this.labelJudul.Location = new System.Drawing.Point(339, 53);
             this.labelJudul.Name = "labelJudul";
             this.labelJudul.Size = new System.Drawing.Size(59, 20);
             this.labelJudul.TabIndex = 2;
@@ -74,9 +75,9 @@
             // textBoxJudul
             // 
             this.textBoxJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxJudul.Location = new System.Drawing.Point(248, 46);
+            this.textBoxJudul.Location = new System.Drawing.Point(404, 46);
             this.textBoxJudul.Name = "textBoxJudul";
-            this.textBoxJudul.Size = new System.Drawing.Size(879, 27);
+            this.textBoxJudul.Size = new System.Drawing.Size(723, 27);
             this.textBoxJudul.TabIndex = 3;
             // 
             // labelGambar
@@ -94,6 +95,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(69, 146);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(295, 221);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -115,15 +117,16 @@
             this.textBoxIsi.TabIndex = 7;
             this.textBoxIsi.Text = "";
             // 
-            // buttonUpdate
+            // buttonInsert
             // 
-            this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdate.Location = new System.Drawing.Point(1024, 457);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(103, 39);
-            this.buttonUpdate.TabIndex = 8;
-            this.buttonUpdate.Text = "Update";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInsert.Location = new System.Drawing.Point(1024, 457);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(103, 39);
+            this.buttonInsert.TabIndex = 8;
+            this.buttonInsert.Text = "Insert";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // buttonPreview
             // 
@@ -146,14 +149,28 @@
             this.buttonBrowsePict.UseVisualStyleBackColor = true;
             this.buttonBrowsePict.Click += new System.EventHandler(this.buttonBrowsePict_Click);
             // 
+            // ShowHide
+            // 
+            this.ShowHide.AutoSize = true;
+            this.ShowHide.Checked = true;
+            this.ShowHide.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ShowHide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowHide.Location = new System.Drawing.Point(204, 52);
+            this.ShowHide.Name = "ShowHide";
+            this.ShowHide.Size = new System.Drawing.Size(112, 24);
+            this.ShowHide.TabIndex = 12;
+            this.ShowHide.Text = "Show/Hide";
+            this.ShowHide.UseVisualStyleBackColor = true;
+            // 
             // AdminInfoNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1199, 536);
+            this.Controls.Add(this.ShowHide);
             this.Controls.Add(this.buttonBrowsePict);
             this.Controls.Add(this.buttonPreview);
-            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.textBoxIsi);
             this.Controls.Add(this.labelIsi);
             this.Controls.Add(this.pictureBox1);
@@ -163,7 +180,8 @@
             this.Controls.Add(this.NoInfo);
             this.Controls.Add(this.labelNo);
             this.Name = "AdminInfoNew";
-            this.Text = "AdminInfoEdit";
+            this.Text = "Tambahkan Konten Baru";
+            this.Load += new System.EventHandler(this.AdminInfoNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,8 +198,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelIsi;
         private System.Windows.Forms.RichTextBox textBoxIsi;
-        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.Button buttonPreview;
         private System.Windows.Forms.Button buttonBrowsePict;
+        private System.Windows.Forms.CheckBox ShowHide;
     }
 }

@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EyeXFramework">
-      <HintPath>..\..\..\..\coba file\LATIHAN\objekbanyakgerak\objekbanyakgerak\bin\Debug\EyeXFramework.dll</HintPath>
+      <HintPath>E:\Library\EyeXFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,13 +54,21 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Tobii.EyeX.Client.Net20">
-      <HintPath>..\..\..\..\coba file\LATIHAN\objekbanyakgerak\objekbanyakgerak\bin\Debug\Tobii.EyeX.Client.Net20.dll</HintPath>
+      <HintPath>E:\Library\Tobii.EyeX.Client.Net20.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAwal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAwal.Designer.cs">
+      <DependentUpon>AdminAwal.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminInfoNew.cs">
       <SubType>Form</SubType>
@@ -85,6 +93,24 @@
     </Compile>
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSlideEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSlideEdit.Designer.cs">
+      <DependentUpon>AdminSlideEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSlideNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSlideNew.Designer.cs">
+      <DependentUpon>AdminSlideNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSlideshow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminSlideshow.Designer.cs">
+      <DependentUpon>AdminSlideshow.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAwal.cs">
       <SubType>Form</SubType>
@@ -161,6 +187,42 @@
     <Compile Include="Kegiatan2.Designer.cs">
       <DependentUpon>Kegiatan2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lantai1_01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai1_01.Designer.cs">
+      <DependentUpon>Lantai1_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai1_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai1_02.Designer.cs">
+      <DependentUpon>Lantai1_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai2_01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai2_01.Designer.cs">
+      <DependentUpon>Lantai2_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai2_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai2_02.Designer.cs">
+      <DependentUpon>Lantai2_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai3_01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai3_01.Designer.cs">
+      <DependentUpon>Lantai3_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lantai3_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lantai3_02.Designer.cs">
+      <DependentUpon>Lantai3_02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prestasi1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +252,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminAwal.resx">
+      <DependentUpon>AdminAwal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminInfoNew.resx">
       <DependentUpon>AdminInfoNew.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +266,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSlideEdit.resx">
+      <DependentUpon>AdminSlideEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSlideNew.resx">
+      <DependentUpon>AdminSlideNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSlideshow.resx">
+      <DependentUpon>AdminSlideshow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAwal.resx">
       <DependentUpon>FormAwal.cs</DependentUpon>
@@ -238,6 +312,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kegiatan2.resx">
       <DependentUpon>Kegiatan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai1_01.resx">
+      <DependentUpon>Lantai1_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai1_02.resx">
+      <DependentUpon>Lantai1_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai2_01.resx">
+      <DependentUpon>Lantai2_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai2_02.resx">
+      <DependentUpon>Lantai2_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai3_01.resx">
+      <DependentUpon>Lantai3_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lantai3_02.resx">
+      <DependentUpon>Lantai3_02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prestasi1.resx">
       <DependentUpon>Prestasi1.cs</DependentUpon>
