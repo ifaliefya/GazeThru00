@@ -16,6 +16,8 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
+        KendaliTombol kendali;
+
         public formInformasi()
         {
             InitializeComponent();
@@ -38,6 +40,54 @@ namespace GazethruApps
             wy[2] = 250;
             wx[3] = 500; //posisi awal btnome
             wy[3] = 620;
+
+            kendali = new KendaliTombol();
+            kendali.TambahTombol(btnHome, new FungsiTombol(HomeTekan));
+            kendali.TambahTombol(btnKegiatan, new FungsiTombol(KgtnTekan));
+            kendali.TambahTombol(btnPrestasi, new FungsiTombol(PrestasiTekan));
+            kendali.TambahTombol(btnTentang, new FungsiTombol(TentangTekan));
+
+            kendali.Start();
+        }
+
+        void HomeTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formAwal FormHome = new formAwal();
+                FormHome.Show();
+                this.Hide();
+            }
+        }
+
+        void KgtnTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formKegiatan FormKegiatan = new formKegiatan();
+                FormKegiatan.Show();
+                this.Close();
+            }
+        }
+
+        void PrestasiTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formPrestasi FormPrestasi = new formPrestasi();
+                FormPrestasi.Show();
+                this.Close();
+            }
+        }
+
+        void TentangTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formTentang FormTentang = new formTentang();
+                FormTentang.Show();
+                this.Close();
+            }
         }
 
         private void FormInformasi_Load(object sender, EventArgs e)
@@ -114,11 +164,9 @@ namespace GazethruApps
             {
                 lap = 0;
             }
-        }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            kendali.CekTombol();
         }
+             
     }
 }

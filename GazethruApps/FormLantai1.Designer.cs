@@ -55,9 +55,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(119, 137);
+            this.pictureBox1.Location = new System.Drawing.Point(159, 169);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(381, 511);
+            this.pictureBox1.Size = new System.Drawing.Size(508, 629);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -68,9 +69,10 @@
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(915, 653);
+            this.btnBack.Location = new System.Drawing.Point(1220, 804);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(104, 39);
+            this.btnBack.Size = new System.Drawing.Size(139, 48);
             this.btnBack.TabIndex = 21;
             this.btnBack.Text = "Kembali";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -83,9 +85,10 @@
             this.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRight.ForeColor = System.Drawing.Color.White;
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
-            this.btnRight.Location = new System.Drawing.Point(170, 653);
+            this.btnRight.Location = new System.Drawing.Point(227, 804);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(40, 40);
+            this.btnRight.Size = new System.Drawing.Size(53, 49);
             this.btnRight.TabIndex = 22;
             this.btnRight.UseVisualStyleBackColor = false;
             // 
@@ -96,9 +99,10 @@
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.ForeColor = System.Drawing.Color.White;
             this.btnUp.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.Image")));
-            this.btnUp.Location = new System.Drawing.Point(550, 450);
+            this.btnUp.Location = new System.Drawing.Point(733, 554);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(40, 40);
+            this.btnUp.Size = new System.Drawing.Size(53, 49);
             this.btnUp.TabIndex = 24;
             this.btnUp.UseVisualStyleBackColor = false;
             this.btnUp.Click += new System.EventHandler(this.point3_Click);
@@ -110,9 +114,10 @@
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.ForeColor = System.Drawing.Color.White;
             this.btnDown.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.Image")));
-            this.btnDown.Location = new System.Drawing.Point(28, 220);
+            this.btnDown.Location = new System.Drawing.Point(37, 271);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(40, 40);
+            this.btnDown.Size = new System.Drawing.Size(53, 49);
             this.btnDown.TabIndex = 25;
             this.btnDown.UseVisualStyleBackColor = false;
             // 
@@ -123,9 +128,10 @@
             this.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLeft.ForeColor = System.Drawing.Color.White;
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
-            this.btnLeft.Location = new System.Drawing.Point(400, 54);
+            this.btnLeft.Location = new System.Drawing.Point(533, 66);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(40, 40);
+            this.btnLeft.Size = new System.Drawing.Size(53, 49);
             this.btnLeft.TabIndex = 26;
             this.btnLeft.UseVisualStyleBackColor = false;
             // 
@@ -135,8 +141,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 39);
+            this.panel1.Size = new System.Drawing.Size(1707, 48);
             this.panel1.TabIndex = 27;
             // 
             // label1
@@ -144,9 +151,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(559, 1);
+            this.label1.Location = new System.Drawing.Point(745, 1);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 32);
+            this.label1.Size = new System.Drawing.Size(252, 41);
             this.label1.TabIndex = 2;
             this.label1.Text = "LANTAI 1 DTETI";
             // 
@@ -159,38 +167,41 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.btnLeft);
             this.panel3.Controls.Add(this.btnDown);
-            this.panel3.Location = new System.Drawing.Point(0, 37);
+            this.panel3.Location = new System.Drawing.Point(0, 46);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(635, 689);
+            this.panel3.Size = new System.Drawing.Size(847, 848);
             this.panel3.TabIndex = 33;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(652, 105);
+            this.label2.Location = new System.Drawing.Point(869, 129);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 25);
+            this.label2.Size = new System.Drawing.Size(242, 31);
             this.label2.TabIndex = 36;
             this.label2.Text = "Ruang Tata Usaha";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(657, 143);
+            this.pictureBox2.Location = new System.Drawing.Point(876, 176);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(272, 303);
+            this.pictureBox2.Size = new System.Drawing.Size(363, 373);
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(935, 143);
+            this.textBox1.Location = new System.Drawing.Point(1247, 176);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(341, 303);
+            this.textBox1.Size = new System.Drawing.Size(453, 372);
             this.textBox1.TabIndex = 34;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
@@ -198,19 +209,20 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(327, 424);
+            this.pictureBox3.Location = new System.Drawing.Point(436, 522);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 28);
+            this.pictureBox3.Size = new System.Drawing.Size(31, 34);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 37;
             this.pictureBox3.TabStop = false;
             // 
             // formLantai1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1707, 886);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
@@ -222,6 +234,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "formLantai1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLantai1";

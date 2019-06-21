@@ -16,6 +16,8 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
+        KendaliTombol kendali;
+
         public formPrestasi()
         {
             InitializeComponent();
@@ -38,6 +40,47 @@ namespace GazethruApps
             wy[2] = 620;
             wx[3] = 1080; //home
             wy[3] = 620;
+
+            kendali = new KendaliTombol();
+            kendali.TambahTombol(btnBack, new FungsiTombol(BackTekan));
+            kendali.TambahTombol(btnHome, new FungsiTombol(HomeTekan));
+            kendali.TambahTombol(btnNext, new FungsiTombol(NextTekan));
+            kendali.TambahTombol(btnPrev, new FungsiTombol(PrevTekan));
+
+            kendali.Start();
+        }
+
+        void BackTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formInformasi FormInformasi = new formInformasi();
+                FormInformasi.Show();
+                this.Close();
+            }
+        }
+        void HomeTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                formUser Home = new formUser();
+                Home.Show();
+                this.Close();
+            }
+        }
+        void NextTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                prestasi21.BringToFront();
+            }
+        }
+        void PrevTekan(ArgumenKendaliTombol e)
+        {
+            if(e.status)
+            {
+                prestasi11.BringToFront();
+            }
         }
 
         private void formPrestasi_Load(object sender, EventArgs e)
@@ -75,6 +118,7 @@ namespace GazethruApps
             {
                 lap = 0;
             }
+            kendali.CekTombol();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
