@@ -31,12 +31,19 @@ namespace GazethruApps
         }
 
         public static int infoIDchoose;
+        public static int PreviewID;
+        public static int LastID;
+        public static int FirstID;
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
         SqlConnection con = new SqlConnection(connectionString);
 
         private void AdminSlideshow_Load(object sender, EventArgs e)
         {
             SlideList("");
+            GetLastID(con);
+
+            PreviewID = 0;
+            PreviewImage();
         }
 
         public void SlideList(string valueToSearch)
@@ -125,6 +132,15 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int first = 1;
+            //disable edit on datagridview
+            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+            this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
+            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
+
+            Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out first);
+            FirstID = first;
+
             int selected = 0;
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
@@ -148,10 +164,13 @@ namespace GazethruApps
             }
             else
             {
-                return;
+                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+                PreviewID = selected;
+                PreviewImage();
             }
         }
 
+ 
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
         {
             con.Open();
@@ -200,6 +219,78 @@ namespace GazethruApps
                     ExecMyQuery(command, "Data Hide");
                 }
             }
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            PreviewID = PreviewID - 1;
+            btnNext.Enabled = true;
+            if (PreviewID < 0)
+            {
+                btnPrev.Enabled = false;
+            }
+            else
+            {
+                btnPrev.Enabled = true;
+                PreviewImage();
+            }
+        }
+
+        public void GetLastID(SqlConnection connection)
+        {
+            
+            SqlCommand command = new SqlCommand(
+              "SELECT MAX(No) FROM Slider", connection);
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    LastID = reader.GetInt32(0);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No rows found.");
+            }
+            reader.Close();
+            connection.Close();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            btnPrev.Enabled = true;
+            PreviewID = PreviewID + 1;
+            if (PreviewID > LastID)
+            {
+                btnNext.Enabled = false;
+            }
+            else
+            {
+                btnNext.Enabled = true;
+                PreviewImage();
+            }
+        }
+
+        void PreviewImage()
+        {
+            con.Open();
+            string SelectQuery = "SELECT Gambar FROM Slider WHERE No=" + PreviewID;
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            if (read.Read())
+            {
+                Byte[] img = (Byte[])(read["Gambar"]);
+                MemoryStream ms = new MemoryStream(img);
+                pictureBox1.Image = Image.FromStream(ms);
+            }
+            else
+            {
+                pictureBox1.Image = null;
+            }
+            con.Close();
         }
     }
 

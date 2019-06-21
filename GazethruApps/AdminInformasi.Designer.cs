@@ -33,6 +33,10 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
+            this.textBoxIsi = new System.Windows.Forms.RichTextBox();
+            this.labelIsi = new System.Windows.Forms.Label();
+            this.textBoxJudul = new System.Windows.Forms.TextBox();
+            this.labelJudul = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,10 +93,50 @@
             this.labelSearch.TabIndex = 4;
             this.labelSearch.Text = "Cari :";
             // 
+            // textBoxIsi
+            // 
+            this.textBoxIsi.Location = new System.Drawing.Point(854, 215);
+            this.textBoxIsi.Name = "textBoxIsi";
+            this.textBoxIsi.Size = new System.Drawing.Size(419, 389);
+            this.textBoxIsi.TabIndex = 11;
+            this.textBoxIsi.Text = "";
+            // 
+            // labelIsi
+            // 
+            this.labelIsi.AutoSize = true;
+            this.labelIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIsi.Location = new System.Drawing.Point(850, 180);
+            this.labelIsi.Name = "labelIsi";
+            this.labelIsi.Size = new System.Drawing.Size(110, 20);
+            this.labelIsi.TabIndex = 10;
+            this.labelIsi.Text = "Description : ";
+            // 
+            // textBoxJudul
+            // 
+            this.textBoxJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxJudul.Location = new System.Drawing.Point(919, 122);
+            this.textBoxJudul.Name = "textBoxJudul";
+            this.textBoxJudul.Size = new System.Drawing.Size(354, 27);
+            this.textBoxJudul.TabIndex = 9;
+            // 
+            // labelJudul
+            // 
+            this.labelJudul.AutoSize = true;
+            this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJudul.Location = new System.Drawing.Point(854, 125);
+            this.labelJudul.Name = "labelJudul";
+            this.labelJudul.Size = new System.Drawing.Size(59, 20);
+            this.labelJudul.TabIndex = 8;
+            this.labelJudul.Text = "Judul :";
+            // 
             // AdminInformasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxIsi);
+            this.Controls.Add(this.labelIsi);
+            this.Controls.Add(this.textBoxJudul);
+            this.Controls.Add(this.labelJudul);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.textBoxSearch);
@@ -114,5 +158,9 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.RichTextBox textBoxIsi;
+        private System.Windows.Forms.Label labelIsi;
+        private System.Windows.Forms.TextBox textBoxJudul;
+        private System.Windows.Forms.Label labelJudul;
     }
 }

@@ -118,6 +118,11 @@ namespace GazethruApps
 
         protected void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //disable edit on datagridview
+            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
+            this.dataGridView1.Rows[e.RowIndex].Cells["Isi"].ReadOnly = true;
+
             int selected = 0;
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
@@ -142,7 +147,8 @@ namespace GazethruApps
             }
             else
             {
-                return;
+                textBoxJudul.Text = dataGridView1.Rows[e.RowIndex].Cells["Judul"].Value.ToString();
+                textBoxIsi.Text = dataGridView1.Rows[e.RowIndex].Cells["Isi"].Value.ToString();
             }
 
 

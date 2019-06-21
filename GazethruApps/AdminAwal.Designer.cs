@@ -37,12 +37,14 @@
             this.btn_Tentang = new System.Windows.Forms.Button();
             this.btn_Slideshow = new System.Windows.Forms.Button();
             this.panelUC = new System.Windows.Forms.Panel();
+            this.Home = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel1.Controls.Add(this.Home);
             this.panel1.Controls.Add(this.Sidepanel);
             this.panel1.Controls.Add(this.btn_Peta);
             this.panel1.Controls.Add(this.btn_Kegiatan);
@@ -148,6 +150,16 @@
             this.panelUC.Size = new System.Drawing.Size(1449, 742);
             this.panelUC.TabIndex = 2;
             // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(33, 559);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(148, 54);
+            this.Home.TabIndex = 2;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
             // AdminAwal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -174,5 +186,6 @@
         private System.Windows.Forms.Button btn_Kegiatan;
         private System.Windows.Forms.Button btn_Prestasi;
         private System.Windows.Forms.Panel panelUC;
+        private System.Windows.Forms.Button Home;
     }
 }

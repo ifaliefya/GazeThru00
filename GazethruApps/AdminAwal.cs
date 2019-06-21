@@ -12,9 +12,12 @@ namespace GazethruApps
 {
     public partial class AdminAwal : Form
     {
+        //private readonly formAwal _Home;
+
         public AdminAwal()
         {
             InitializeComponent();
+            //_Home = Home;
             Sidepanel.Height = btn_Slideshow.Height;
             Sidepanel.Top = btn_Slideshow.Top;
             if (!panelUC.Controls.Contains(AdminSlideshow.Instance))
@@ -65,6 +68,13 @@ namespace GazethruApps
             }
             else
                 AdminInformasi.Instance.BringToFront();
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            formAwal Home = new formAwal();
+            Home.Show();
+            this.Hide();
         }
     }
 }
