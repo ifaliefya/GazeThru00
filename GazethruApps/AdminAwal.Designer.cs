@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAwal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Home = new System.Windows.Forms.Button();
             this.Sidepanel = new System.Windows.Forms.Panel();
             this.btn_Peta = new System.Windows.Forms.Button();
             this.btn_Kegiatan = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btn_Tentang = new System.Windows.Forms.Button();
             this.btn_Slideshow = new System.Windows.Forms.Button();
             this.panelUC = new System.Windows.Forms.Panel();
-            this.Home = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(240, 839);
             this.panel1.TabIndex = 0;
+            // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(33, 559);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(148, 54);
+            this.Home.TabIndex = 2;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Sidepanel
             // 
@@ -94,6 +104,7 @@
             this.btn_Kegiatan.Text = "   Kegiatan";
             this.btn_Kegiatan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Kegiatan.UseVisualStyleBackColor = true;
+            this.btn_Kegiatan.Click += new System.EventHandler(this.btn_Kegiatan_Click);
             // 
             // btn_Prestasi
             // 
@@ -109,6 +120,7 @@
             this.btn_Prestasi.Text = "   Prestasi";
             this.btn_Prestasi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Prestasi.UseVisualStyleBackColor = true;
+            this.btn_Prestasi.Click += new System.EventHandler(this.btn_Prestasi_Click);
             // 
             // btn_Tentang
             // 
@@ -149,16 +161,6 @@
             this.panelUC.Name = "panelUC";
             this.panelUC.Size = new System.Drawing.Size(1449, 742);
             this.panelUC.TabIndex = 2;
-            // 
-            // Home
-            // 
-            this.Home.Location = new System.Drawing.Point(33, 559);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(148, 54);
-            this.Home.TabIndex = 2;
-            this.Home.Text = "Home";
-            this.Home.UseVisualStyleBackColor = true;
-            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // AdminAwal
             // 

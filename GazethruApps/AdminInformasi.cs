@@ -30,19 +30,77 @@ namespace GazethruApps
         }
 
         public static int infoIDchoose;
+        public string Category = AdminAwal.Category;
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
 
         SqlConnection con = new SqlConnection(connectionString);
 
-
         private void AdminInformasi_Load(object sender, EventArgs e)
         {
-            InfoContent("");
+            dataGridView1.Columns.Clear();
+            //InfoContent("");
+
+            if (Category=="Info")
+            {
+                InfoContent("");
+            }
+            else if (Category=="Prestasi")
+            {
+                PrestasiContent("");
+            }
+            else
+            {
+                KegiatanContent("");
+            }
         }
 
         public void InfoContent(string valueToSearch)
         {
             SqlCommand command = new SqlCommand("SELECT * FROM Info WHERE CONCAT(No, Judul, Isi) LIKE '%" + valueToSearch + "%'", con);
+            SqlDataAdapter adapter = new SqlDataAdapter(command); //adapter perintah query sql
+
+            DataTable table = new DataTable(); //bikin DataTable namanya table                  
+
+            adapter.Fill(table); //perintah query sql disimpan di table
+
+            dataGridView1.RowTemplate.Height = 60;
+            dataGridView1.AllowUserToAddRows = false;
+
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = table; //datagrid datasourcenya dari table
+
+            CreateImageColumn();
+            CreateButtonColumn();
+            CreateDeleteButton();
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        public void PrestasiContent(string valueToSearch)
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM Prestasi WHERE CONCAT(No, Judul, Isi) LIKE '%" + valueToSearch + "%'", con);
+            SqlDataAdapter adapter = new SqlDataAdapter(command); //adapter perintah query sql
+
+            DataTable table = new DataTable(); //bikin DataTable namanya table                  
+
+            adapter.Fill(table); //perintah query sql disimpan di table
+
+            dataGridView1.RowTemplate.Height = 60;
+            dataGridView1.AllowUserToAddRows = false;
+
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = table; //datagrid datasourcenya dari table
+
+            CreateImageColumn();
+            CreateButtonColumn();
+            CreateDeleteButton();
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        public void KegiatanContent(string valueToSearch)
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM Kegiatan WHERE CONCAT(No, Judul, Isi) LIKE '%" + valueToSearch + "%'", con);
             SqlDataAdapter adapter = new SqlDataAdapter(command); //adapter perintah query sql
 
             DataTable table = new DataTable(); //bikin DataTable namanya table                  
@@ -107,7 +165,19 @@ namespace GazethruApps
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            InfoContent(textBoxSearch.Text);
+            //InfoContent(textBoxSearch.Text);
+            if (Category == "Info")
+            {
+                InfoContent(textBoxSearch.Text);
+            }
+            else if (Category == "Prestasi")
+            {
+                PrestasiContent(textBoxSearch.Text);
+            }
+            else
+            {
+                KegiatanContent(textBoxSearch.Text);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -137,7 +207,7 @@ namespace GazethruApps
 
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Info WHERE No=" + infoIDchoose, con);
+                SqlCommand command = new SqlCommand("DELETE FROM " + Category + "WHERE No=" + infoIDchoose, con);
 
                 if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -182,13 +252,36 @@ namespace GazethruApps
             }
 
             con.Close();
-            InfoContent("");
-
+            //InfoContent("");
+            if (Category == "Info")
+            {
+                InfoContent("");
+            }
+            else if (Category == "Prestasi")
+            {
+                PrestasiContent("");
+            }
+            else
+            {
+                KegiatanContent("");
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            InfoContent("");
+            //InfoContent("");
+            if (Category == "Info")
+            {
+                InfoContent("");
+            }
+            else if (Category == "Prestasi")
+            {
+                PrestasiContent("");
+            }
+            else
+            {
+                KegiatanContent("");
+            }
         }
 
         // This event handler manually raises the CellValueChanged event
@@ -212,8 +305,8 @@ namespace GazethruApps
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
 
-                SqlCommand command = new SqlCommand("UPDATE Info SET Show=@show WHERE No=" + infoIDchoose, con);
-                Boolean check = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value.ToString());
+                SqlCommand command = new SqlCommand("UPDATE " + Category + " SET Show=@show WHERE No=" + infoIDchoose, con);
+                Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
 
                 if (check == true)
                 {
@@ -227,5 +320,6 @@ namespace GazethruApps
                 }
             }
         }
+
     }
 }

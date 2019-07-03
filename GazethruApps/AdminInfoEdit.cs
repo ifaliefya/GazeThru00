@@ -34,7 +34,7 @@ namespace GazethruApps
         {
             
             con.Open();
-            string SelectQuery = "SELECT * FROM Info WHERE No=" + AdminInformasi.infoIDchoose;
+            string SelectQuery = "SELECT * FROM " + AdminAwal.Category + " WHERE No=" + AdminInformasi.infoIDchoose;
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
             if (read.Read())
@@ -42,7 +42,7 @@ namespace GazethruApps
                 NoInfo.Text = (read["No"].ToString());
                 textBoxJudul.Text = (read["Judul"].ToString());
                 textBoxIsi.Text = (read["Isi"].ToString());
-                ShowHide.Checked = Convert.ToBoolean(read["Show"].ToString());
+                ShowHide.Checked = (Boolean)(read["Show"]);
                 if (!Convert.IsDBNull(read["Gambar"]))
                 {
                     Byte[] img = (Byte[])(read["Gambar"]);
@@ -76,7 +76,7 @@ namespace GazethruApps
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
             byte[] img = ms.ToArray();
 
-            SqlCommand command = new SqlCommand("UPDATE Info SET Judul=@judul, Isi=@isi, Gambar=@gambar, Show=@show WHERE No="+ AdminInformasi.infoIDchoose, con);
+            SqlCommand command = new SqlCommand("UPDATE " + AdminAwal.Category + " SET Judul=@judul, Isi=@isi, Gambar=@gambar, Show=@show WHERE No=" + AdminInformasi.infoIDchoose, con);
 
             command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
             command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
@@ -102,7 +102,19 @@ namespace GazethruApps
             }
 
             con.Close();
-            _InfoAwal.InfoContent("");
+            //_InfoAwal.InfoContent("");
+            if (AdminAwal.Category == "Info")
+            {
+                _InfoAwal.InfoContent("");
+            }
+            else if (AdminAwal.Category == "Prestasi")
+            {
+                _InfoAwal.PrestasiContent("");
+            }
+            else
+            {
+                _InfoAwal.KegiatanContent("");
+            }
             this.Close();
         }
     }

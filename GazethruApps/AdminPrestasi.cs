@@ -8,54 +8,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.IO;
 
 namespace GazethruApps
 {
-    public partial class AdminSlideshow : UserControl
+    public partial class AdminPrestasi : UserControl
     {
-        private static AdminSlideshow _instance;
-        public static AdminSlideshow Instance
+        private static AdminPrestasi _instance;
+        public static AdminPrestasi Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new AdminSlideshow();
+                    _instance = new AdminPrestasi();
                 return _instance;
             }
         }
-
-        public AdminSlideshow()
+        public AdminPrestasi()
         {
             InitializeComponent();
         }
 
         public static int infoIDchoose;
-        public static int PreviewID;
-        public static int LastID;
-        public static int FirstID;
+        public string Category = AdminAwal.Category;
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
+
         SqlConnection con = new SqlConnection(connectionString);
 
-        private void AdminSlideshow_Load(object sender, EventArgs e)
+        private void AdminPrestasi_Load(object sender, EventArgs e)
         {
-            SlideList("");
-            GetLastID(con);
-
-            PreviewID = 0;
-            PreviewImage();
+            PrestasiContent("");
         }
 
-        public void SlideList(string valueToSearch)
+        public void PrestasiContent(string valueToSearch)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Slider WHERE CONCAT(No, Judul, Tanggal, Show) LIKE '%" + valueToSearch + "%'", con);
+            SqlCommand command = new SqlCommand("SELECT * FROM Prestasi WHERE CONCAT(No, Judul, Isi) LIKE '%" + valueToSearch + "%'", con);
             SqlDataAdapter adapter = new SqlDataAdapter(command); //adapter perintah query sql
 
             DataTable table = new DataTable(); //bikin DataTable namanya table                  
 
             adapter.Fill(table); //perintah query sql disimpan di table
 
-            dataGridView1.RowTemplate.Height = 70;
+            dataGridView1.RowTemplate.Height = 60;
             dataGridView1.AllowUserToAddRows = false;
 
             dataGridView1.Columns.Clear();
@@ -68,11 +61,6 @@ namespace GazethruApps
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
-        {
-            SlideList(textBoxSearch.Text);
-        }
-
         private void CreateImageColumn()
         {
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
@@ -80,7 +68,7 @@ namespace GazethruApps
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
 
-        //Add a edit button column. 
+        //Add a button column. 
         private void CreateButtonColumn()
         {
             DataGridViewButtonColumn buttonCol = new DataGridViewButtonColumn();
@@ -89,9 +77,7 @@ namespace GazethruApps
             buttonCol.Text = "Edit";
 
             buttonCol.UseColumnTextForButtonValue = true;
-
             dataGridView1.Columns.Add(buttonCol);
-
         }
 
         //Add a delete button column. 
@@ -103,58 +89,42 @@ namespace GazethruApps
             deleteBtn.Text = "Delete";
 
             deleteBtn.UseColumnTextForButtonValue = true;
-
             dataGridView1.Columns.Add(deleteBtn);
+        }
 
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            PrestasiContent(textBoxSearch.Text);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AdminSlideNew addSlider = new AdminSlideNew(this);
-            addSlider.Show();
-        }
-
-        //Add checkbox hide show
-        private void CreateShowCheckbox ()
-        {
-            DataGridViewCheckBoxColumn showCheck = new DataGridViewCheckBoxColumn();
-            showCheck.HeaderText = "Show";
-            showCheck.Name = "Show";
-
-
-            dataGridView1.Columns.Add(showCheck);
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            SlideList("");
+            //AdminInfoNew addInfo = new AdminInfoNew(this);
+            //addInfo.Show();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int first = 1;
             //disable edit on datagridview
             this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
             this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out first);
-            FirstID = first;
+            this.dataGridView1.Rows[e.RowIndex].Cells["Isi"].ReadOnly = true;
 
             int selected = 0;
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
-                AdminSlideEdit editInfo = new AdminSlideEdit(this);
-                editInfo.Show();
+
+                //AdminInfoEdit editInfo = new AdminInfoEdit(this);
+                //editInfo.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
             {
 
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Slider WHERE No=" + infoIDchoose, con);
+                SqlCommand command = new SqlCommand("DELETE FROM " + Category + "WHERE No=" + infoIDchoose, con);
 
                 if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -164,13 +134,11 @@ namespace GazethruApps
             }
             else
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                PreviewID = selected;
-                PreviewImage();
+                textBoxJudul.Text = dataGridView1.Rows[e.RowIndex].Cells["Judul"].Value.ToString();
+                textBoxIsi.Text = dataGridView1.Rows[e.RowIndex].Cells["Isi"].Value.ToString();
             }
         }
 
- 
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
         {
             con.Open();
@@ -184,8 +152,12 @@ namespace GazethruApps
             }
 
             con.Close();
-            SlideList("");
+            PrestasiContent("");
+        }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            PrestasiContent("");
         }
 
         private void dataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -205,7 +177,7 @@ namespace GazethruApps
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
 
-                SqlCommand command = new SqlCommand("UPDATE Slider SET Show=@show WHERE No=" + infoIDchoose, con);
+                SqlCommand command = new SqlCommand("UPDATE " + Category + " SET Show=@show WHERE No=" + infoIDchoose, con);
                 Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
 
                 if (check == true)
@@ -220,79 +192,5 @@ namespace GazethruApps
                 }
             }
         }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            PreviewID = PreviewID - 1;
-            btnNext.Enabled = true;
-            if (PreviewID < 0)
-            {
-                btnPrev.Enabled = false;
-            }
-            else
-            {
-                btnPrev.Enabled = true;
-                PreviewImage();
-            }
-        }
-
-        public void GetLastID(SqlConnection connection)
-        {
-            
-            SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM Slider", connection);
-            connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    LastID = reader.GetInt32(0);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
-            }
-            reader.Close();
-            connection.Close();
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            btnPrev.Enabled = true;
-            PreviewID = PreviewID + 1;
-            if (PreviewID > LastID)
-            {
-                btnNext.Enabled = false;
-            }
-            else
-            {
-                btnNext.Enabled = true;
-                PreviewImage();
-            }
-        }
-
-        void PreviewImage()
-        {
-            con.Open();
-            string SelectQuery = "SELECT Gambar FROM Slider WHERE No=" + PreviewID;
-            SqlCommand command = new SqlCommand(SelectQuery, con);
-            SqlDataReader read = command.ExecuteReader();
-            if (read.Read())
-            {
-                Byte[] img = (Byte[])(read["Gambar"]);
-                MemoryStream ms = new MemoryStream(img);
-                pictureBox1.Image = Image.FromStream(ms);
-            }
-            else
-            {
-                pictureBox1.Image = null;
-            }
-            con.Close();
-        }
     }
-
-
 }

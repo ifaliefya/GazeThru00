@@ -13,6 +13,7 @@ namespace GazethruApps
     public partial class AdminAwal : Form
     {
         //private readonly formAwal _Home;
+        public static string Category;
 
         public AdminAwal()
         {
@@ -55,11 +56,13 @@ namespace GazethruApps
         {
             Sidepanel.Height = btn_Tentang.Height;
             Sidepanel.Top = btn_Tentang.Top;
+
             //adminInformasi1.BringToFront();
             //AdminInformasi Tentang = new AdminInformasi();
             //Tentang.InfoContent("");
-            if (!panelUC.Controls.Contains(AdminInformasi.Instance))
+            if (!panelUC.Controls.Contains(AdminInformasi.Instance)||Category!="Info")
             {
+                Category = "Info";
                 panelUC.Controls.Add(AdminInformasi.Instance);
                 AdminInformasi.Instance.Dock = DockStyle.Fill;
                 AdminInformasi.Instance.BringToFront();
@@ -70,11 +73,49 @@ namespace GazethruApps
                 AdminInformasi.Instance.BringToFront();
         }
 
+        private void btn_Prestasi_Click(object sender, EventArgs e)
+        {
+            Sidepanel.Height = btn_Prestasi.Height;
+            Sidepanel.Top = btn_Prestasi.Top;
+
+            if (!panelUC.Controls.Contains(AdminPrestasi.Instance) || Category != "Prestasi")
+            {
+                Category = "Prestasi";
+                panelUC.Controls.Add(AdminPrestasi.Instance);
+                AdminPrestasi.Instance.Dock = DockStyle.Fill;
+                AdminPrestasi.Instance.BringToFront();
+                AdminPrestasi Pres = new AdminPrestasi();
+                Pres.PrestasiContent("");
+            }
+            else
+                AdminPrestasi.Instance.BringToFront();
+        }
+
+        private void btn_Kegiatan_Click(object sender, EventArgs e)
+        {
+            Sidepanel.Height = btn_Kegiatan.Height;
+            Sidepanel.Top = btn_Kegiatan.Top;
+
+            if (!panelUC.Controls.Contains(AdminKegiatan.Instance) || Category != "Kegiatan")
+            {
+                Category = "Kegiatan";
+                panelUC.Controls.Add(AdminKegiatan.Instance);
+                AdminKegiatan.Instance.Dock = DockStyle.Fill;
+                AdminKegiatan.Instance.BringToFront();
+                AdminKegiatan Keg = new AdminKegiatan();
+                Keg.KegiatanContent("");
+            }
+            else
+                AdminKegiatan.Instance.BringToFront();
+        }
+
         private void Home_Click(object sender, EventArgs e)
         {
             formAwal Home = new formAwal();
             Home.Show();
             this.Hide();
         }
+
+
     }
 }

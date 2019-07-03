@@ -88,11 +88,23 @@
     <Compile Include="AdminInformasi.Designer.cs">
       <DependentUpon>AdminInformasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminKegiatan.Designer.cs">
+      <DependentUpon>AdminKegiatan.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPrestasi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPrestasi.Designer.cs">
+      <DependentUpon>AdminPrestasi.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminSlideEdit.cs">
       <SubType>Form</SubType>
@@ -264,8 +276,14 @@
     <EmbeddedResource Include="AdminInformasi.resx">
       <DependentUpon>AdminInformasi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminKegiatan.resx">
+      <DependentUpon>AdminKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPrestasi.resx">
+      <DependentUpon>AdminPrestasi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminSlideEdit.resx">
       <DependentUpon>AdminSlideEdit.cs</DependentUpon>

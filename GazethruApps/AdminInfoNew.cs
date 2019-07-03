@@ -15,12 +15,16 @@ namespace GazethruApps
     public partial class AdminInfoNew : Form
     {
         private readonly  AdminInformasi _InfoAwal;
+        private readonly AdminPrestasi _PrestasiAwal;
+        private readonly AdminKegiatan _KegiatanAwal;
+
         public AdminInfoNew(AdminInformasi InfoAwal)
         {
             _InfoAwal = InfoAwal;
             InitializeComponent();
             ShowHide.Checked = true;
         }
+
 
         public static int infoIDlast;
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
