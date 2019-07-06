@@ -38,20 +38,7 @@ namespace GazethruApps
         private void AdminInformasi_Load(object sender, EventArgs e)
         {
             dataGridView1.Columns.Clear();
-            //InfoContent("");
-
-            if (Category=="Info")
-            {
-                InfoContent("");
-            }
-            else if (Category=="Prestasi")
-            {
-                PrestasiContent("");
-            }
-            else
-            {
-                KegiatanContent("");
-            }
+            InfoContent("");
         }
 
         public void InfoContent(string valueToSearch)
@@ -75,51 +62,7 @@ namespace GazethruApps
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
-        public void PrestasiContent(string valueToSearch)
-        {
-            SqlCommand command = new SqlCommand("SELECT * FROM Prestasi WHERE CONCAT(No, Judul, Isi) LIKE '%" + valueToSearch + "%'", con);
-            SqlDataAdapter adapter = new SqlDataAdapter(command); //adapter perintah query sql
-
-            DataTable table = new DataTable(); //bikin DataTable namanya table                  
-
-            adapter.Fill(table); //perintah query sql disimpan di table
-
-            dataGridView1.RowTemplate.Height = 60;
-            dataGridView1.AllowUserToAddRows = false;
-
-            dataGridView1.Columns.Clear();
-            dataGridView1.DataSource = table; //datagrid datasourcenya dari table
-
-            CreateImageColumn();
-            CreateButtonColumn();
-            CreateDeleteButton();
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
-        public void KegiatanContent(string valueToSearch)
-        {
-            SqlCommand command = new SqlCommand("SELECT * FROM Kegiatan WHERE CONCAT(No, Judul, Isi) LIKE '%" + valueToSearch + "%'", con);
-            SqlDataAdapter adapter = new SqlDataAdapter(command); //adapter perintah query sql
-
-            DataTable table = new DataTable(); //bikin DataTable namanya table                  
-
-            adapter.Fill(table); //perintah query sql disimpan di table
-
-            dataGridView1.RowTemplate.Height = 60;
-            dataGridView1.AllowUserToAddRows = false;
-
-            dataGridView1.Columns.Clear();
-            dataGridView1.DataSource = table; //datagrid datasourcenya dari table
-
-            CreateImageColumn();
-            CreateButtonColumn();
-            CreateDeleteButton();
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
+                
         private void CreateImageColumn()
         {
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
@@ -165,19 +108,7 @@ namespace GazethruApps
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            //InfoContent(textBoxSearch.Text);
-            if (Category == "Info")
-            {
-                InfoContent(textBoxSearch.Text);
-            }
-            else if (Category == "Prestasi")
-            {
-                PrestasiContent(textBoxSearch.Text);
-            }
-            else
-            {
-                KegiatanContent(textBoxSearch.Text);
-            }
+            InfoContent(textBoxSearch.Text);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -252,36 +183,12 @@ namespace GazethruApps
             }
 
             con.Close();
-            //InfoContent("");
-            if (Category == "Info")
-            {
-                InfoContent("");
-            }
-            else if (Category == "Prestasi")
-            {
-                PrestasiContent("");
-            }
-            else
-            {
-                KegiatanContent("");
-            }
+            InfoContent("");
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            //InfoContent("");
-            if (Category == "Info")
-            {
-                InfoContent("");
-            }
-            else if (Category == "Prestasi")
-            {
-                PrestasiContent("");
-            }
-            else
-            {
-                KegiatanContent("");
-            }
+            InfoContent("");
         }
 
         // This event handler manually raises the CellValueChanged event

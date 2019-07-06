@@ -102,19 +102,7 @@ namespace GazethruApps
             }
 
             con.Close();
-            //_InfoAwal.InfoContent("");
-            if (AdminAwal.Category == "Info")
-            {
-                _InfoAwal.InfoContent("");
-            }
-            else if (AdminAwal.Category == "Prestasi")
-            {
-                _InfoAwal.PrestasiContent("");
-            }
-            else
-            {
-                _InfoAwal.KegiatanContent("");
-            }
+            _InfoAwal.InfoContent("");
             this.Close();
         }
     }
