@@ -109,6 +109,23 @@ namespace GazethruApps
                 AdminKegiatan.Instance.BringToFront();
         }
 
+        private void btn_Peta_Click(object sender, EventArgs e)
+        {
+            Sidepanel.Height = btn_Peta.Height;
+            Sidepanel.Top = btn_Peta.Top;
+
+            if (!panelUC.Controls.Contains(AdminPetaAwal.Instance))
+            {
+                panelUC.Controls.Add(AdminPetaAwal.Instance);
+                AdminPetaAwal.Instance.Dock = DockStyle.Fill;
+                AdminPetaAwal.Instance.BringToFront();
+                AdminPetaAwal Keg = new AdminPetaAwal();
+                //Peta.KegiatanContent("");
+            }
+            else
+                AdminPetaAwal.Instance.BringToFront();
+        }
+
         private void Home_Click(object sender, EventArgs e)
         {
             formAwal Home = new formAwal();
@@ -116,6 +133,6 @@ namespace GazethruApps
             this.Hide();
         }
 
-
+        
     }
 }

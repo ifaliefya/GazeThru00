@@ -100,6 +100,18 @@
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPetaAwal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPetaAwal.Designer.cs">
+      <DependentUpon>AdminPetaAwal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPetaEdit.Designer.cs">
+      <DependentUpon>AdminPetaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPrestasi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,6 +211,7 @@
     <Compile Include="Kegiatan2.Designer.cs">
       <DependentUpon>Kegiatan2.cs</DependentUpon>
     </Compile>
+    <Compile Include="KoneksiSQL.cs" />
     <Compile Include="Lantai1_01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -281,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaAwal.resx">
+      <DependentUpon>AdminPetaAwal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaEdit.resx">
+      <DependentUpon>AdminPetaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPrestasi.resx">
       <DependentUpon>AdminPrestasi.cs</DependentUpon>

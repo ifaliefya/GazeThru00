@@ -17,7 +17,7 @@ namespace GazethruApps
         private readonly  AdminInformasi _InfoAwal;
         private readonly AdminPrestasi _PrestasiAwal;
         private readonly AdminKegiatan _KegiatanAwal;
-
+       
         public AdminInfoNew(AdminInformasi InfoAwal)
         {
             _InfoAwal = InfoAwal;

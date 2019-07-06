@@ -89,6 +89,7 @@
             this.btn_Peta.Text = "   Peta";
             this.btn_Peta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Peta.UseVisualStyleBackColor = true;
+            this.btn_Peta.Click += new System.EventHandler(this.btn_Peta_Click);
             // 
             // btn_Kegiatan
             // 
