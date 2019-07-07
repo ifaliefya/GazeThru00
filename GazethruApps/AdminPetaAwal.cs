@@ -33,9 +33,7 @@ namespace GazethruApps
         public static int infoIDchoose;
         public static int PreviewID;
 
-        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
-
-        SqlConnection con = new SqlConnection(connectionString);
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
 
         private void AdminPetaAwal_Load(object sender, EventArgs e)
         {
