@@ -50,37 +50,18 @@ namespace GazethruApps
             kendali.Start();
         }
 
-        void BackTekan(ArgumenKendaliTombol e)
+        private static formPrestasi Instance;
+        public static formPrestasi getInstance()
         {
-            if(e.status)
+            if (Instance == null || Instance.IsDisposed)
             {
-                formInformasi FormInformasi = new formInformasi();
-                FormInformasi.Show();
-                this.Close();
+                Instance = new formPrestasi();
             }
-        }
-        void HomeTekan(ArgumenKendaliTombol e)
-        {
-            if(e.status)
+            else
             {
-                formUser Home = new formUser();
-                Home.Show();
-                this.Close();
+                Instance.BringToFront();
             }
-        }
-        void NextTekan(ArgumenKendaliTombol e)
-        {
-            if(e.status)
-            {
-                prestasi21.BringToFront();
-            }
-        }
-        void PrevTekan(ArgumenKendaliTombol e)
-        {
-            if(e.status)
-            {
-                prestasi11.BringToFront();
-            }
+            return Instance;
         }
 
         private void formPrestasi_Load(object sender, EventArgs e)
@@ -119,6 +100,57 @@ namespace GazethruApps
                 lap = 0;
             }
             kendali.CekTombol();
+        }
+        private void BackTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formInformasi FormInformasi = formInformasi.getInstance();
+                FormInformasi.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
+        }
+        private void HomeTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formUser Home = formUser.getInstance();
+                Home.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
+        }
+        private void NextTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                prestasi21.BringToFront();
+            }
+        }
+        private void PrevTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                prestasi11.BringToFront();
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

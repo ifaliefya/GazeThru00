@@ -38,7 +38,7 @@ namespace GazethruApps
             wy[1] = 470;
             wx[2] = 480; //posisi awal btnPrestasi
             wy[2] = 250;
-            wx[3] = 500; //posisi awal btnome
+            wx[3] = 500; //posisi awal btnhome
             wy[3] = 620;
 
             kendali = new KendaliTombol();
@@ -50,42 +50,119 @@ namespace GazethruApps
             kendali.Start();
         }
 
-        void HomeTekan(ArgumenKendaliTombol e)
+        private static formInformasi Instance;
+        public static formInformasi getInstance()
         {
-            if(e.status)
+            if (Instance == null || Instance.IsDisposed)
             {
-                formAwal FormHome = new formAwal();
-                FormHome.Show();
-                this.Hide();
+                Instance = new formInformasi();
             }
+            else
+            {
+                Instance.BringToFront();
+            }
+            return Instance;
         }
 
-        void KgtnTekan(ArgumenKendaliTombol e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
+            btnTentang.Location = new Point((int)wx[0], (int)wy[0]);
+            btnKegiatan.Location = new Point((int)wx[1], (int)wy[1]);
+            btnPrestasi.Location = new Point((int)wx[2], (int)wy[2]);
+            btnHome.Location = new Point((int)wx[3], (int)wy[3]);
+
+            if (lap == 0)
+            {
+                wy[0]++;
+                wy[1]--;
+                wx[2]++;
+                wy[2] = wy[2] - 0.60f;
+                wx[3]++;
+            }
+            if (lap == 1)
+            {
+                wy[0]--;
+                wy[1]++;
+                wx[2]--;
+                wy[2] = wy[2] + 0.60f;
+                wx[3]--;
+            }
+
+            if (wx[3] == 730)
+            {
+                lap = 1;
+            }
+            if (wx[3] == 500)
+            {
+                lap = 0;
+            }
+
+            kendali.CekTombol();
+        }
+        private void HomeTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
             if(e.status)
             {
-                formKegiatan FormKegiatan = new formKegiatan();
-                FormKegiatan.Show();
+                formUser FormUser = formUser.getInstance();
+                FormUser.Show();                
+                kendali.Close();
+                timer1.Stop();
                 this.Close();
             }
         }
 
-        void PrestasiTekan(ArgumenKendaliTombol e)
+        private void KgtnTekan(ArgumenKendaliTombol e)
         {
-            if(e.status)
+            if (e.mataX == null || e.mataY == null)
             {
-                formPrestasi FormPrestasi = new formPrestasi();
-                FormPrestasi.Show();
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formKegiatan FormKegiatan = formKegiatan.getInstance();
+                FormKegiatan.Show();                
+                kendali.Close();
+                timer1.Stop();
                 this.Close();
             }
         }
 
-        void TentangTekan(ArgumenKendaliTombol e)
+        private void PrestasiTekan(ArgumenKendaliTombol e)
         {
-            if(e.status)
+            if (e.mataX == null || e.mataY == null)
             {
-                formTentang FormTentang = new formTentang();
-                FormTentang.Show();
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formPrestasi FormPrestasi = formPrestasi.getInstance();
+                FormPrestasi.Show();                
+                kendali.Close();
+                timer1.Stop();
+                this.Close();
+            }
+        }
+
+        private void TentangTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formTentang FormTentang = formTentang.getInstance();
+                FormTentang.Show();                
+                kendali.Close();
+                timer1.Stop();
                 this.Close();
             }
         }
@@ -103,13 +180,12 @@ namespace GazethruApps
             this.Close();
         }
 
-        //private void btnHome_Click(object sender, EventArgs e)
-        //{
-        //    formUser FormUser = new formUser(); 
-        //    FormUser.Show();
-        //    this.Hide();
-           
-        //}
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            formUser FormUser = new formUser(); 
+            FormUser.Show();
+            this.Hide();           
+        }
 
         private void btnTentang_Click(object sender, EventArgs e)
         {
@@ -130,43 +206,6 @@ namespace GazethruApps
             formKegiatan FormKegiatan = new formKegiatan();
             FormKegiatan.Show();
             this.Close();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            btnTentang.Location = new Point((int)wx[0], (int)wy[0]);
-            btnKegiatan.Location = new Point((int)wx[1], (int)wy[1]);
-            btnPrestasi.Location = new Point((int)wx[2], (int)wy[2]);
-            btnHome.Location = new Point((int)wx[3], (int)wy[3]);
-         
-            if(lap==0)
-            {
-                wy[0]++;
-                wy[1]--;
-                wx[2]++;
-                wy[2] = wy[2] - 0.60f;
-                wx[3]++;
-            }
-            if(lap==1)
-            {
-                wy[0]--;
-                wy[1]++;
-                wx[2]--;
-                wy[2] = wy[2] + 0.60f;
-                wx[3]--;
-            }
-
-            if (wx[3] == 730)
-            {
-                lap = 1;
-            }
-            if (wx[3] == 500)
-            {
-                lap = 0;
-            }
-
-            kendali.CekTombol();
-        }
-             
+        } 
     }
 }
