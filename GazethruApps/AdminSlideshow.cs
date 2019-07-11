@@ -40,9 +40,10 @@ namespace GazethruApps
         private void AdminSlideshow_Load(object sender, EventArgs e)
         {
             SlideList("");
+            GetFirstID(con);
             GetLastID(con);
 
-            PreviewID = 0;
+            PreviewID = FirstID;
             PreviewImage();
         }
 
@@ -132,14 +133,10 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int first = 1;
             //disable edit on datagridview
             this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
             this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
             this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out first);
-            FirstID = first;
 
             int selected = 0;
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
@@ -238,7 +235,6 @@ namespace GazethruApps
 
         public void GetLastID(SqlConnection connection)
         {
-            
             SqlCommand command = new SqlCommand(
               "SELECT MAX(No) FROM Slider", connection);
             connection.Open();
@@ -249,6 +245,28 @@ namespace GazethruApps
                 while (reader.Read())
                 {
                     LastID = reader.GetInt32(0);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No rows found.");
+            }
+            reader.Close();
+            connection.Close();
+        }
+
+        public void GetFirstID(SqlConnection connection)
+        {
+            SqlCommand command = new SqlCommand(
+              "SELECT MIN(No) FROM Slider", connection);
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    FirstID = reader.GetInt32(0);
                 }
             }
             else

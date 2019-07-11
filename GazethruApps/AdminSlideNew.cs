@@ -119,8 +119,6 @@ namespace GazethruApps
             //    command.Parameters.Add("@gambar", SqlDbType.Image).Value = GetPic(pictureBox1.Image);
             //    ExecMyQuery(command, "Data Inserted");
             //}
-
-
         }
 
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
