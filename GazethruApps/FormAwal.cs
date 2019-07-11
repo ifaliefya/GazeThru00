@@ -37,7 +37,7 @@ namespace GazethruApps
         {
             InitializeComponent();
             kendali = new KendaliTombol();
-
+            
             wx = new List<double>();
             wy = new List<double>();
             wx.Add(0);
@@ -49,24 +49,27 @@ namespace GazethruApps
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
 
             kendali.Start();
-            GetLastID(con);
+            //GetLastID(con);
+        }
+
+        private static formAwal Instance;
+        public static formAwal getInstance()
+        {
+            if (Instance == null || Instance.IsDisposed)
+            {
+                Instance = new formAwal();
+            }
+            else
+            {
+                Instance.BringToFront();
+            }
+            return Instance;
         }
 
         private static int imageNumber = 1;
         private static int LastID;
-        //public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
-        //SqlConnection con = new SqlConnection(connectionString);
-        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
-
-        void TombolUserTekan(ArgumenKendaliTombol e)
-        {
-            if (e.status)
-            {
-                formUser FormUser = new formUser();
-                FormUser.Show();
-                this.Hide();
-            }
-        }
+        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
+        SqlConnection con = new SqlConnection(connectionString);             
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -109,12 +112,27 @@ namespace GazethruApps
                 lap = 0;
             }
 
-            //kendali.CekTombol();
+            kendali.CekTombol();
+        }
+        private void TombolUserTekan(ArgumenKendaliTombol eawal)
+        {
+            if (eawal.mataX == null || eawal.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (eawal.status)
+            {
+                formUser FormUser = formUser.getInstance();
+                FormUser.Show();
+                timer1.Stop();                
+                this.Hide();                
+            }            
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            formUser FormUser = new formUser();
+            formUser FormUser = formUser.getInstance();
             FormUser.Show();
             this.Hide();
         }
@@ -147,7 +165,7 @@ namespace GazethruApps
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            LoadNextImage();
+            //LoadNextImage();
         }
 
         public void LoadNextImage ()

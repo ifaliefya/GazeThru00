@@ -16,6 +16,8 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
+        KendaliTombol kendali;
+
         public formPrestasi()
         {
             InitializeComponent();
@@ -38,6 +40,28 @@ namespace GazethruApps
             wy[2] = 620;
             wx[3] = 1080; //home
             wy[3] = 620;
+
+            kendali = new KendaliTombol();
+            kendali.TambahTombol(btnBack, new FungsiTombol(BackTekan));
+            kendali.TambahTombol(btnHome, new FungsiTombol(HomeTekan));
+            kendali.TambahTombol(btnNext, new FungsiTombol(NextTekan));
+            kendali.TambahTombol(btnPrev, new FungsiTombol(PrevTekan));
+
+            kendali.Start();
+        }
+
+        private static formPrestasi Instance;
+        public static formPrestasi getInstance()
+        {
+            if (Instance == null || Instance.IsDisposed)
+            {
+                Instance = new formPrestasi();
+            }
+            else
+            {
+                Instance.BringToFront();
+            }
+            return Instance;
         }
 
         private void formPrestasi_Load(object sender, EventArgs e)
@@ -74,6 +98,58 @@ namespace GazethruApps
             if(wy[0]==170)
             {
                 lap = 0;
+            }
+            kendali.CekTombol();
+        }
+        private void BackTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formInformasi FormInformasi = formInformasi.getInstance();
+                FormInformasi.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
+        }
+        private void HomeTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formUser Home = formUser.getInstance();
+                Home.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
+        }
+        private void NextTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                prestasi21.BringToFront();
+            }
+        }
+        private void PrevTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                prestasi11.BringToFront();
             }
         }
 

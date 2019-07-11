@@ -16,8 +16,8 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
-        KendaliTombol kendali;
-
+        KendaliTombol kendaliuser;
+        
         public formUser()
         {
             InitializeComponent();
@@ -37,12 +37,26 @@ namespace GazethruApps
             wx[2] = 460; //lokasi awal btnBack
             wy[2] = 580;
 
-            kendali = new KendaliTombol();
-            kendali.TambahTombol(btnInfo, new FungsiTombol(InfoTekan));
-            kendali.TambahTombol(btnPeta, new FungsiTombol(PetaTekan));
-            kendali.TambahTombol(btnBack, new FungsiTombol(BackTekan));
+            kendaliuser = new KendaliTombol();
+            kendaliuser.TambahTombol(btnInfo, new FungsiTombol(InfoTekan));
+            kendaliuser.TambahTombol(btnPeta, new FungsiTombol(PetaTekan));
+            kendaliuser.TambahTombol(btnBack, new FungsiTombol(BackTekan));
 
-            kendali.Start();
+            kendaliuser.Start();
+        }
+
+        private static formUser Instance;
+        public static formUser getInstance()
+        {
+            if (Instance == null || Instance.IsDisposed)
+            {
+                Instance = new formUser();
+            }
+            else
+            {
+                Instance.BringToFront();
+            }
+            return Instance;
         }
 
         private void FormUser_Load(object sender, EventArgs e)
@@ -50,7 +64,7 @@ namespace GazethruApps
             timer1.Interval = 1;
             timer1.Start();
         }
-
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             btnInfo.Location = new Point((int)wx[0], (int)wy[0]);
@@ -78,12 +92,12 @@ namespace GazethruApps
                 lap = 0;
             }
 
-            kendali.CekTombol();
+            kendaliuser.CekTombol();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+       private void btnBack_Click(object sender, EventArgs e)
         {
-            formAwal FormHome = new formAwal();
+            formAwal FormHome = formAwal.getInstance();
             FormHome.Show();
             this.Close();
         }
@@ -102,37 +116,52 @@ namespace GazethruApps
             this.Close();
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void InfoTekan(ArgumenKendaliTombol e)
         {
-            formAwal FormHome = new formAwal();
-            FormHome.Show();
-            this.Hide();
-        }
-        void InfoTekan(ArgumenKendaliTombol e)
-        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendaliuser.NoLook();
+            }
+
             if (e.status)
             {
-                formInformasi FormInformasi = new formInformasi();
+                formInformasi FormInformasi = formInformasi.getInstance();
                 FormInformasi.Show();
-                this.Hide();
+                kendaliuser.Close();
+                timer1.Stop();
+                this.Close();
             }
         }
-        void PetaTekan(ArgumenKendaliTombol e)
+        private void PetaTekan(ArgumenKendaliTombol e)
         {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendaliuser.NoLook();
+            }
+
             if (e.status)
             {
-                formPeta FormPeta = new formPeta();
-                FormPeta.Show();
-                this.Hide();
+                formPeta FormPeta = formPeta.getInstance();
+                FormPeta.Show();                
+                kendaliuser.Close();
+                timer1.Stop();
+                this.Close();
             }
         }
-        void BackTekan(ArgumenKendaliTombol e)
+        private void BackTekan(ArgumenKendaliTombol e)
         {
-            if(e.status)
+            if (e.mataX == null || e.mataY == null)
             {
-                formAwal FormHome = new formAwal();
-                FormHome.Show();
-                this.Hide();
+                kendaliuser.NoLook();
+            }
+
+            if (e.status)
+            {
+                formAwal FormHome = formAwal.getInstance();
+                FormHome.Show();                
+                kendaliuser.Close();
+                timer1.Stop();
+                this.Close();
             }
         }
     }
