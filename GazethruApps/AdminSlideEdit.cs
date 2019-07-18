@@ -15,10 +15,12 @@ namespace GazethruApps
     public partial class AdminSlideEdit : Form
     {
         private readonly AdminSlideshow _SlideAwal;
+        public int ChoosenID;
 
-        public AdminSlideEdit(AdminSlideshow SlideAwal)
+        public AdminSlideEdit(AdminSlideshow SlideAwal, int Choosen)
         {
             _SlideAwal = SlideAwal;
+            ChoosenID = Choosen;
             InitializeComponent();
         }
 
@@ -32,7 +34,7 @@ namespace GazethruApps
         public void EditSliderContent()
         {
             con.Open();
-            string SelectQuery = "SELECT * FROM Slider WHERE No=" + AdminSlideshow.infoIDchoose;
+            string SelectQuery = "SELECT * FROM Slider WHERE No=" + ChoosenID;
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
             if (read.Read())
@@ -74,7 +76,7 @@ namespace GazethruApps
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
             byte[] img = ms.ToArray();
 
-            SqlCommand command = new SqlCommand("UPDATE Slider SET Judul=@judul, Gambar=@gambar, Show=@show WHERE No=" + AdminSlideshow.infoIDchoose, con);
+            SqlCommand command = new SqlCommand("UPDATE Slider SET Judul=@judul, Gambar=@gambar, Show=@show WHERE No=" + ChoosenID, con);
 
             command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
             command.Parameters.Add("@show", SqlDbType.Bit).Value = ShowHide.Checked;

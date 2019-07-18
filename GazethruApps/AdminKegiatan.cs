@@ -114,8 +114,8 @@ namespace GazethruApps
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
 
-                //AdminInfoEdit editInfo = new AdminInfoEdit(this);
-                //editInfo.Show();
+               AdminInfoEdit editInfo = new AdminInfoEdit(infoIDchoose, "Kegiatan");
+               editInfo.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
             {

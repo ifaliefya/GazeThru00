@@ -178,6 +178,7 @@
             this.Controls.Add(this.NoInfo);
             this.Controls.Add(this.labelNo);
             this.Name = "AdminInfoEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Konten";
             this.Load += new System.EventHandler(this.AdminInfoEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
