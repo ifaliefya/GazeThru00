@@ -113,7 +113,7 @@ namespace GazethruApps
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AdminInfoNew addInfo = new AdminInfoNew(this);
+            AdminInfoNew addInfo = new AdminInfoNew("Info");
             addInfo.Show();
         }
 
@@ -138,7 +138,7 @@ namespace GazethruApps
 
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM " + Category + "WHERE No=" + infoIDchoose, con);
+                SqlCommand command = new SqlCommand("DELETE FROM Info WHERE No=" + infoIDchoose, con);
 
                 if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -212,7 +212,7 @@ namespace GazethruApps
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
 
-                SqlCommand command = new SqlCommand("UPDATE " + Category + " SET Show=@show WHERE No=" + infoIDchoose, con);
+                SqlCommand command = new SqlCommand("UPDATE Info SET Show=@show WHERE No=" + infoIDchoose, con);
                 Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
 
                 if (check == true)
