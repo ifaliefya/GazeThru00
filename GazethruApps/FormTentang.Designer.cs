@@ -39,10 +39,14 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.visiTeti2 = new GazethruApps.VisiTeti();
-            this.visiElektro2 = new GazethruApps.VisiElektro();
+            this.panelView = new System.Windows.Forms.Panel();
+            this.textBoxIsi = new System.Windows.Forms.TextBox();
+            this.lblJudul = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -152,26 +156,50 @@
             this.panel2.Size = new System.Drawing.Size(1707, 394);
             this.panel2.TabIndex = 29;
             // 
-            // visiTeti2
+            // panelView
             // 
-            this.visiTeti2.BackColor = System.Drawing.Color.White;
-            this.visiTeti2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.visiTeti2.Location = new System.Drawing.Point(252, 100);
-            this.visiTeti2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.visiTeti2.Name = "visiTeti2";
-            this.visiTeti2.Size = new System.Drawing.Size(1179, 659);
-            this.visiTeti2.TabIndex = 30;
+            this.panelView.Controls.Add(this.textBoxIsi);
+            this.panelView.Controls.Add(this.lblJudul);
+            this.panelView.Controls.Add(this.pictureBox1);
+            this.panelView.Location = new System.Drawing.Point(252, 100);
+            this.panelView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelView.Name = "panelView";
+            this.panelView.Size = new System.Drawing.Size(1179, 659);
+            this.panelView.TabIndex = 32;
             // 
-            // visiElektro2
+            // textBoxIsi
             // 
-            this.visiElektro2.BackColor = System.Drawing.Color.White;
-            this.visiElektro2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.visiElektro2.Location = new System.Drawing.Point(252, 100);
-            this.visiElektro2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.visiElektro2.Name = "visiElektro2";
-            this.visiElektro2.Size = new System.Drawing.Size(1179, 659);
-            this.visiElektro2.TabIndex = 31;
-            this.visiElektro2.Load += new System.EventHandler(this.visiElektro2_Load);
+            this.textBoxIsi.BackColor = System.Drawing.Color.White;
+            this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIsi.Location = new System.Drawing.Point(409, 67);
+            this.textBoxIsi.Multiline = true;
+            this.textBoxIsi.Name = "textBoxIsi";
+            this.textBoxIsi.ReadOnly = true;
+            this.textBoxIsi.Size = new System.Drawing.Size(461, 332);
+            this.textBoxIsi.TabIndex = 42;
+            this.textBoxIsi.Text = resources.GetString("textBoxIsi.Text");
+            // 
+            // lblJudul
+            // 
+            this.lblJudul.AutoSize = true;
+            this.lblJudul.BackColor = System.Drawing.Color.White;
+            this.lblJudul.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJudul.Location = new System.Drawing.Point(403, 15);
+            this.lblJudul.Name = "lblJudul";
+            this.lblJudul.Size = new System.Drawing.Size(457, 30);
+            this.lblJudul.TabIndex = 41;
+            this.lblJudul.Text = "Kontes Robot Terbang Indonesia (KRTI) 2018";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(14, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(379, 505);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
             // 
             // formTentang
             // 
@@ -179,8 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1707, 886);
-            this.Controls.Add(this.visiTeti2);
-            this.Controls.Add(this.visiElektro2);
+            this.Controls.Add(this.panelView);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
@@ -197,6 +224,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelView.ResumeLayout(false);
+            this.panelView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -212,9 +242,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
-        private VisiTeti visiTeti1;
-        private VisiElektro visiElektro1;
-        private VisiTeti visiTeti2;
-        private VisiElektro visiElektro2;
+        private System.Windows.Forms.Panel panelView;
+        private System.Windows.Forms.TextBox textBoxIsi;
+        private System.Windows.Forms.Label lblJudul;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

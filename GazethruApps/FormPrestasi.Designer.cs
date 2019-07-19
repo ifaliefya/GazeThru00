@@ -39,10 +39,14 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.prestasi11 = new GazethruApps.Prestasi1();
-            this.prestasi21 = new GazethruApps.Prestasi2();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxIsi = new System.Windows.Forms.TextBox();
+            this.lblJudul = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNext
@@ -144,23 +148,49 @@
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
             // 
-            // prestasi11
+            // panel3
             // 
-            this.prestasi11.BackColor = System.Drawing.Color.White;
-            this.prestasi11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.prestasi11.Location = new System.Drawing.Point(191, 74);
-            this.prestasi11.Name = "prestasi11";
-            this.prestasi11.Size = new System.Drawing.Size(883, 534);
-            this.prestasi11.TabIndex = 36;
+            this.panel3.Controls.Add(this.textBoxIsi);
+            this.panel3.Controls.Add(this.lblJudul);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(191, 74);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(881, 534);
+            this.panel3.TabIndex = 38;
             // 
-            // prestasi21
+            // textBoxIsi
             // 
-            this.prestasi21.BackColor = System.Drawing.Color.White;
-            this.prestasi21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.prestasi21.Location = new System.Drawing.Point(191, 74);
-            this.prestasi21.Name = "prestasi21";
-            this.prestasi21.Size = new System.Drawing.Size(881, 534);
-            this.prestasi21.TabIndex = 37;
+            this.textBoxIsi.BackColor = System.Drawing.Color.White;
+            this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIsi.Location = new System.Drawing.Point(407, 67);
+            this.textBoxIsi.Multiline = true;
+            this.textBoxIsi.Name = "textBoxIsi";
+            this.textBoxIsi.ReadOnly = true;
+            this.textBoxIsi.Size = new System.Drawing.Size(461, 332);
+            this.textBoxIsi.TabIndex = 39;
+            this.textBoxIsi.Text = resources.GetString("textBoxIsi.Text");
+            // 
+            // lblJudul
+            // 
+            this.lblJudul.AutoSize = true;
+            this.lblJudul.BackColor = System.Drawing.Color.White;
+            this.lblJudul.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJudul.Location = new System.Drawing.Point(401, 15);
+            this.lblJudul.Name = "lblJudul";
+            this.lblJudul.Size = new System.Drawing.Size(457, 30);
+            this.lblJudul.TabIndex = 38;
+            this.lblJudul.Text = "Kontes Robot Terbang Indonesia (KRTI) 2018";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(379, 505);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
             // 
             // formPrestasi
             // 
@@ -168,8 +198,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.prestasi11);
-            this.Controls.Add(this.prestasi21);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
@@ -185,6 +214,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,7 +231,9 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Prestasi1 prestasi11;
-        private Prestasi2 prestasi21;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBoxIsi;
+        private System.Windows.Forms.Label lblJudul;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

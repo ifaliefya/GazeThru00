@@ -211,7 +211,6 @@
     <Compile Include="Kegiatan2.Designer.cs">
       <DependentUpon>Kegiatan2.cs</DependentUpon>
     </Compile>
-    <Compile Include="KoneksiSQL.cs" />
     <Compile Include="Lantai1_01.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -268,11 +267,11 @@
     <Compile Include="VisiElektro.Designer.cs">
       <DependentUpon>VisiElektro.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisiTeti.cs">
+    <Compile Include="ViewInfo01.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VisiTeti.Designer.cs">
-      <DependentUpon>VisiTeti.cs</DependentUpon>
+    <Compile Include="ViewInfo01.Designer.cs">
+      <DependentUpon>ViewInfo01.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -387,8 +386,8 @@
     <EmbeddedResource Include="VisiElektro.resx">
       <DependentUpon>VisiElektro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisiTeti.resx">
-      <DependentUpon>VisiTeti.cs</DependentUpon>
+    <EmbeddedResource Include="ViewInfo01.resx">
+      <DependentUpon>ViewInfo01.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

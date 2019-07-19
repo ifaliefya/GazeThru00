@@ -17,25 +17,25 @@ namespace GazethruApps
 
     public partial class formAwal : Form
     {
-        //private static formAwal _instance;
-        //public static formAwal Instance
-        //{
-        //    get
-        //    {
-        //        if (_instance == null)
-        //            _instance = new formAwal();
-        //        return _instance;
-        //    }
-        //}
 
         List<double> wx;
         List<double> wy;
         int lap = 0;
 
+        List<int> ShowID = new List<int>();
+        int counter = 0;
+        int maxCounter;
+        int nowShowing;
+        Object[] numb;
+
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         KendaliTombol kendali;
         public formAwal()
         {
             InitializeComponent();
+
+            PopulateViewID();
+
             kendali = new KendaliTombol();
             
             wx = new List<double>();
@@ -49,7 +49,6 @@ namespace GazethruApps
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
 
             kendali.Start();
-            //GetLastID(con);
         }
 
         private static formAwal Instance;
@@ -66,10 +65,22 @@ namespace GazethruApps
             return Instance;
         }
 
-        private static int imageNumber = 1;
-        private static int LastID;
-        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
-        SqlConnection con = new SqlConnection(connectionString);             
+        public void PopulateViewID()
+        {
+            con.Open();
+            string SelectQuery = "SELECT No FROM Slider WHERE Show = 1;";
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            while (read.Read())
+            {
+                numb = new object[read.FieldCount];
+                ShowID.Add((int)read.GetValue(0));
+            }
+            con.Close();
+            nowShowing = ShowID[0];
+            maxCounter = ShowID.Count;
+
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -165,68 +176,38 @@ namespace GazethruApps
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            //LoadNextImage();
+            LoadNextImage(nowShowing);
         }
 
-        public void LoadNextImage ()
+        public void LoadNextImage (int ViewShow)
         {
             con.Open();
-            string SelectQuery = "SELECT * FROM Slider WHERE No=" + imageNumber;
+            string SelectQuery = "SELECT * FROM Slider WHERE No=" + ViewShow;
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
             if (read.Read())
             {
-                //Boolean check = Convert.ToBoolean(read["Show"].ToString());
-                Boolean check = (Boolean)(read["Show"]);
-
-                if (check == true)
-                {
-                    Byte[] img = (Byte[])(read["Gambar"]);
-                    MemoryStream ms = new MemoryStream(img);
-                    pictureBox1.Image = Image.FromStream(ms);
-                }
-                //else
-                //{
-                //    imageNumber++;
-                //}
+                Byte[] img = (Byte[])(read["Gambar"]);
+                MemoryStream ms = new MemoryStream(img);
+                pictureBox1.Image = Image.FromStream(ms);
             }
             else
             {
                 pictureBox1.Image = null;
             }
             con.Close();
-            if (imageNumber == LastID)
+            if (counter == maxCounter-1)
             {
-                imageNumber = 1;
+                counter = 0;
+                nowShowing = ShowID[counter];
             }
             else
             {
-                imageNumber++;
+                counter ++;
+                nowShowing = ShowID[counter];
             }
         }
 
-        public void GetLastID(SqlConnection connection)
-        {
-
-            SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM Slider", connection);
-            connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    LastID = reader.GetInt32(0)+1;
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
-            }
-            reader.Close();
-            connection.Close();
-        }
     }           
 }
 
