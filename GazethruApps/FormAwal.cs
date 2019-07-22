@@ -44,7 +44,7 @@ namespace GazethruApps
             wy.Add(0);
 
             wx[0] = 870; //lokasi awal
-            wy[0] = 520;
+            wy[0] = 600;
 
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
 
