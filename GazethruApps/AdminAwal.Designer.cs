@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAwal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Home = new System.Windows.Forms.Button();
             this.Sidepanel = new System.Windows.Forms.Panel();
             this.btn_Peta = new System.Windows.Forms.Button();
             this.btn_Kegiatan = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel1.Controls.Add(this.Home);
             this.panel1.Controls.Add(this.Sidepanel);
             this.panel1.Controls.Add(this.btn_Peta);
             this.panel1.Controls.Add(this.btn_Kegiatan);
@@ -54,6 +56,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(240, 839);
             this.panel1.TabIndex = 0;
+            // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(33, 559);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(148, 54);
+            this.Home.TabIndex = 2;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Sidepanel
             // 
@@ -77,6 +89,7 @@
             this.btn_Peta.Text = "   Peta";
             this.btn_Peta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Peta.UseVisualStyleBackColor = true;
+            this.btn_Peta.Click += new System.EventHandler(this.btn_Peta_Click);
             // 
             // btn_Kegiatan
             // 
@@ -92,6 +105,7 @@
             this.btn_Kegiatan.Text = "   Kegiatan";
             this.btn_Kegiatan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Kegiatan.UseVisualStyleBackColor = true;
+            this.btn_Kegiatan.Click += new System.EventHandler(this.btn_Kegiatan_Click);
             // 
             // btn_Prestasi
             // 
@@ -107,6 +121,7 @@
             this.btn_Prestasi.Text = "   Prestasi";
             this.btn_Prestasi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Prestasi.UseVisualStyleBackColor = true;
+            this.btn_Prestasi.Click += new System.EventHandler(this.btn_Prestasi_Click);
             // 
             // btn_Tentang
             // 
@@ -174,5 +189,6 @@
         private System.Windows.Forms.Button btn_Kegiatan;
         private System.Windows.Forms.Button btn_Prestasi;
         private System.Windows.Forms.Panel panelUC;
+        private System.Windows.Forms.Button Home;
     }
 }

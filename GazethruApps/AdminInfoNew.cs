@@ -15,6 +15,9 @@ namespace GazethruApps
     public partial class AdminInfoNew : Form
     {
         private readonly  AdminInformasi _InfoAwal;
+        private readonly AdminPrestasi _PrestasiAwal;
+        private readonly AdminKegiatan _KegiatanAwal;
+       
         public AdminInfoNew(AdminInformasi InfoAwal)
         {
             _InfoAwal = InfoAwal;
@@ -22,10 +25,11 @@ namespace GazethruApps
             ShowHide.Checked = true;
         }
 
+
         public static int infoIDlast;
-        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
-        SqlConnection con = new SqlConnection(connectionString);
-        
+
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
+
         private void buttonBrowsePict_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -89,6 +93,7 @@ namespace GazethruApps
             command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
             command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
             command.Parameters.Add("@show", SqlDbType.Bit).Value = ShowHide.Checked;
+
             if (pictureBox1.Image == null)
             {
                 command.Parameters.Add("@gambar", SqlDbType.VarBinary).Value = DBNull.Value;

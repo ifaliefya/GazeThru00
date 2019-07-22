@@ -19,26 +19,30 @@ namespace GazethruApps
         public double korelasiY;
         public double jarak;
         public bool status;
+        public int? mataX;
+        public int? mataY;
 
-        public ArgumenKendaliTombol(double corx, double cory, double dist, bool state)
+        public ArgumenKendaliTombol(double corx, double cory, double dist, bool state, int? gazeX, int? gazeY)
         {
             korelasiX = corx;
             korelasiY = cory;
             jarak = dist;
             status = state;
+            mataX = gazeX;
+            mataY = gazeY;
         }
     }
 
     public class KendaliTombol
     {
         int ukuranKorelasi = 5;
-        int ukuranFilterMata = 20;
+        int ukuranFilterMata = 30;
 
         double ThresholdJarak = 250;
         double ThresholdKorelasi = 0.7;
 
-        int DurasiJarakEuclidean = 100;
-        int DurasiKorelasiPearson = 100;
+        int DurasiJarakEuclidean = 140;
+        int DurasiKorelasiPearson = 140;
 
         EyeXHost Host;
         GazePointDataStream DataStream;
@@ -58,6 +62,9 @@ namespace GazethruApps
         List<double[]> DaftarJarakEuclidean;
         List<double[]> DaftarKorX;
         List<double[]> DaftarKorY;
+
+        int? posisimataX;
+        int? posisimataY;
 
         public KendaliTombol()
         {
@@ -90,7 +97,7 @@ namespace GazethruApps
 
             Host.Start();
             DataStream.Next += SimpanPosisiMata;
-        }
+        }       
 
         public void TambahTombol(Control tombol, FungsiTombol fungsi)
         {
@@ -208,12 +215,16 @@ namespace GazethruApps
 
             for(int i = 0; i < DaftarTombol.Count; i++)
             {
+                posisimataX = PosisiMata[0][0];
+                posisimataY = PosisiMata[1][0];
+
                 double jarak = JarakEuclidean(DaftarPosisiTombol[i][0][0], DaftarPosisiTombol[i][1][0], PosisiMata[0][0], PosisiMata[1][0]);
                 DaftarJarakEuclidean[i][HasilJarakEuclidean[i]] = jarak;
                 HasilJarakEuclidean[i] = jarak < ThresholdJarak ? HasilJarakEuclidean[i] + 1 : 0;
 
                 double korelasix = KorelasiPearson(DaftarPosisiTombol[i][0], PosisiMata[0]);
                 double korelasiy = KorelasiPearson(DaftarPosisiTombol[i][1], PosisiMata[1]);
+
                 HasilKorelasiX[i] = (korelasix > ThresholdKorelasi) ? HasilKorelasiX[i] + 1 : 0;
                 HasilKorelasiY[i] = (korelasiy > ThresholdKorelasi) ? HasilKorelasiY[i] + 1 : 0;                              
 
@@ -224,18 +235,29 @@ namespace GazethruApps
 
                 if (statusjarak)
                 {
-                    HasilJarakEuclidean[i] = DurasiJarakEuclidean;
+                    HasilJarakEuclidean[i] = 0;
                 }
                 
                 if(statuskorelasi)
                 {
-                    HasilKorelasiPearson[i] = DurasiKorelasiPearson;
+                    HasilKorelasiPearson[i] = 0;
                 }
 
-                ArgumenKendaliTombol e = new ArgumenKendaliTombol(korelasix, korelasiy, jarak, statuskorelasi);  //hanya untuk ppmc
+                ArgumenKendaliTombol e = new ArgumenKendaliTombol(korelasix, korelasiy, jarak, statuskorelasi, posisimataX, posisimataY);  //hanya untuk ppmc
                 
                 DaftarFungsi[i](e);
             }
+        }
+
+        public void Close()
+        {
+            Host.Dispose();
+        }
+
+        public void NoLook()
+        {          
+            posisimataX = 0;
+            posisimataY = 0;
         }
     }
 }

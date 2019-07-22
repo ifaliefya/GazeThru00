@@ -16,6 +16,7 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
+        KendaliTombol kendali;
         public formPeta()
         {
             InitializeComponent();
@@ -38,7 +39,28 @@ namespace GazethruApps
             wy[2] = 430;
             wx[3] = 500; //home
             wy[3] = 620;
-            
+
+            kendali = new KendaliTombol();
+            kendali.TambahTombol(btnHome, new FungsiTombol(TombolHomeTekan));
+            kendali.TambahTombol(btnSatu, new FungsiTombol(TombolSatuTekan));
+            kendali.TambahTombol(btnDua, new FungsiTombol(TombolDuaTekan));
+            kendali.TambahTombol(btnTiga, new FungsiTombol(TombolTigaTekan));
+
+            kendali.Start();
+        }
+
+        private static formPeta Instance;
+        public static formPeta getInstance()
+        {
+            if (Instance == null || Instance.IsDisposed)
+            {
+                Instance = new formPeta();
+            }
+            else
+            {
+                Instance.BringToFront();
+            }
+            return Instance;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -92,6 +114,8 @@ namespace GazethruApps
             {
                 lap = 0;
             }
+
+            kendali.CekTombol();
         }
 
         private void btnSatu_Click(object sender, EventArgs e)
@@ -113,6 +137,75 @@ namespace GazethruApps
             formLantai3 FormLantai3 = new formLantai3();
             FormLantai3.Show();
             this.Close();
+        }
+
+        private void TombolHomeTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formUser Home = formUser.getInstance();
+                Home.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
+        }
+
+        private void TombolSatuTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formLantai1 FormLantai1 = formLantai1.getInstance();
+                FormLantai1.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
+        }
+
+        private void TombolDuaTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formLantai2 FormLantai2 = formLantai2.getInstance();
+                FormLantai2.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
+                
+        }
+
+        private void TombolTigaTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formLantai3 FormLantai3 = formLantai3.getInstance();
+                FormLantai3.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
         }
     }
 }

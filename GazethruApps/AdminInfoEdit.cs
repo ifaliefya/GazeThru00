@@ -14,13 +14,18 @@ namespace GazethruApps
 {
     public partial class AdminInfoEdit : Form
     {
-        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
-        SqlConnection con = new SqlConnection(connectionString);
+        private readonly AdminInformasi _InfoAwal;
 
-        public AdminInfoEdit()
+        public AdminInfoEdit(AdminInformasi InfoAwal)
         {
+            _InfoAwal = InfoAwal;
             InitializeComponent();
         }
+
+        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
+        SqlConnection con = new SqlConnection(connectionString);
+        //KoneksiSQL con = new KoneksiSQL();
+        //con.Koneksi();
 
         private void AdminInfoEdit_Load(object sender, EventArgs e)
         {
@@ -31,7 +36,7 @@ namespace GazethruApps
         {
             
             con.Open();
-            string SelectQuery = "SELECT * FROM Info WHERE No=" + AdminInformasi.infoIDchoose;
+            string SelectQuery = "SELECT * FROM " + AdminAwal.Category + " WHERE No=" + AdminInformasi.infoIDchoose;
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
             if (read.Read())
@@ -39,7 +44,7 @@ namespace GazethruApps
                 NoInfo.Text = (read["No"].ToString());
                 textBoxJudul.Text = (read["Judul"].ToString());
                 textBoxIsi.Text = (read["Isi"].ToString());
-                ShowHide.Checked = Convert.ToBoolean(read["Show"].ToString());
+                ShowHide.Checked = (Boolean)(read["Show"]);
                 if (!Convert.IsDBNull(read["Gambar"]))
                 {
                     Byte[] img = (Byte[])(read["Gambar"]);
@@ -73,7 +78,7 @@ namespace GazethruApps
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
             byte[] img = ms.ToArray();
 
-            SqlCommand command = new SqlCommand("UPDATE Info SET Judul=@judul, Isi=@isi, Gambar=@gambar, Show=@show WHERE No="+ AdminInformasi.infoIDchoose, con);
+            SqlCommand command = new SqlCommand("UPDATE " + AdminAwal.Category + " SET Judul=@judul, Isi=@isi, Gambar=@gambar, Show=@show WHERE No=" + AdminInformasi.infoIDchoose, con);
 
             command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
             command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
@@ -99,11 +104,8 @@ namespace GazethruApps
             }
 
             con.Close();
+            _InfoAwal.InfoContent("");
             this.Close();
-            //??
-            AdminInformasi load = new AdminInformasi();
-            load.InfoContent("");
-
         }
     }
 }

@@ -33,6 +33,10 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
+            this.textBoxIsi = new System.Windows.Forms.RichTextBox();
+            this.labelIsi = new System.Windows.Forms.Label();
+            this.textBoxJudul = new System.Windows.Forms.TextBox();
+            this.labelJudul = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +44,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 79);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -52,7 +56,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(656, 31);
+            this.btnAdd.Location = new System.Drawing.Point(676, 29);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(160, 42);
             this.btnAdd.TabIndex = 1;
@@ -62,7 +66,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(490, 31);
+            this.btnRefresh.Location = new System.Drawing.Point(510, 29);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(160, 42);
             this.btnRefresh.TabIndex = 2;
@@ -73,7 +77,7 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(84, 45);
+            this.textBoxSearch.Location = new System.Drawing.Point(104, 43);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(179, 28);
             this.textBoxSearch.TabIndex = 3;
@@ -83,16 +87,56 @@
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(25, 45);
+            this.labelSearch.Location = new System.Drawing.Point(45, 43);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(53, 24);
             this.labelSearch.TabIndex = 4;
             this.labelSearch.Text = "Cari :";
             // 
+            // textBoxIsi
+            // 
+            this.textBoxIsi.Location = new System.Drawing.Point(874, 213);
+            this.textBoxIsi.Name = "textBoxIsi";
+            this.textBoxIsi.Size = new System.Drawing.Size(419, 389);
+            this.textBoxIsi.TabIndex = 11;
+            this.textBoxIsi.Text = "";
+            // 
+            // labelIsi
+            // 
+            this.labelIsi.AutoSize = true;
+            this.labelIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIsi.Location = new System.Drawing.Point(870, 178);
+            this.labelIsi.Name = "labelIsi";
+            this.labelIsi.Size = new System.Drawing.Size(110, 20);
+            this.labelIsi.TabIndex = 10;
+            this.labelIsi.Text = "Description : ";
+            // 
+            // textBoxJudul
+            // 
+            this.textBoxJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxJudul.Location = new System.Drawing.Point(939, 120);
+            this.textBoxJudul.Name = "textBoxJudul";
+            this.textBoxJudul.Size = new System.Drawing.Size(354, 27);
+            this.textBoxJudul.TabIndex = 9;
+            // 
+            // labelJudul
+            // 
+            this.labelJudul.AutoSize = true;
+            this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJudul.Location = new System.Drawing.Point(874, 123);
+            this.labelJudul.Name = "labelJudul";
+            this.labelJudul.Size = new System.Drawing.Size(59, 20);
+            this.labelJudul.TabIndex = 8;
+            this.labelJudul.Text = "Judul :";
+            // 
             // AdminInformasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxIsi);
+            this.Controls.Add(this.labelIsi);
+            this.Controls.Add(this.textBoxJudul);
+            this.Controls.Add(this.labelJudul);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.textBoxSearch);
@@ -114,5 +158,9 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.RichTextBox textBoxIsi;
+        private System.Windows.Forms.Label labelIsi;
+        private System.Windows.Forms.TextBox textBoxJudul;
+        private System.Windows.Forms.Label labelJudul;
     }
 }

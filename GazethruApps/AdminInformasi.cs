@@ -30,13 +30,14 @@ namespace GazethruApps
         }
 
         public static int infoIDchoose;
-        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string Category = AdminAwal.Category;
+        //public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
+        //SqlConnection con = new SqlConnection(connectionString);
 
-        SqlConnection con = new SqlConnection(connectionString);
-
-
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         private void AdminInformasi_Load(object sender, EventArgs e)
         {
+            dataGridView1.Columns.Clear();
             InfoContent("");
         }
 
@@ -61,7 +62,7 @@ namespace GazethruApps
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
+                
         private void CreateImageColumn()
         {
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
@@ -118,6 +119,10 @@ namespace GazethruApps
 
         protected void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //disable edit on datagridview
+            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
+            this.dataGridView1.Rows[e.RowIndex].Cells["Isi"].ReadOnly = true;
 
             int selected = 0;
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
@@ -125,7 +130,7 @@ namespace GazethruApps
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
 
-                AdminInfoEdit editInfo = new AdminInfoEdit();
+                AdminInfoEdit editInfo = new AdminInfoEdit(this);
                 editInfo.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
@@ -133,7 +138,7 @@ namespace GazethruApps
 
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Info WHERE No=" + infoIDchoose, con);
+                SqlCommand command = new SqlCommand("DELETE FROM " + Category + "WHERE No=" + infoIDchoose, con);
 
                 if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -143,7 +148,8 @@ namespace GazethruApps
             }
             else
             {
-                return;
+                textBoxJudul.Text = dataGridView1.Rows[e.RowIndex].Cells["Judul"].Value.ToString();
+                textBoxIsi.Text = dataGridView1.Rows[e.RowIndex].Cells["Isi"].Value.ToString();
             }
 
 
@@ -178,7 +184,6 @@ namespace GazethruApps
 
             con.Close();
             InfoContent("");
-
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -207,8 +212,8 @@ namespace GazethruApps
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
 
-                SqlCommand command = new SqlCommand("UPDATE Info SET Show=@show WHERE No=" + infoIDchoose, con);
-                Boolean check = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value.ToString());
+                SqlCommand command = new SqlCommand("UPDATE " + Category + " SET Show=@show WHERE No=" + infoIDchoose, con);
+                Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
 
                 if (check == true)
                 {
@@ -222,5 +227,6 @@ namespace GazethruApps
                 }
             }
         }
+
     }
 }

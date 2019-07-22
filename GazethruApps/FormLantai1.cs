@@ -15,6 +15,8 @@ namespace GazethruApps
         List<double> wx;
         List<double> wy;
         int lap = 0;
+        KendaliTombol kendali;
+
         public formLantai1()
         {
             InitializeComponent();
@@ -33,6 +35,26 @@ namespace GazethruApps
             wy[1] = 140;
             wx[2] = 470; //back
             wy[2] = 640;
+
+            kendali = new KendaliTombol();
+            kendali.TambahTombol(btnBack, new FungsiTombol(TombolBackTekan));
+            kendali.TambahTombol(btnNext, new FungsiTombol(TombolNextTekan));
+            //kendali.TambahTombol(btnPrev, new FungsiTombol(TombolPrevTekan));
+            kendali.Start();
+        }
+
+        private static formLantai1 Instance;
+        public static formLantai1 getInstance()
+        {
+            if (Instance == null || Instance.IsDisposed)
+            {
+                Instance = new formLantai1();
+            }
+            else
+            {
+                Instance.BringToFront();
+            }
+            return Instance;
         }
 
         private void FormLantai1_Load(object sender, EventArgs e)
@@ -67,6 +89,8 @@ namespace GazethruApps
             {
                 lap = 0;
             }
+
+            kendali.CekTombol();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -102,5 +126,44 @@ namespace GazethruApps
             lantai1_021.BringToFront();
             picPointer.Location = new Point(700, 225);
         }
+
+        private void TombolBackTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                formPeta FormPeta = formPeta.getInstance();
+                FormPeta.Show();
+                timer1.Stop();
+                kendali.Close();
+                this.Close();
+            }
+        }
+
+        private void TombolNextTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
+
+            if (e.status)
+            {
+                lantai1_021.BringToFront();
+                picPointer.Location = new Point(700, 225);
+            }
+        }
+
+        //void TombolPrevTekan(ArgumenKendaliTombol e)
+        //{
+        //    if (e.status)
+        //    {
+
+        //    }
+        //}
     }
 }
