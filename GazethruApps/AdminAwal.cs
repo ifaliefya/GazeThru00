@@ -119,7 +119,7 @@ namespace GazethruApps
                 panelUC.Controls.Add(AdminPetaAwal.Instance);
                 AdminPetaAwal.Instance.Dock = DockStyle.Fill;
                 AdminPetaAwal.Instance.BringToFront();
-                AdminPetaAwal Keg = new AdminPetaAwal();
+                AdminPetaAwal Peta = new AdminPetaAwal();
                 //Peta.KegiatanContent("");
             }
             else
