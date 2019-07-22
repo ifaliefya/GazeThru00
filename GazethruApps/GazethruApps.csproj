@@ -112,6 +112,30 @@
     <Compile Include="AdminPetaEdit.Designer.cs">
       <DependentUpon>AdminPetaEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPetaNewLantai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPetaNewLantai.Designer.cs">
+      <DependentUpon>AdminPetaNewLantai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPetaNew.Designer.cs">
+      <DependentUpon>AdminPetaNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaNewLantaiDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPetaNewLantaiDetail.Designer.cs">
+      <DependentUpon>AdminPetaNewLantaiDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaNewRuang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPetaNewRuang.Designer.cs">
+      <DependentUpon>AdminPetaNewRuang.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPrestasi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -267,12 +291,6 @@
     <Compile Include="VisiElektro.Designer.cs">
       <DependentUpon>VisiElektro.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewInfo01.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ViewInfo01.Designer.cs">
-      <DependentUpon>ViewInfo01.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +317,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPetaEdit.resx">
       <DependentUpon>AdminPetaEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaNewLantai.resx">
+      <DependentUpon>AdminPetaNewLantai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaNew.resx">
+      <DependentUpon>AdminPetaNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaNewLantaiDetail.resx">
+      <DependentUpon>AdminPetaNewLantaiDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaNewRuang.resx">
+      <DependentUpon>AdminPetaNewRuang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPrestasi.resx">
       <DependentUpon>AdminPrestasi.cs</DependentUpon>
@@ -385,9 +415,6 @@
     </Compile>
     <EmbeddedResource Include="VisiElektro.resx">
       <DependentUpon>VisiElektro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewInfo01.resx">
-      <DependentUpon>ViewInfo01.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

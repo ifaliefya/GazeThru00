@@ -30,12 +30,11 @@ namespace GazethruApps
             InitializeComponent();
         }
 
-        public static int infoIDchoose;
+        public static int PetaIDchoose;
         public static int PreviewID;
         public static int FirstID;
         public static int LastID;
         public static bool addShow;
-
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
 
@@ -54,8 +53,7 @@ namespace GazethruApps
 
         private void button1_Click(object sender, EventArgs e)
         {
-                AdminPetaEdit.Instance.BringToFront();
-                AdminPetaEdit Keg = new AdminPetaEdit();
+            PetaList();
         }
 
         public void PetaList()
@@ -83,8 +81,8 @@ namespace GazethruApps
         {
             DataGridViewButtonColumn buttonCol = new DataGridViewButtonColumn();
             buttonCol.HeaderText = "";
-            buttonCol.Name = "Edit";
-            buttonCol.Text = "Edit";
+            buttonCol.Name = "Detail";
+            buttonCol.Text = "Detail";
 
             buttonCol.UseColumnTextForButtonValue = true;
 
@@ -132,31 +130,32 @@ namespace GazethruApps
             this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
             this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
 
-            int selected = 0;
-            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+            PetaIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
+
+            if (e.ColumnIndex == dataGridView1.Columns["Detail"].Index && e.RowIndex >= 0)
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
+
                 //AdminSlideEdit editInfo = new AdminSlideEdit(this);
                 //editInfo.Show();
+                AdminPetaNew addNewLantai = new AdminPetaNew();
+                addNewLantai.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
             {
 
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Peta WHERE No=" + infoIDchoose, con);
+
+                SqlCommand command = new SqlCommand("DELETE FROM Peta WHERE No=" + PetaIDchoose, con);
 
                 if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     ExecMyQuery(command, "Data Deleted");
+                    GetLastID(con);
                 }
 
             }
             else
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                PreviewID = selected;
+                PreviewID = PetaIDchoose;
                 PreviewImage();
             }
         }
@@ -223,12 +222,16 @@ namespace GazethruApps
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            addShow = true;
-            AddView(addShow);
+            //addShow = true;
+            //AddView(addShow);
+            PetaIDchoose = 0;
+            AdminPetaNew addNewLantai = new AdminPetaNew();
+            addNewLantai.Show();
 
         }
         public void AddView (Boolean show)
         {
+            panelEdit.Visible = show;
             textBoxJudul.Visible = show;
             btnCancel.Visible = show;
             btnInsert.Visible = show;
