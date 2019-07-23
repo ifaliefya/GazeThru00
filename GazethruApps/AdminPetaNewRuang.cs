@@ -26,21 +26,33 @@ namespace GazethruApps
         }
 
         public int NoLantai;
-        public int PointerID = 0;
+        public int LastPointer = 0;
         public int currentPLocX;
         public int currentPLocY;
-        public string currentPName;
+        public string NewPName;
         public int IDChoose;
         public int LastID;
         public int EditSession = 0;
+        public Boolean NotSave;
 
-        List<int> LocXPExist = new List<int>();
-        List<int> LocYPExist = new List<int>();
-        List<int> PExist = new List<int>();
+        public struct PExist
+        {
+            public int LocX;
+            public int LocY;
+            public string Name;
+
+            public PExist(int x, int y, string name)
+            {
+                LocX = x;
+                LocY = y;
+                Name = name;
+            }
+        }
+
+        List<PExist> AllPointer = new List<PExist>();
         int counter = 0;
         int maxCounter;
-
-
+        
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
 
         public AdminPetaNewRuang()
@@ -52,25 +64,56 @@ namespace GazethruApps
         {
             AddEditView(false, false, false);
             GetLastID(con);
+            labelIDNow.Text = "0";
         }
 
         public void LoadPointer (int IDLantai)
         {
             con.Open();
-
-            string SelectQuery = "SELECT LocX, LocY, Pointer WHERE PetaID = " + IDLantai;
+            string SelectQuery = "SELECT LocX, LocY, Pointer FROM Ruang WHERE PetaID = " + IDLantai;
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
-            while(read.Read())
+            if (read.HasRows)
             {
-                LocXPExist.Add((int)read.GetValue(0));
-                LocYPExist.Add((int)read.GetValue(1));
-                PExist.Add((int)read.GetValue(2));
+                while (read.Read())
+                {
+                    var locx = read.GetInt32(0);
+                    var locy = read.GetInt32(1);
+                    var name = read.GetString(2);
+                    var Pini = new PExist(locx, locy, name);
+                    AllPointer.Add(Pini);
+
+                    Pointer P = ReadPointer(locx, locy, name);
+                    pbPetaLantai.Controls.Add(P);
+                    P.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PointerDown);
+                    P.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PointerDrag);
+                    P.Move += new System.EventHandler(this.PointerMove);
+                    P.Click += new System.EventHandler(this.PointerClick);
+                    //    var locx = AllPointer[PointerID].LocX;
+                }
+                maxCounter = AllPointer.Count;
+                LastPointer = Convert.ToInt32(AllPointer[maxCounter - 1].Name);
             }
+            else
+            {
+                MessageBox.Show("Tambahkan Pointer");
+            }
+            
             con.Close();
-            maxCounter = PExist.Count;
+
         }
 
+        Pointer ReadPointer(int x, int y, string name)
+        {
+            Pointer Pointer = new Pointer();
+            Pointer.Name = name;
+            Pointer.Size = new Size(22, 30);
+            Pointer.Location = new System.Drawing.Point(x, y);
+            Pointer.BackColor = Color.Transparent;
+            Pointer.BorderStyle = BorderStyle.FixedSingle;
+
+            return Pointer;
+        }
 
         public void GetLantaiPic (int IDLantai)
         {
@@ -144,10 +187,10 @@ namespace GazethruApps
 
         private void buttonAddPoint_Click(object sender, EventArgs e)
         {
-            ++PointerID;
-            Pointer P = AddPointer(PointerID);
+            ++LastPointer;
+            Pointer P = AddPointer(LastPointer);
             pbPetaLantai.Controls.Add(P);
-            currentPName = P.Name;
+            NewPName = P.Name;
             P.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PointerDown);
             P.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PointerDrag);
             P.Move += new System.EventHandler(this.PointerMove);
@@ -157,13 +200,25 @@ namespace GazethruApps
             tbLocY.Text = P.Location.Y.ToString();
 
             AddEditView(false, true, false);
+            NotSave = true;
         }
 
-        Pointer AddPointer (int counter)
+        void BelomDisimpan ()
+        {
+            List<Control> listPointer = pbPetaLantai.Controls.Cast<Control>().ToList();
+            foreach (Control control in listPointer)
+            {
+                pbPetaLantai.Controls.Remove(control);
+                control.Dispose();
+            }
+            LoadPointer(NoLantai);
+        }
+
+        Pointer AddPointer (int newPointerID)
         {
             EditSession = 0;
             Pointer Pointer = new Pointer();
-            Pointer.Name = "Ruang" + counter.ToString();
+            Pointer.Name = newPointerID.ToString();
             Pointer.Size = new Size(22, 30);
             Pointer.Top = pbPetaLantai.Top + 10;
             Pointer.Left = pbPetaLantai.Left + 10;
@@ -205,12 +260,11 @@ namespace GazethruApps
             string Pname = currentP.Name;
             PointerChoosen(Pname);
             AddEditView(true, true, false);
-            int ClickedP = PointerID + 1;
-            if (Pname != "Ruang" + ClickedP.ToString())
-            {
-                PreviewDetail(Pname);
-            }
-
+            //if (Pname != NewPName || NotSave == true )
+            //{
+            //    BelomDisimpan();
+            //}
+            PreviewDetail(Pname);
         }
 
         //PointerChoosen dipanggil dari dalam PreviewDetail
@@ -220,11 +274,16 @@ namespace GazethruApps
                 if (item.Name == Pname)
                 {
                     item.BackColor = Color.Black;
+                    currentPLocX = item.Location.X;
+                    currentPLocY = item.Location.Y;
+                    tbLocX.Text = currentPLocX.ToString();
+                    tbLocY.Text = currentPLocY.ToString();
                 }
                 else
                 {
                     item.BackColor = Color.Transparent;
                 }
+
         }
 
 
@@ -280,17 +339,19 @@ namespace GazethruApps
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             AddEditView(false, false, false);
-            if (EditSession == 0)
+            //if (EditSession == 0)
+            if (NotSave == true)
             {
-                string Pname = "Ruang" + PointerID.ToString();
+                string Pname = LastPointer.ToString();
                 foreach (Control item in pbPetaLantai.Controls)
                     if (item.Name == Pname)
                     {
                         pbPetaLantai.Controls.Remove(item);
                         break;
                     }
-                PointerID--;
+                LastPointer--;
             }
+            LoadPointer(NoLantai);
         }
 
         public void GetLastID(SqlConnection connection)
@@ -300,16 +361,17 @@ namespace GazethruApps
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            
+            while (reader.Read())
             {
-                while (reader.Read())
+                if (!reader.IsDBNull(0))
                 {
                     LastID = reader.GetInt32(0) + 1;
                 }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
+                else
+                {
+                    LastID = 0;
+                }
             }
             reader.Close();
             connection.Close();
@@ -353,7 +415,7 @@ namespace GazethruApps
                 command.Parameters.Add("@locy", SqlDbType.Int).Value = currentPLocY;
                 command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
                 command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxJudul.Text;
-                command.Parameters.Add("@pointer", SqlDbType.VarChar).Value = currentPName;
+                command.Parameters.Add("@pointer", SqlDbType.VarChar).Value = NewPName;
 
                 if (pictureBoxRuang.Image == null)
                 {
@@ -364,6 +426,7 @@ namespace GazethruApps
                     command.Parameters.Add("@gambar", SqlDbType.Image).Value = GetPic(pictureBoxRuang.Image);
                 }
                 ExecMyQuery(command, "Pointer Ruangan Ditambahkan");
+                NotSave = false;
             }
             else
             {
@@ -411,6 +474,10 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (NotSave == true)
+            {
+                BelomDisimpan();
+            }
             this.dataGridView1.Rows[e.RowIndex].Cells["Id"].ReadOnly = true;
             this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
 
@@ -456,8 +523,8 @@ namespace GazethruApps
             if (read.Read())
             {
                 EditSession = (int)(read["Id"]);
-                tbLocX.Text = (String)(read["LocX"].ToString());
-                tbLocY.Text = (String)(read["LocY"].ToString());
+                //tbLocX.Text = (String)(read["LocX"].ToString());
+                //tbLocY.Text = (String)(read["LocY"].ToString());
                 textBoxJudul.Text = (String)(read["Judul"]); 
                 textBoxIsi.Text = (String)(read["Isi"]);
 
@@ -489,6 +556,63 @@ namespace GazethruApps
         private void buttonBack_Click(object sender, EventArgs e)
         {
             //adminPetaNew Close
+        }
+
+        private void buttonPrev_Click(object sender, EventArgs e)
+        {
+            if (NotSave == true)
+            {
+                BelomDisimpan();
+            }
+            --counter;
+            buttonNext.Enabled = true;
+            if (counter <= 0)
+            {
+                buttonPrev.Enabled = false;
+            }
+            else
+            {
+                string PrevP = AllPointer[counter].Name;
+                PreviewDetail(PrevP);
+                AddEditView(true, false, true);
+                int Counterlabel = counter + 1;
+                labelIDNow.Text = Counterlabel.ToString();
+            }
+
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            if (NotSave == true)
+            {
+                BelomDisimpan();
+            }
+            ++counter;
+            buttonPrev.Enabled = true;
+            if (counter > LastPointer)
+            {
+                buttonNext.Enabled = false;
+            }
+            else
+            {
+                string NextP = AllPointer[counter].Name;
+                PreviewDetail(NextP);
+                AddEditView(true, false, true);
+                int Counterlabel = counter + 1;
+                labelIDNow.Text = Counterlabel.ToString();
+            }
+
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            List<Control> listPointer = pbPetaLantai.Controls.Cast<Control>().ToList();
+            foreach (Control control in listPointer)
+            {
+                pbPetaLantai.Controls.Remove(control);
+                control.Dispose();
+            }
+            LoadPointer(NoLantai);
         }
     }
 
