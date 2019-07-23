@@ -121,22 +121,28 @@ namespace GazethruApps
         private void btnSatu_Click(object sender, EventArgs e)
         {
             formLantai1 FormLantai1 = new formLantai1();
-            FormLantai1.Show();
             this.Close();
+            FormLantai1.Show();
+            FormLantai1.GetLantaiPic(1);
+            FormLantai1.LoadPointer(1);
         }
 
         private void btnDua_Click(object sender, EventArgs e)
         {
-            formLantai2 FormLantai2 = new formLantai2();
-            FormLantai2.Show();
+            formLantai1 FormLantai1 = new formLantai1();
             this.Close();
+            FormLantai1.Show();
+            FormLantai1.GetLantaiPic(2);
+            FormLantai1.LoadPointer(2);
         }
 
         private void btnTiga_Click(object sender, EventArgs e)
         {
-            formLantai3 FormLantai3 = new formLantai3();
-            FormLantai3.Show();
+            formLantai1 FormLantai1 = formLantai1.getInstance();
             this.Close();
+            FormLantai1.Show();
+            FormLantai1.GetLantaiPic(3);
+            FormLantai1.LoadPointer(3);
         }
 
         private void TombolHomeTekan(ArgumenKendaliTombol e)

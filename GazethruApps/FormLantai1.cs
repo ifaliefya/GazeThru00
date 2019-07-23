@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace GazethruApps
 {
@@ -16,6 +18,27 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
         KendaliTombol kendali;
+        public struct PExist
+        {
+            public int LocX;
+            public int LocY;
+            public string Name;
+
+            public PExist(int x, int y, string name)
+            {
+                LocX = x;
+                LocY = y;
+                Name = name;
+            }
+        }
+
+
+        List<PExist> AllPointer = new List<PExist>();
+        int counter = 0;
+        int maxCounter;
+        public int NoLantai;
+
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
 
         public formLantai1()
         {
@@ -39,7 +62,7 @@ namespace GazethruApps
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnBack, new FungsiTombol(TombolBackTekan));
             kendali.TambahTombol(btnNext, new FungsiTombol(TombolNextTekan));
-            //kendali.TambahTombol(btnPrev, new FungsiTombol(TombolPrevTekan));
+            kendali.TambahTombol(btnPrev, new FungsiTombol(TombolPrevTekan));
             kendali.Start();
         }
 
@@ -61,6 +84,7 @@ namespace GazethruApps
         {
             timer1.Interval = 1;
             timer1.Start();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -100,31 +124,19 @@ namespace GazethruApps
             this.Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnPrev_Click(object sender, EventArgs e)
         {
-
+            --counter;
+            PreviewDetail(AllPointer[counter].Name);
+            PopulateButton();
         }
 
-        private void point3_Click(object sender, EventArgs e)
-        {
-            lantai1_011.BringToFront();
-            picPointer.Location = new Point(605, 206);
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void picPointer_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            lantai1_021.BringToFront();
-            picPointer.Location = new Point(700, 225);
+            ++counter;
+            PreviewDetail(AllPointer[counter].Name);
+            PopulateButton();
         }
 
         private void TombolBackTekan(ArgumenKendaliTombol e)
@@ -153,17 +165,164 @@ namespace GazethruApps
 
             if (e.status)
             {
-                lantai1_021.BringToFront();
-                picPointer.Location = new Point(700, 225);
+
             }
         }
 
-        //void TombolPrevTekan(ArgumenKendaliTombol e)
-        //{
-        //    if (e.status)
-        //    {
+        void TombolPrevTekan(ArgumenKendaliTombol e)
+        {
+            if (e.mataX == null || e.mataY == null)
+            {
+                kendali.NoLook();
+            }
 
-        //    }
-        //}
+            if (e.status)
+            {
+                --counter;
+                PreviewDetail(AllPointer[counter].Name);
+                PopulateButton();
+            }
+        }
+
+        public void PopulateButton()
+        {
+            if (maxCounter == 1)
+            {
+                btnPrev.Visible = false;
+                btnNext.Visible = false;
+            }
+            else if (counter == 0)
+            {
+                btnPrev.Visible = false;
+                btnNext.Visible = true;
+            }
+            else if (counter == maxCounter - 1)
+            {
+                btnNext.Visible = false;
+                btnPrev.Visible = true;
+            }
+            else
+            {
+                btnNext.Visible = true;
+                btnPrev.Visible = true;
+            }
+        }
+
+
+        public void GetLantaiPic(int IDLantai)
+        {
+            NoLantai = IDLantai;
+
+            con.Open();
+            string SelectQuery = "SELECT * FROM Peta WHERE No=" + NoLantai;
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            if (read.Read())
+            {
+                labelNamaLantai.Text = (read["Judul"].ToString());
+                if (!Convert.IsDBNull(read["Gambar"]))
+                {
+                    Byte[] img = (Byte[])(read["Gambar"]);
+                    MemoryStream ms = new MemoryStream(img);
+                    pbPetaLantai.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                labelNamaLantai.Text = "";
+                pbPetaLantai.Image = null;
+            }
+            con.Close();
+        }
+
+        public void LoadPointer(int IDLantai)
+        {
+            con.Open();
+            string SelectQuery = "SELECT LocX, LocY, Pointer FROM Ruang WHERE PetaID = " + IDLantai;
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            if (read.HasRows)
+            {
+                while (read.Read())
+                {
+                    var locx = read.GetInt32(0);
+                    var locy = read.GetInt32(1);
+                    var name = read.GetString(2);
+                    var Pini = new PExist(locx, locy, name);
+                    AllPointer.Add(Pini);
+
+                    Pointer P = ReadPointer(locx, locy, name);
+                    pbPetaLantai.Controls.Add(P);
+                }
+                maxCounter = AllPointer.Count;
+            }
+            else
+            {
+                MessageBox.Show("Tambahkan Pointer");
+            }
+
+            con.Close();
+
+            PreviewDetail(AllPointer[0].Name);
+            PopulateButton();
+        }
+
+        Pointer ReadPointer(int x, int y, string name)
+        {
+            Pointer Pointer = new Pointer();
+            Pointer.Name = name;
+            Pointer.Size = new Size(22, 30);
+            Pointer.Location = new System.Drawing.Point(x, y);
+            Pointer.BackColor = Color.Transparent;
+            Pointer.BorderStyle = BorderStyle.FixedSingle;
+
+            return Pointer;
+        }
+
+        void PointerChoosen(string Pname)
+        {
+            foreach (Control item in pbPetaLantai.Controls)
+                if (item.Name == Pname)
+                {
+                    item.BackColor = Color.Black;
+                }
+                else
+                {
+                    item.BackColor = Color.Transparent;
+                }
+        }
+
+        void PreviewDetail(string Pname)
+        {
+            PointerChoosen(Pname);
+
+            con.Open();
+            string SelectQuery = "SELECT Id, LocX, LocY, Judul, Isi, Gambar FROM Ruang WHERE PetaID=" + NoLantai + "AND Pointer ='" + Pname + "'";
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            if (read.Read())
+            {
+                labelJudul.Text = (String)(read["Judul"]);
+                textBoxIsi.Text = (String)(read["Isi"]);
+
+                if (!Convert.IsDBNull(read["Gambar"]))
+                {
+                    Byte[] img = (Byte[])(read["Gambar"]);
+                    MemoryStream ms = new MemoryStream(img);
+                    pictureBoxRuang.Image = Image.FromStream(ms);
+                }
+                else
+                {
+                    pictureBoxRuang.Image = null;
+                }
+            }
+            else
+            {
+                labelJudul.Text = "";
+                textBoxIsi.Text = "";
+                pictureBoxRuang.Image = null;
+            }
+            con.Close();
+        }
     }
 }
