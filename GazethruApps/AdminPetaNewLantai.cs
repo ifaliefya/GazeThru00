@@ -128,8 +128,7 @@ namespace GazethruApps
             }
             else
             {
-                try
-                {
+                //try catch disini
                     if (LantaiChoosen == 0)
                     {
                         int newID = LastID - 1;
@@ -153,12 +152,6 @@ namespace GazethruApps
                         command.Parameters.Add("@gambar", SqlDbType.Image).Value = GetPic(pictureBox1.Image);
                         ExecMyQuery(command, "Peta Lantai Diupdate");
                     }
-                   
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
         }
 
@@ -190,8 +183,8 @@ namespace GazethruApps
                 else
                 {
                     newRuang.GetLantaiPic(LantaiChoosen);
-                    newRuang.ListPoint(LantaiChoosen);
                     newRuang.LoadPointer(LantaiChoosen);
+                    newRuang.ListPoint(LantaiChoosen);
                 }
 
             }

@@ -54,6 +54,7 @@
             this.panelPeta = new System.Windows.Forms.Panel();
             this.pbPetaLantai = new System.Windows.Forms.PictureBox();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPointer)).BeginInit();
             this.panelDetails.SuspendLayout();
@@ -302,6 +303,7 @@
             this.buttonPrev.TabIndex = 52;
             this.buttonPrev.Text = "<";
             this.buttonPrev.UseVisualStyleBackColor = true;
+            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
             // 
             // buttonNext
             // 
@@ -313,6 +315,7 @@
             this.buttonNext.TabIndex = 53;
             this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // panelPeta
             // 
@@ -344,10 +347,23 @@
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRefresh.Location = new System.Drawing.Point(301, 418);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(113, 30);
+            this.buttonRefresh.TabIndex = 56;
+            this.buttonRefresh.Text = "Refresh Pointer";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // AdminPetaNewRuang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.panelPeta);
             this.Controls.Add(this.buttonNext);
@@ -402,5 +418,6 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }

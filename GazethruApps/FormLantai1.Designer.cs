@@ -33,19 +33,21 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelNamaLantai = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.picPointer = new System.Windows.Forms.PictureBox();
-            this.lantai1_011 = new GazethruApps.Lantai1_01();
-            this.lantai1_021 = new GazethruApps.Lantai1_02();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxIsi = new System.Windows.Forms.TextBox();
+            this.labelJudul = new System.Windows.Forms.Label();
+            this.pictureBoxRuang = new System.Windows.Forms.PictureBox();
+            this.panelPeta = new System.Windows.Forms.Panel();
+            this.pbPetaLantai = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPointer)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRuang)).BeginInit();
+            this.panelPeta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPetaLantai)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -53,7 +55,6 @@
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(470, 640);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(104, 39);
@@ -74,55 +75,32 @@
             this.btnPrev.Size = new System.Drawing.Size(40, 40);
             this.btnPrev.TabIndex = 24;
             this.btnPrev.UseVisualStyleBackColor = false;
-            this.btnPrev.Click += new System.EventHandler(this.point3_Click);
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelNamaLantai);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 39);
             this.panel1.TabIndex = 27;
             // 
-            // label1
+            // labelNamaLantai
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(559, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "LANTAI 1 DTETI";
+            this.labelNamaLantai.AutoSize = true;
+            this.labelNamaLantai.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNamaLantai.ForeColor = System.Drawing.Color.White;
+            this.labelNamaLantai.Location = new System.Drawing.Point(559, 1);
+            this.labelNamaLantai.Name = "labelNamaLantai";
+            this.labelNamaLantai.Size = new System.Drawing.Size(201, 32);
+            this.labelNamaLantai.TabIndex = 2;
+            this.labelNamaLantai.Text = "LANTAI 1 DTETI";
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(668, 250);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 28);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 37;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(301, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(723, 374);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnNext
             // 
@@ -147,32 +125,71 @@
             this.panel3.Size = new System.Drawing.Size(1280, 10);
             this.panel3.TabIndex = 39;
             // 
-            // picPointer
+            // panel2
             // 
-            this.picPointer.Image = ((System.Drawing.Image)(resources.GetObject("picPointer.Image")));
-            this.picPointer.Location = new System.Drawing.Point(605, 206);
-            this.picPointer.Name = "picPointer";
-            this.picPointer.Size = new System.Drawing.Size(22, 30);
-            this.picPointer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPointer.TabIndex = 46;
-            this.picPointer.TabStop = false;
-            this.picPointer.Click += new System.EventHandler(this.picPointer_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.panel2.Controls.Add(this.textBoxIsi);
+            this.panel2.Controls.Add(this.labelJudul);
+            this.panel2.Controls.Add(this.pictureBoxRuang);
+            this.panel2.Location = new System.Drawing.Point(6, 418);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1268, 206);
+            this.panel2.TabIndex = 49;
             // 
-            // lantai1_011
+            // textBoxIsi
             // 
-            this.lantai1_011.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.lantai1_011.Location = new System.Drawing.Point(9, 416);
-            this.lantai1_011.Name = "lantai1_011";
-            this.lantai1_011.Size = new System.Drawing.Size(1268, 206);
-            this.lantai1_011.TabIndex = 47;
+            this.textBoxIsi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIsi.ForeColor = System.Drawing.Color.White;
+            this.textBoxIsi.Location = new System.Drawing.Point(478, 73);
+            this.textBoxIsi.Multiline = true;
+            this.textBoxIsi.Name = "textBoxIsi";
+            this.textBoxIsi.ReadOnly = true;
+            this.textBoxIsi.Size = new System.Drawing.Size(399, 102);
+            this.textBoxIsi.TabIndex = 40;
+            this.textBoxIsi.Text = resources.GetString("textBoxIsi.Text");
             // 
-            // lantai1_021
+            // labelJudul
             // 
-            this.lantai1_021.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.lantai1_021.Location = new System.Drawing.Point(9, 416);
-            this.lantai1_021.Name = "lantai1_021";
-            this.lantai1_021.Size = new System.Drawing.Size(1268, 206);
-            this.lantai1_021.TabIndex = 48;
+            this.labelJudul.AutoSize = true;
+            this.labelJudul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJudul.ForeColor = System.Drawing.Color.White;
+            this.labelJudul.Location = new System.Drawing.Point(473, 31);
+            this.labelJudul.Name = "labelJudul";
+            this.labelJudul.Size = new System.Drawing.Size(192, 25);
+            this.labelJudul.TabIndex = 41;
+            this.labelJudul.Text = "Ruang Tata Usaha";
+            // 
+            // pictureBoxRuang
+            // 
+            this.pictureBoxRuang.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRuang.Image")));
+            this.pictureBoxRuang.Location = new System.Drawing.Point(6, 0);
+            this.pictureBoxRuang.Name = "pictureBoxRuang";
+            this.pictureBoxRuang.Size = new System.Drawing.Size(452, 206);
+            this.pictureBoxRuang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxRuang.TabIndex = 39;
+            this.pictureBoxRuang.TabStop = false;
+            // 
+            // panelPeta
+            // 
+            this.panelPeta.Controls.Add(this.pbPetaLantai);
+            this.panelPeta.Location = new System.Drawing.Point(301, 39);
+            this.panelPeta.Name = "panelPeta";
+            this.panelPeta.Size = new System.Drawing.Size(723, 374);
+            this.panelPeta.TabIndex = 55;
+            // 
+            // pbPetaLantai
+            // 
+            this.pbPetaLantai.BackColor = System.Drawing.Color.White;
+            this.pbPetaLantai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPetaLantai.Image = ((System.Drawing.Image)(resources.GetObject("pbPetaLantai.Image")));
+            this.pbPetaLantai.Location = new System.Drawing.Point(0, 0);
+            this.pbPetaLantai.Name = "pbPetaLantai";
+            this.pbPetaLantai.Size = new System.Drawing.Size(723, 374);
+            this.pbPetaLantai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPetaLantai.TabIndex = 50;
+            this.pbPetaLantai.TabStop = false;
             // 
             // formLantai1
             // 
@@ -180,16 +197,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.lantai1_011);
-            this.Controls.Add(this.picPointer);
+            this.Controls.Add(this.panelPeta);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lantai1_021);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formLantai1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -197,9 +211,11 @@
             this.Load += new System.EventHandler(this.FormLantai1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPointer)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRuang)).EndInit();
+            this.panelPeta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPetaLantai)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,13 +225,14 @@
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelNamaLantai;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox picPointer;
-        private Lantai1_01 lantai1_011;
-        private Lantai1_02 lantai1_021;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBoxRuang;
+        private System.Windows.Forms.TextBox textBoxIsi;
+        private System.Windows.Forms.Label labelJudul;
+        private System.Windows.Forms.Panel panelPeta;
+        private System.Windows.Forms.PictureBox pbPetaLantai;
     }
 }

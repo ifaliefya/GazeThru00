@@ -40,15 +40,12 @@ namespace GazethruApps
 
         private void AdminPetaAwal_Load(object sender, EventArgs e)
         {
-            addShow = false;
-            AddView(addShow);
-
+            //if not null
             PetaList();
             GetFirstID(con);
             GetLastID(con);
 
-            PreviewID = FirstID;
-            PreviewImage();
+            PreviewImage(FirstID);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -103,7 +100,7 @@ namespace GazethruApps
             dataGridView1.Columns.Add(deleteBtn);
         }
 
-        void PreviewImage()
+        void PreviewImage(int PreviewID)
         {
             con.Open();
             string SelectQuery = "SELECT Judul, Gambar FROM Peta WHERE No=" + PreviewID;
@@ -131,19 +128,13 @@ namespace GazethruApps
             this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
 
             PetaIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
-
             if (e.ColumnIndex == dataGridView1.Columns["Detail"].Index && e.RowIndex >= 0)
             {
-
-                //AdminSlideEdit editInfo = new AdminSlideEdit(this);
-                //editInfo.Show();
                 AdminPetaNew addNewLantai = new AdminPetaNew();
                 addNewLantai.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
             {
-
-
                 SqlCommand command = new SqlCommand("DELETE FROM Peta WHERE No=" + PetaIDchoose, con);
 
                 if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -151,12 +142,10 @@ namespace GazethruApps
                     ExecMyQuery(command, "Data Deleted");
                     GetLastID(con);
                 }
-
             }
             else
             {
-                PreviewID = PetaIDchoose;
-                PreviewImage();
+                PreviewImage(PetaIDchoose);
             }
         }
 
@@ -220,38 +209,13 @@ namespace GazethruApps
             reader.Close();
             connection.Close();
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //addShow = true;
-            //AddView(addShow);
             PetaIDchoose = 0;
             AdminPetaNew addNewLantai = new AdminPetaNew();
             addNewLantai.Show();
 
-        }
-        public void AddView (Boolean show)
-        {
-            panelEdit.Visible = show;
-            textBoxJudul.Visible = show;
-            btnCancel.Visible = show;
-            btnInsert.Visible = show;
-            pictureBox1.Enabled = show;
-            if (show == true)
-            {
-                //Nanti diganti click here to choose image
-                pictureBox1.Image = null;
-            }
-            else
-            {
-                PreviewID = FirstID;
-                PreviewImage();
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            addShow = false;
-            AddView(addShow);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -262,11 +226,6 @@ namespace GazethruApps
             {
                 pictureBox1.Image = Image.FromFile(opf.FileName);
             }
-        }
-
-        private void textBoxJudul_Click(object sender, EventArgs e)
-        {
-            textBoxJudul.Text = null;
         }
 
         private byte[] GetPic(Image img)
@@ -282,36 +241,5 @@ namespace GazethruApps
             }
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            if (pictureBox1.Image == null | textBoxJudul == null )
-            {
-                MessageBox.Show("Masukkan gambar dan isi judul terlebih dahulu");
-            }
-
-            else
-            {
-                try
-                {
-                    string InsertQuery =
-                    "DBCC CHECKIDENT (Peta, RESEED," + LastID + "); " + //ERROR DBCC adalah menyalahi aturan increment dan unique, semoga tidak error
-                    "INSERT INTO Peta(Judul, Gambar) VALUES (@judul, @gambar);";
-                    SqlCommand command = new SqlCommand(InsertQuery, con);
-
-                    command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
-                    command.Parameters.Add("@gambar", SqlDbType.Image).Value = GetPic(pictureBox1.Image);
-                    ExecMyQuery(command, "Data Inserted");
-                    addShow = false;
-                    AddView(addShow);
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        
     }
 }
