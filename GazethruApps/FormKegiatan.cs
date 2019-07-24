@@ -46,14 +46,14 @@ namespace GazethruApps
             wx.Add(0); //add btnHome
             wy.Add(0);
 
-            wx[0] = 70;//posisi awal btnPrev
+            wx[0] = 230;//posisi awal btnPrev 
             wy[0] = 170;
-            wx[1] = 1080; //posisi awal btnNext
+            wx[1] = 1620; //posisi awal btnNext
             wy[1] = 400;
-            wx[2] = 100; //posisi awal btnBack
-            wy[2] = 620;
-            wx[3] = 1080; //posisi awal btnHome
-            wy[3] = 620;
+            wx[2] = 300; //posisi awal btnBack 
+            wy[2] = 900;
+            wx[3] = 1620; //posisi awal btnHome
+            wy[3] = 900;
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnBack, new FungsiTombol(TombolBackTekan));

@@ -50,7 +50,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 39);
+            this.panel1.Size = new System.Drawing.Size(1920, 39);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -69,8 +69,9 @@
             this.btnTiga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnTiga.FlatAppearance.BorderSize = 0;
             this.btnTiga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiga.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTiga.ForeColor = System.Drawing.Color.White;
-            this.btnTiga.Location = new System.Drawing.Point(1080, 430);
+            this.btnTiga.Location = new System.Drawing.Point(1620, 430);
             this.btnTiga.Name = "btnTiga";
             this.btnTiga.Size = new System.Drawing.Size(104, 39);
             this.btnTiga.TabIndex = 14;
@@ -83,8 +84,9 @@
             this.btnDua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnDua.FlatAppearance.BorderSize = 0;
             this.btnDua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDua.ForeColor = System.Drawing.Color.White;
-            this.btnDua.Location = new System.Drawing.Point(500, 250);
+            this.btnDua.Location = new System.Drawing.Point(700, 300);
             this.btnDua.Name = "btnDua";
             this.btnDua.Size = new System.Drawing.Size(104, 39);
             this.btnDua.TabIndex = 13;
@@ -101,8 +103,9 @@
             this.btnSatu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnSatu.FlatAppearance.BorderSize = 0;
             this.btnSatu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSatu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSatu.ForeColor = System.Drawing.Color.White;
-            this.btnSatu.Location = new System.Drawing.Point(100, 200);
+            this.btnSatu.Location = new System.Drawing.Point(300, 200);
             this.btnSatu.Name = "btnSatu";
             this.btnSatu.Size = new System.Drawing.Size(104, 39);
             this.btnSatu.TabIndex = 24;
@@ -113,9 +116,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(374, 305);
+            this.pictureBox1.Location = new System.Drawing.Point(622, 437);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(580, 354);
+            this.pictureBox1.Size = new System.Drawing.Size(710, 430);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
@@ -124,9 +127,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 710);
+            this.panel2.Location = new System.Drawing.Point(0, 1070);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1280, 10);
+            this.panel2.Size = new System.Drawing.Size(1920, 10);
             this.panel2.TabIndex = 29;
             // 
             // btnHome
@@ -134,7 +137,8 @@
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Location = new System.Drawing.Point(500, 620);
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Location = new System.Drawing.Point(1100, 900);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(104, 39);
             this.btnHome.TabIndex = 21;
@@ -147,7 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSatu);
             this.Controls.Add(this.btnHome);

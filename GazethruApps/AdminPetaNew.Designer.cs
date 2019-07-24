@@ -33,18 +33,20 @@
             // 
             // panelEdit
             // 
-            this.panelEdit.Location = new System.Drawing.Point(2, 8);
+            this.panelEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEdit.Location = new System.Drawing.Point(0, 0);
             this.panelEdit.Name = "panelEdit";
-            this.panelEdit.Size = new System.Drawing.Size(1280, 720);
+            this.panelEdit.Size = new System.Drawing.Size(1264, 681);
             this.panelEdit.TabIndex = 0;
             // 
             // AdminPetaNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 740);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panelEdit);
             this.Name = "AdminPetaNew";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tambah Lantai Baru";
             this.Load += new System.EventHandler(this.AdminPetaNew_Load);
             this.ResumeLayout(false);

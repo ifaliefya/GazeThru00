@@ -133,6 +133,14 @@ namespace GazethruApps
             this.Hide();
         }
 
-        
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnTutup_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

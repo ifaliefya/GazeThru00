@@ -42,18 +42,21 @@
             // ShowHide
             // 
             this.ShowHide.AutoSize = true;
-            this.ShowHide.Location = new System.Drawing.Point(377, 35);
+            this.ShowHide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ShowHide.Location = new System.Drawing.Point(313, 24);
+            this.ShowHide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ShowHide.Name = "ShowHide";
-            this.ShowHide.Size = new System.Drawing.Size(97, 21);
+            this.ShowHide.Size = new System.Drawing.Size(78, 17);
             this.ShowHide.TabIndex = 15;
             this.ShowHide.Text = "Show/Hide";
             this.ShowHide.UseVisualStyleBackColor = true;
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(409, 101);
+            this.buttonUpdate.Location = new System.Drawing.Point(313, 591);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdate.Size = new System.Drawing.Size(77, 32);
             this.buttonUpdate.TabIndex = 14;
             this.buttonUpdate.Text = "UPDATE";
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -62,42 +65,47 @@
             // TanggalNOW
             // 
             this.TanggalNOW.AutoSize = true;
-            this.TanggalNOW.Location = new System.Drawing.Point(123, 35);
+            this.TanggalNOW.Location = new System.Drawing.Point(122, 24);
+            this.TanggalNOW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TanggalNOW.Name = "TanggalNOW";
-            this.TanggalNOW.Size = new System.Drawing.Size(96, 17);
+            this.TanggalNOW.Size = new System.Drawing.Size(75, 13);
             this.TanggalNOW.TabIndex = 13;
             this.TanggalNOW.Text = "DD-MM-YYYY";
             // 
             // labelTgl
             // 
             this.labelTgl.AutoSize = true;
-            this.labelTgl.Location = new System.Drawing.Point(49, 35);
+            this.labelTgl.Location = new System.Drawing.Point(67, 24);
+            this.labelTgl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTgl.Name = "labelTgl";
-            this.labelTgl.Size = new System.Drawing.Size(68, 17);
+            this.labelTgl.Size = new System.Drawing.Size(52, 13);
             this.labelTgl.TabIndex = 12;
             this.labelTgl.Text = "Tanggal :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 69);
+            this.label1.Location = new System.Drawing.Point(67, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Judul :";
             // 
             // textBoxJudul
             // 
-            this.textBoxJudul.Location = new System.Drawing.Point(126, 69);
+            this.textBoxJudul.Location = new System.Drawing.Point(120, 60);
+            this.textBoxJudul.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxJudul.Name = "textBoxJudul";
-            this.textBoxJudul.Size = new System.Drawing.Size(358, 22);
+            this.textBoxJudul.Size = new System.Drawing.Size(270, 20);
             this.textBoxJudul.TabIndex = 10;
             // 
             // buttonBrowsePict
             // 
-            this.buttonBrowsePict.Location = new System.Drawing.Point(42, 110);
+            this.buttonBrowsePict.Location = new System.Drawing.Point(71, 591);
+            this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
-            this.buttonBrowsePict.Size = new System.Drawing.Size(75, 23);
+            this.buttonBrowsePict.Size = new System.Drawing.Size(77, 32);
             this.buttonBrowsePict.TabIndex = 9;
             this.buttonBrowsePict.Text = "Browse";
             this.buttonBrowsePict.UseVisualStyleBackColor = true;
@@ -105,18 +113,21 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(42, 139);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox1.Location = new System.Drawing.Point(70, 93);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(442, 506);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(320, 480);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "";
             // 
             // AdminSlideEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 687);
+            this.ClientSize = new System.Drawing.Size(472, 681);
             this.Controls.Add(this.ShowHide);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.TanggalNOW);
@@ -125,7 +136,11 @@
             this.Controls.Add(this.textBoxJudul);
             this.Controls.Add(this.buttonBrowsePict);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "AdminSlideEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Slider";
             this.Load += new System.EventHandler(this.AdminSlideEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -43,8 +43,8 @@ namespace GazethruApps
             wx.Add(0);
             wy.Add(0);
 
-            wx[0] = 870; //lokasi awal
-            wy[0] = 600;
+            wx[0] = 1220; //lokasi awal 900; 830
+            wy[0] = 900;
 
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
 
@@ -113,12 +113,12 @@ namespace GazethruApps
                 wx[0]--;
             }
 
-            if (wx[0] == 1000)
+            if (wx[0] == 1450)
             {
                 lap = 1; //titik akhir
             }
 
-            if (wx[0] == 770)
+            if (wx[0] == 1220)
             {
                 lap = 0;
             }
@@ -208,6 +208,10 @@ namespace GazethruApps
             }
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }           
 }
 

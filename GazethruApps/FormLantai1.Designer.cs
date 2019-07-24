@@ -40,8 +40,8 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.picPointer = new System.Windows.Forms.PictureBox();
-            this.lantai1_021 = new GazethruApps.Lantai1_02();
             this.lantai1_011 = new GazethruApps.Lantai1_01();
+            this.lantai1_021 = new GazethruApps.Lantai1_02();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,6 +53,7 @@
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(470, 640);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(104, 39);
@@ -157,14 +158,6 @@
             this.picPointer.TabStop = false;
             this.picPointer.Click += new System.EventHandler(this.picPointer_Click);
             // 
-            // lantai1_021
-            // 
-            this.lantai1_021.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.lantai1_021.Location = new System.Drawing.Point(9, 416);
-            this.lantai1_021.Name = "lantai1_021";
-            this.lantai1_021.Size = new System.Drawing.Size(1268, 206);
-            this.lantai1_021.TabIndex = 48;
-            // 
             // lantai1_011
             // 
             this.lantai1_011.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
@@ -172,6 +165,14 @@
             this.lantai1_011.Name = "lantai1_011";
             this.lantai1_011.Size = new System.Drawing.Size(1268, 206);
             this.lantai1_011.TabIndex = 47;
+            // 
+            // lantai1_021
+            // 
+            this.lantai1_021.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.lantai1_021.Location = new System.Drawing.Point(9, 416);
+            this.lantai1_021.Name = "lantai1_021";
+            this.lantai1_021.Size = new System.Drawing.Size(1268, 206);
+            this.lantai1_021.TabIndex = 48;
             // 
             // formLantai1
             // 

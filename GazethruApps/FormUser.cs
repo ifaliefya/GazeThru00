@@ -30,12 +30,12 @@ namespace GazethruApps
             wx.Add(0);
             wy.Add(0);
 
-            wx[0] = 100; //lokasi awal btnInformasi
+            wx[0] = 300; //lokasi awal btnInformasi
             wy[0] = 200;
-            wx[1] = 1130; //lokasi awal btnPeta
+            wx[1] = 1620; //lokasi awal btnPeta
             wy[1] = 430;
-            wx[2] = 460; //lokasi awal btnBack
-            wy[2] = 580;
+            wx[2] = 770; //lokasi awal btnBack
+            wy[2] = 900;
 
             kendaliuser = new KendaliTombol();
             kendaliuser.TambahTombol(btnInfo, new FungsiTombol(InfoTekan));
@@ -163,6 +163,11 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

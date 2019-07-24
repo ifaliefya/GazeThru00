@@ -228,5 +228,9 @@ namespace GazethruApps
             }
         }
 
+        private void textBoxIsi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

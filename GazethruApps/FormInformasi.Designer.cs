@@ -49,9 +49,8 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1707, 48);
+            this.panel1.Size = new System.Drawing.Size(1920, 39);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -59,10 +58,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(764, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(887, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 41);
+            this.label1.Size = new System.Drawing.Size(153, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "INFORMASI";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -72,10 +70,10 @@
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Location = new System.Drawing.Point(667, 763);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Location = new System.Drawing.Point(1100, 900);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(139, 48);
+            this.btnHome.Size = new System.Drawing.Size(104, 39);
             this.btnHome.TabIndex = 9;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -86,11 +84,11 @@
             this.btnTentang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnTentang.FlatAppearance.BorderSize = 0;
             this.btnTentang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTentang.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTentang.ForeColor = System.Drawing.Color.White;
-            this.btnTentang.Location = new System.Drawing.Point(133, 246);
-            this.btnTentang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTentang.Location = new System.Drawing.Point(300, 200);
             this.btnTentang.Name = "btnTentang";
-            this.btnTentang.Size = new System.Drawing.Size(139, 48);
+            this.btnTentang.Size = new System.Drawing.Size(111, 39);
             this.btnTentang.TabIndex = 24;
             this.btnTentang.Text = "Tentang DTETI";
             this.btnTentang.UseVisualStyleBackColor = false;
@@ -101,11 +99,11 @@
             this.btnPrestasi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnPrestasi.FlatAppearance.BorderSize = 0;
             this.btnPrestasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrestasi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrestasi.ForeColor = System.Drawing.Color.White;
-            this.btnPrestasi.Location = new System.Drawing.Point(640, 308);
-            this.btnPrestasi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrestasi.Location = new System.Drawing.Point(700, 300);
             this.btnPrestasi.Name = "btnPrestasi";
-            this.btnPrestasi.Size = new System.Drawing.Size(139, 48);
+            this.btnPrestasi.Size = new System.Drawing.Size(104, 39);
             this.btnPrestasi.TabIndex = 25;
             this.btnPrestasi.Text = "Prestasi";
             this.btnPrestasi.UseVisualStyleBackColor = false;
@@ -116,11 +114,11 @@
             this.btnKegiatan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnKegiatan.FlatAppearance.BorderSize = 0;
             this.btnKegiatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKegiatan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKegiatan.ForeColor = System.Drawing.Color.White;
-            this.btnKegiatan.Location = new System.Drawing.Point(1440, 578);
-            this.btnKegiatan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKegiatan.Location = new System.Drawing.Point(1620, 470);
             this.btnKegiatan.Name = "btnKegiatan";
-            this.btnKegiatan.Size = new System.Drawing.Size(139, 48);
+            this.btnKegiatan.Size = new System.Drawing.Size(104, 39);
             this.btnKegiatan.TabIndex = 26;
             this.btnKegiatan.Text = "Kegiatan";
             this.btnKegiatan.UseVisualStyleBackColor = false;
@@ -133,41 +131,38 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(544, 364);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(622, 437);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(643, 401);
+            this.pictureBox1.Size = new System.Drawing.Size(710, 430);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(186)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 874);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 1070);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1707, 12);
+            this.panel2.Size = new System.Drawing.Size(1920, 10);
             this.panel2.TabIndex = 28;
             // 
             // formInformasi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1707, 886);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.btnKegiatan);
             this.Controls.Add(this.btnPrestasi);
             this.Controls.Add(this.btnTentang);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "formInformasi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInformasi";
