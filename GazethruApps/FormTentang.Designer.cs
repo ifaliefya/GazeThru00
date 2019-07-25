@@ -43,8 +43,10 @@
             this.textBoxIsi = new System.Windows.Forms.TextBox();
             this.lblJudul = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PresenceCheck = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panelView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(548, 3);
+            this.label1.Location = new System.Drawing.Point(866, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 32);
             this.label1.TabIndex = 2;
@@ -76,7 +78,7 @@
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(1080, 620);
+            this.btnHome.Location = new System.Drawing.Point(1620, 900);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(104, 39);
             this.btnHome.TabIndex = 12;
@@ -90,7 +92,7 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(100, 620);
+            this.btnBack.Location = new System.Drawing.Point(300, 900);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(104, 39);
             this.btnBack.TabIndex = 11;
@@ -105,7 +107,7 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.ForeColor = System.Drawing.Color.White;
             this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.Location = new System.Drawing.Point(70, 170);
+            this.btnPrev.Location = new System.Drawing.Point(230, 170);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(104, 39);
             this.btnPrev.TabIndex = 13;
@@ -119,7 +121,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(1080, 400);
+            this.btnNext.Location = new System.Drawing.Point(1620, 400);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(104, 39);
             this.btnNext.TabIndex = 14;
@@ -130,9 +132,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(557, 612);
+            this.pictureBox2.Location = new System.Drawing.Point(820, 44);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(166, 96);
+            this.pictureBox2.Size = new System.Drawing.Size(281, 230);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
@@ -144,6 +146,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 760);
             this.panel2.Name = "panel2";
@@ -156,7 +159,7 @@
             this.panelView.Controls.Add(this.textBoxIsi);
             this.panelView.Controls.Add(this.lblJudul);
             this.panelView.Controls.Add(this.pictureBox1);
-            this.panelView.Location = new System.Drawing.Point(189, 81);
+            this.panelView.Location = new System.Drawing.Point(533, 135);
             this.panelView.Margin = new System.Windows.Forms.Padding(2);
             this.panelView.Name = "panelView";
             this.panelView.Size = new System.Drawing.Size(884, 500);
@@ -199,14 +202,22 @@
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
             // 
+            // PresenceCheck
+            // 
+            this.PresenceCheck.BackColor = System.Drawing.Color.Maroon;
+            this.PresenceCheck.Location = new System.Drawing.Point(955, 1070);
+            this.PresenceCheck.Name = "PresenceCheck";
+            this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
+            this.PresenceCheck.TabIndex = 37;
+            // 
             // formTentang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.panelView);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.btnHome);
@@ -221,6 +232,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.panelView.ResumeLayout(false);
             this.panelView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -243,5 +255,6 @@
         private System.Windows.Forms.TextBox textBoxIsi;
         private System.Windows.Forms.Label lblJudul;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel PresenceCheck;
     }
 }

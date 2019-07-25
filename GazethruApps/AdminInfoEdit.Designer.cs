@@ -112,9 +112,9 @@
             this.labelIsi.Location = new System.Drawing.Point(300, 90);
             this.labelIsi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelIsi.Name = "labelIsi";
-            this.labelIsi.Size = new System.Drawing.Size(91, 17);
+            this.labelIsi.Size = new System.Drawing.Size(74, 17);
             this.labelIsi.TabIndex = 6;
-            this.labelIsi.Text = "Description : ";
+            this.labelIsi.Text = "Deskripsi :";
             // 
             // textBoxIsi
             // 

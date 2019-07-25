@@ -29,12 +29,12 @@ namespace GazethruApps
             wx.Add(0); //back
             wy.Add(0);
 
-            wx[0] = 1030; //next
-            wy[0] = 370;
-            wx[1] = 255; //prev
-            wy[1] = 140;
-            wx[2] = 470; //back
-            wy[2] = 640;
+            wx[0] = 1620; //next
+            wy[0] = 400;
+            wx[1] = 300; //prev
+            wy[1] = 170;
+            wx[2] = 1100; //back
+            wy[2] = 900;
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnBack, new FungsiTombol(TombolBackTekan));
@@ -80,19 +80,19 @@ namespace GazethruApps
             {
                 wy[0]--;
                 wy[1]++;
-                wx[2]++;
+                wx[2]--;
             }
             if (lap == 1)
             {
                 wy[0]++;
                 wy[1]--;
-                wx[2]--;
+                wx[2]++;
             }
-            if (wy[0] == 140)
+            if (wy[0] == 400)
             {
                 lap = 1;
             }
-            if (wy[0] == 370)
+            if (wy[0] == 170)
             {
                 lap = 0;
             }
@@ -108,7 +108,7 @@ namespace GazethruApps
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            lantai3_011.BringToFront();
+            //lantai3_011.BringToFront();
             picPointer.Location = new Point(705, 230);
         }
 
@@ -151,7 +151,7 @@ namespace GazethruApps
 
             if (e.status)
             {
-                lantai3_011.BringToFront();
+               // lantai3_011.BringToFront();
                 picPointer.Location = new Point(705, 230);
             }
         }

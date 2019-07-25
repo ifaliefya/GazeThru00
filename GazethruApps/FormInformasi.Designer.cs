@@ -39,6 +39,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.PresenceCheck = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +148,14 @@
             this.panel2.Size = new System.Drawing.Size(1920, 10);
             this.panel2.TabIndex = 28;
             // 
+            // PresenceCheck
+            // 
+            this.PresenceCheck.BackColor = System.Drawing.Color.Maroon;
+            this.PresenceCheck.Location = new System.Drawing.Point(955, 1070);
+            this.PresenceCheck.Name = "PresenceCheck";
+            this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
+            this.PresenceCheck.TabIndex = 36;
+            // 
             // formInformasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +163,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.btnKegiatan);
             this.Controls.Add(this.btnPrestasi);
             this.Controls.Add(this.btnTentang);
@@ -185,5 +195,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PresenceCheck;
     }
 }

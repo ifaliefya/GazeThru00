@@ -43,6 +43,7 @@
             this.pictureBoxRuang = new System.Windows.Forms.PictureBox();
             this.panelPeta = new System.Windows.Forms.Panel();
             this.pbPetaLantai = new System.Windows.Forms.PictureBox();
+            this.PresenceCheck = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRuang)).BeginInit();
@@ -55,7 +56,7 @@
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(470, 640);
+            this.btnBack.Location = new System.Drawing.Point(1100, 900);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(104, 39);
             this.btnBack.TabIndex = 21;
@@ -70,7 +71,7 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.ForeColor = System.Drawing.Color.White;
             this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.Location = new System.Drawing.Point(255, 145);
+            this.btnPrev.Location = new System.Drawing.Point(300, 145);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(40, 40);
             this.btnPrev.TabIndex = 24;
@@ -84,7 +85,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 39);
+            this.panel1.Size = new System.Drawing.Size(1920, 39);
             this.panel1.TabIndex = 27;
             // 
             // labelNamaLantai
@@ -92,7 +93,7 @@
             this.labelNamaLantai.AutoSize = true;
             this.labelNamaLantai.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNamaLantai.ForeColor = System.Drawing.Color.White;
-            this.labelNamaLantai.Location = new System.Drawing.Point(559, 1);
+            this.labelNamaLantai.Location = new System.Drawing.Point(860, 2);
             this.labelNamaLantai.Name = "labelNamaLantai";
             this.labelNamaLantai.Size = new System.Drawing.Size(201, 32);
             this.labelNamaLantai.TabIndex = 2;
@@ -109,7 +110,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(1030, 370);
+            this.btnNext.Location = new System.Drawing.Point(1620, 400);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(40, 40);
             this.btnNext.TabIndex = 25;
@@ -120,9 +121,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 710);
+            this.panel3.Location = new System.Drawing.Point(0, 1070);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1280, 10);
+            this.panel3.Size = new System.Drawing.Size(1920, 10);
             this.panel3.TabIndex = 39;
             // 
             // panel2
@@ -131,9 +132,9 @@
             this.panel2.Controls.Add(this.textBoxIsi);
             this.panel2.Controls.Add(this.labelJudul);
             this.panel2.Controls.Add(this.pictureBoxRuang);
-            this.panel2.Location = new System.Drawing.Point(6, 418);
+            this.panel2.Location = new System.Drawing.Point(0, 624);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1268, 206);
+            this.panel2.Size = new System.Drawing.Size(1920, 270);
             this.panel2.TabIndex = 49;
             // 
             // textBoxIsi
@@ -141,7 +142,7 @@
             this.textBoxIsi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxIsi.ForeColor = System.Drawing.Color.White;
-            this.textBoxIsi.Location = new System.Drawing.Point(478, 73);
+            this.textBoxIsi.Location = new System.Drawing.Point(539, 74);
             this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.ReadOnly = true;
@@ -155,7 +156,7 @@
             this.labelJudul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJudul.ForeColor = System.Drawing.Color.White;
-            this.labelJudul.Location = new System.Drawing.Point(473, 31);
+            this.labelJudul.Location = new System.Drawing.Point(534, 32);
             this.labelJudul.Name = "labelJudul";
             this.labelJudul.Size = new System.Drawing.Size(192, 25);
             this.labelJudul.TabIndex = 41;
@@ -164,9 +165,9 @@
             // pictureBoxRuang
             // 
             this.pictureBoxRuang.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRuang.Image")));
-            this.pictureBoxRuang.Location = new System.Drawing.Point(6, 0);
+            this.pictureBoxRuang.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxRuang.Name = "pictureBoxRuang";
-            this.pictureBoxRuang.Size = new System.Drawing.Size(452, 206);
+            this.pictureBoxRuang.Size = new System.Drawing.Size(480, 270);
             this.pictureBoxRuang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxRuang.TabIndex = 39;
             this.pictureBoxRuang.TabStop = false;
@@ -174,29 +175,37 @@
             // panelPeta
             // 
             this.panelPeta.Controls.Add(this.pbPetaLantai);
-            this.panelPeta.Location = new System.Drawing.Point(301, 39);
+            this.panelPeta.Location = new System.Drawing.Point(439, 55);
             this.panelPeta.Name = "panelPeta";
-            this.panelPeta.Size = new System.Drawing.Size(723, 374);
+            this.panelPeta.Size = new System.Drawing.Size(1048, 544);
             this.panelPeta.TabIndex = 55;
             // 
             // pbPetaLantai
             // 
             this.pbPetaLantai.BackColor = System.Drawing.Color.White;
-            this.pbPetaLantai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbPetaLantai.Image = ((System.Drawing.Image)(resources.GetObject("pbPetaLantai.Image")));
-            this.pbPetaLantai.Location = new System.Drawing.Point(0, 0);
+            this.pbPetaLantai.Location = new System.Drawing.Point(3, 0);
             this.pbPetaLantai.Name = "pbPetaLantai";
-            this.pbPetaLantai.Size = new System.Drawing.Size(723, 374);
+            this.pbPetaLantai.Size = new System.Drawing.Size(1048, 541);
             this.pbPetaLantai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPetaLantai.TabIndex = 50;
             this.pbPetaLantai.TabStop = false;
+            // 
+            // PresenceCheck
+            // 
+            this.PresenceCheck.BackColor = System.Drawing.Color.Maroon;
+            this.PresenceCheck.Location = new System.Drawing.Point(955, 535);
+            this.PresenceCheck.Name = "PresenceCheck";
+            this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
+            this.PresenceCheck.TabIndex = 56;
             // 
             // formLantai1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.panelPeta);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -234,5 +243,6 @@
         private System.Windows.Forms.Label labelJudul;
         private System.Windows.Forms.Panel panelPeta;
         private System.Windows.Forms.PictureBox pbPetaLantai;
+        private System.Windows.Forms.Panel PresenceCheck;
     }
 }

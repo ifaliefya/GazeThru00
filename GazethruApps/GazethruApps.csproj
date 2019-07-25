@@ -142,6 +142,12 @@
     <Compile Include="AdminPrestasi.Designer.cs">
       <DependentUpon>AdminPrestasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminSetting.Designer.cs">
+      <DependentUpon>AdminSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminSlideEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPrestasi.resx">
       <DependentUpon>AdminPrestasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSetting.resx">
+      <DependentUpon>AdminSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminSlideEdit.resx">
       <DependentUpon>AdminSlideEdit.cs</DependentUpon>

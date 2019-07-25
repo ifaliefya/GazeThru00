@@ -128,7 +128,7 @@
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(82, 34);
             this.btnPrev.TabIndex = 10;
-            this.btnPrev.Text = "Previous";
+            this.btnPrev.Text = "Sebelumnya";
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
@@ -139,7 +139,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(82, 34);
             this.btnNext.TabIndex = 11;
-            this.btnNext.Text = "Next";
+            this.btnNext.Text = "Selanjutnya";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -148,9 +148,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(746, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "PREVIEW";
+            this.label1.Text = "PRATINJAU";
             // 
             // AdminSlideshow
             // 
@@ -168,7 +168,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminSlideshow";
-            this.Size = new System.Drawing.Size(1087, 603);
+            this.Size = new System.Drawing.Size(1920, 811);
             this.Load += new System.EventHandler(this.AdminSlideshow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -114,9 +114,9 @@
             this.labelIsi.Location = new System.Drawing.Point(300, 90);
             this.labelIsi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelIsi.Name = "labelIsi";
-            this.labelIsi.Size = new System.Drawing.Size(91, 17);
+            this.labelIsi.Size = new System.Drawing.Size(78, 17);
             this.labelIsi.TabIndex = 6;
-            this.labelIsi.Text = "Description : ";
+            this.labelIsi.Text = "Deskripsi : ";
             // 
             // textBoxIsi
             // 
@@ -140,7 +140,7 @@
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(77, 32);
             this.buttonInsert.TabIndex = 8;
-            this.buttonInsert.Text = "Insert";
+            this.buttonInsert.Text = "Simpan";
             this.buttonInsert.UseVisualStyleBackColor = false;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 

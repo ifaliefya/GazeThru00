@@ -44,6 +44,7 @@
             this.textBoxIsi = new System.Windows.Forms.TextBox();
             this.lblJudul = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PresenceCheck = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -199,12 +200,21 @@
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
             // 
+            // PresenceCheck
+            // 
+            this.PresenceCheck.BackColor = System.Drawing.Color.Maroon;
+            this.PresenceCheck.Location = new System.Drawing.Point(955, 535);
+            this.PresenceCheck.Name = "PresenceCheck";
+            this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
+            this.PresenceCheck.TabIndex = 42;
+            // 
             // formKegiatan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
@@ -243,5 +253,6 @@
         private System.Windows.Forms.TextBox textBoxIsi;
         private System.Windows.Forms.Label lblJudul;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel PresenceCheck;
     }
 }

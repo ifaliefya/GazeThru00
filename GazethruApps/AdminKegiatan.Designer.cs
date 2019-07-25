@@ -195,7 +195,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminKegiatan";
-            this.Size = new System.Drawing.Size(1087, 603);
+            this.Size = new System.Drawing.Size(1920, 811);
             this.Load += new System.EventHandler(this.AdminKegiatan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

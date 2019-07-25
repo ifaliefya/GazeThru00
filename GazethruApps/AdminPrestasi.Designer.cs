@@ -63,9 +63,9 @@
             this.labelIsi.Location = new System.Drawing.Point(660, 147);
             this.labelIsi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelIsi.Name = "labelIsi";
-            this.labelIsi.Size = new System.Drawing.Size(91, 17);
+            this.labelIsi.Size = new System.Drawing.Size(78, 17);
             this.labelIsi.TabIndex = 19;
-            this.labelIsi.Text = "Description : ";
+            this.labelIsi.Text = "Deskripsi : ";
             // 
             // textBoxJudul
             // 
@@ -174,9 +174,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 16);
+            this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 21;
-            this.label1.Text = "PREVIEW";
+            this.label1.Text = "PRATINJAU";
             // 
             // AdminPrestasi
             // 
@@ -195,7 +195,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPrestasi";
-            this.Size = new System.Drawing.Size(1087, 603);
+            this.Size = new System.Drawing.Size(1920, 811);
             this.Load += new System.EventHandler(this.AdminPrestasi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

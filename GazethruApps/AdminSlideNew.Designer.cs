@@ -52,17 +52,19 @@
             // 
             // buttonBrowsePict
             // 
-            this.buttonBrowsePict.Location = new System.Drawing.Point(71, 591);
+            this.buttonBrowsePict.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonBrowsePict.Location = new System.Drawing.Point(70, 541);
             this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
             this.buttonBrowsePict.Size = new System.Drawing.Size(77, 32);
             this.buttonBrowsePict.TabIndex = 1;
             this.buttonBrowsePict.Text = "Browse";
-            this.buttonBrowsePict.UseVisualStyleBackColor = true;
+            this.buttonBrowsePict.UseVisualStyleBackColor = false;
             this.buttonBrowsePict.Click += new System.EventHandler(this.buttonBrowsePict_Click);
             // 
             // textBoxJudul
             // 
+            this.textBoxJudul.ForeColor = System.Drawing.Color.White;
             this.textBoxJudul.Location = new System.Drawing.Point(120, 60);
             this.textBoxJudul.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxJudul.Name = "textBoxJudul";
@@ -72,6 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(67, 62);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -82,6 +85,7 @@
             // labelTgl
             // 
             this.labelTgl.AutoSize = true;
+            this.labelTgl.ForeColor = System.Drawing.Color.White;
             this.labelTgl.Location = new System.Drawing.Point(67, 24);
             this.labelTgl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTgl.Name = "labelTgl";
@@ -92,6 +96,7 @@
             // TanggalNOW
             // 
             this.TanggalNOW.AutoSize = true;
+            this.TanggalNOW.ForeColor = System.Drawing.Color.White;
             this.TanggalNOW.Location = new System.Drawing.Point(122, 24);
             this.TanggalNOW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TanggalNOW.Name = "TanggalNOW";
@@ -101,18 +106,19 @@
             // 
             // buttonInsert
             // 
-            this.buttonInsert.Location = new System.Drawing.Point(313, 591);
+            this.buttonInsert.Location = new System.Drawing.Point(263, 591);
             this.buttonInsert.Margin = new System.Windows.Forms.Padding(2);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(77, 32);
+            this.buttonInsert.Size = new System.Drawing.Size(127, 32);
             this.buttonInsert.TabIndex = 6;
-            this.buttonInsert.Text = "INSERT";
+            this.buttonInsert.Text = "Simpan";
             this.buttonInsert.UseVisualStyleBackColor = true;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // ShowHide
             // 
             this.ShowHide.AutoSize = true;
+            this.ShowHide.ForeColor = System.Drawing.Color.White;
             this.ShowHide.Location = new System.Drawing.Point(313, 24);
             this.ShowHide.Margin = new System.Windows.Forms.Padding(2);
             this.ShowHide.Name = "ShowHide";
@@ -125,6 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(472, 681);
             this.Controls.Add(this.ShowHide);
             this.Controls.Add(this.buttonInsert);
