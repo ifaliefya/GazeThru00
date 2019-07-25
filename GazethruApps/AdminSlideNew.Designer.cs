@@ -55,10 +55,11 @@
             this.buttonBrowsePict.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonBrowsePict.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonBrowsePict.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBrowsePict.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBrowsePict.Location = new System.Drawing.Point(70, 541);
             this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
-            this.buttonBrowsePict.Size = new System.Drawing.Size(127, 32);
+            this.buttonBrowsePict.Size = new System.Drawing.Size(148, 32);
             this.buttonBrowsePict.TabIndex = 1;
             this.buttonBrowsePict.Text = "UNGGAH GAMBAR";
             this.buttonBrowsePict.UseVisualStyleBackColor = false;
@@ -110,6 +111,7 @@
             // 
             this.buttonInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(186)))));
             this.buttonInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInsert.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInsert.ForeColor = System.Drawing.Color.White;
             this.buttonInsert.Location = new System.Drawing.Point(156, 604);
             this.buttonInsert.Margin = new System.Windows.Forms.Padding(2);

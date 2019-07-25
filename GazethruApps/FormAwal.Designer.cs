@@ -108,11 +108,11 @@
             this.btnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnUser.FlatAppearance.BorderSize = 0;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUser.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.White;
             this.btnUser.Location = new System.Drawing.Point(1220, 900);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(104, 39);
+            this.btnUser.Size = new System.Drawing.Size(174, 56);
             this.btnUser.TabIndex = 4;
             this.btnUser.Text = "Mulai";
             this.btnUser.UseVisualStyleBackColor = false;

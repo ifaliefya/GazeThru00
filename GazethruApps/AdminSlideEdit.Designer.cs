@@ -57,13 +57,14 @@
             this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.buttonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
             this.buttonUpdate.Location = new System.Drawing.Point(156, 604);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(156, 32);
             this.buttonUpdate.TabIndex = 14;
-            this.buttonUpdate.Text = "UPDATE";
+            this.buttonUpdate.Text = "PERBARUI";
             this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
@@ -111,10 +112,11 @@
             // 
             // buttonBrowsePict
             // 
+            this.buttonBrowsePict.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBrowsePict.Location = new System.Drawing.Point(70, 541);
             this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
-            this.buttonBrowsePict.Size = new System.Drawing.Size(127, 32);
+            this.buttonBrowsePict.Size = new System.Drawing.Size(148, 32);
             this.buttonBrowsePict.TabIndex = 9;
             this.buttonBrowsePict.Text = "UNGGAH GAMBAR";
             this.buttonBrowsePict.UseVisualStyleBackColor = true;

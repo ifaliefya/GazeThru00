@@ -36,6 +36,8 @@
             this.txtConfirmaPassword = new System.Windows.Forms.TextBox();
             this.btnPassword = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblPassCurrent
@@ -82,7 +84,7 @@
             // 
             this.lblPassConfirm.AutoSize = true;
             this.lblPassConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassConfirm.Location = new System.Drawing.Point(203, 294);
+            this.lblPassConfirm.Location = new System.Drawing.Point(203, 292);
             this.lblPassConfirm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassConfirm.Name = "lblPassConfirm";
             this.lblPassConfirm.Size = new System.Drawing.Size(189, 18);
@@ -92,7 +94,7 @@
             // txtConfirmaPassword
             // 
             this.txtConfirmaPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmaPassword.Location = new System.Drawing.Point(395, 294);
+            this.txtConfirmaPassword.Location = new System.Drawing.Point(395, 292);
             this.txtConfirmaPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmaPassword.Name = "txtConfirmaPassword";
             this.txtConfirmaPassword.Size = new System.Drawing.Size(250, 24);
@@ -102,6 +104,7 @@
             // 
             this.btnPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(186)))));
             this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPassword.ForeColor = System.Drawing.Color.White;
             this.btnPassword.Location = new System.Drawing.Point(328, 360);
             this.btnPassword.Name = "btnPassword";
@@ -113,18 +116,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(133, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(352, 37);
+            this.label3.Size = new System.Drawing.Size(280, 45);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Pengaturan Password";
+            this.label3.Text = "Pengaturan Akun";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(202, 158);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(189, 18);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Username                           :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(394, 158);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(250, 24);
+            this.textBox1.TabIndex = 26;
             // 
             // AdminSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.lblPassConfirm);
@@ -150,5 +175,7 @@
         private System.Windows.Forms.TextBox txtConfirmaPassword;
         private System.Windows.Forms.Button btnPassword;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

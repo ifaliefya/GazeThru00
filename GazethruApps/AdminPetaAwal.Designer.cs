@@ -52,11 +52,11 @@
             // labelJudulPeta
             // 
             this.labelJudulPeta.AutoSize = true;
-            this.labelJudulPeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJudulPeta.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJudulPeta.Location = new System.Drawing.Point(133, 141);
             this.labelJudulPeta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJudulPeta.Name = "labelJudulPeta";
-            this.labelJudulPeta.Size = new System.Drawing.Size(74, 24);
+            this.labelJudulPeta.Size = new System.Drawing.Size(82, 25);
             this.labelJudulPeta.TabIndex = 2;
             this.labelJudulPeta.Text = "Lantai 1";
             // 
@@ -79,6 +79,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(1169, 128);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
@@ -92,12 +93,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(133, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 37);
+            this.label2.Size = new System.Drawing.Size(213, 45);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Tentang DTETI";
+            this.label2.Text = "Denah DTETI";
             // 
             // AdminPetaAwal
             // 

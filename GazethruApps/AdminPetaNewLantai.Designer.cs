@@ -86,11 +86,11 @@
             // 
             // buttonBrowsePict
             // 
-            this.buttonBrowsePict.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBrowsePict.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBrowsePict.Location = new System.Drawing.Point(471, 628);
             this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
-            this.buttonBrowsePict.Size = new System.Drawing.Size(137, 32);
+            this.buttonBrowsePict.Size = new System.Drawing.Size(148, 32);
             this.buttonBrowsePict.TabIndex = 18;
             this.buttonBrowsePict.Text = "UNGGAH GAMBAR";
             this.buttonBrowsePict.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             // 
             this.btnInsertnEdit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnInsertnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsertnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertnEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertnEdit.ForeColor = System.Drawing.Color.White;
             this.btnInsertnEdit.Location = new System.Drawing.Point(975, 701);
             this.btnInsertnEdit.Margin = new System.Windows.Forms.Padding(2);

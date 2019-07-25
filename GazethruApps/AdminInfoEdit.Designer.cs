@@ -134,7 +134,7 @@
             // 
             this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
             this.buttonUpdate.Location = new System.Drawing.Point(654, 480);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
@@ -147,11 +147,11 @@
             // 
             // buttonBrowsePict
             // 
-            this.buttonBrowsePict.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBrowsePict.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBrowsePict.Location = new System.Drawing.Point(53, 417);
             this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
-            this.buttonBrowsePict.Size = new System.Drawing.Size(124, 32);
+            this.buttonBrowsePict.Size = new System.Drawing.Size(148, 32);
             this.buttonBrowsePict.TabIndex = 10;
             this.buttonBrowsePict.Text = "UNGGAH GAMBAR";
             this.buttonBrowsePict.UseVisualStyleBackColor = true;

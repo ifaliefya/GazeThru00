@@ -85,6 +85,7 @@
             this.btnRefresh.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(384, 133);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
@@ -100,6 +101,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(471, 133);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
@@ -124,10 +126,11 @@
             // 
             // btnPrev
             // 
-            this.btnPrev.Location = new System.Drawing.Point(660, 379);
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.Location = new System.Drawing.Point(650, 379);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(93, 34);
+            this.btnPrev.Size = new System.Drawing.Size(103, 34);
             this.btnPrev.TabIndex = 10;
             this.btnPrev.Text = "SEBELUMNYA";
             this.btnPrev.UseVisualStyleBackColor = true;
@@ -135,10 +138,11 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(1097, 379);
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(1093, 379);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(101, 34);
+            this.btnNext.Size = new System.Drawing.Size(111, 34);
             this.btnNext.TabIndex = 11;
             this.btnNext.Text = "SELANJUTNYA";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -147,20 +151,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(880, 141);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(858, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.TabIndex = 12;
             this.label1.Text = "PRATINJAU";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(133, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(504, 37);
+            this.label3.Size = new System.Drawing.Size(498, 45);
             this.label3.TabIndex = 27;
             this.label3.Text = "Slideshow Pengumuman Terkini";
             // 

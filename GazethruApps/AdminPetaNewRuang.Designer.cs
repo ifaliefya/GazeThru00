@@ -96,7 +96,7 @@
             // 
             // buttonAddPoint
             // 
-            this.buttonAddPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddPoint.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddPoint.Location = new System.Drawing.Point(949, 769);
             this.buttonAddPoint.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddPoint.Name = "buttonAddPoint";
@@ -138,19 +138,19 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Location = new System.Drawing.Point(146, 568);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(113, 30);
             this.buttonCancel.TabIndex = 63;
-            this.buttonCancel.Text = "CANCEL";
+            this.buttonCancel.Text = "URUNGKAN";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
-            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.Location = new System.Drawing.Point(263, 568);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
@@ -194,8 +194,8 @@
             // 
             // buttonBrowsePict
             // 
-            this.buttonBrowsePict.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBrowsePict.Location = new System.Drawing.Point(15, 193);
+            this.buttonBrowsePict.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBrowsePict.Location = new System.Drawing.Point(16, 186);
             this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
             this.buttonBrowsePict.Size = new System.Drawing.Size(165, 30);
@@ -226,7 +226,7 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEdit.Location = new System.Drawing.Point(29, 568);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEdit.Name = "buttonEdit";
@@ -259,9 +259,9 @@
             // pictureBoxRuang
             // 
             this.pictureBoxRuang.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBoxRuang.Location = new System.Drawing.Point(15, 17);
+            this.pictureBoxRuang.Location = new System.Drawing.Point(15, 0);
             this.pictureBoxRuang.Name = "pictureBoxRuang";
-            this.pictureBoxRuang.Size = new System.Drawing.Size(383, 206);
+            this.pictureBoxRuang.Size = new System.Drawing.Size(384, 216);
             this.pictureBoxRuang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxRuang.TabIndex = 41;
             this.pictureBoxRuang.TabStop = false;
@@ -303,6 +303,7 @@
             // 
             // panelPeta
             // 
+            this.panelPeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPeta.Controls.Add(this.pbPetaLantai);
             this.panelPeta.Location = new System.Drawing.Point(317, 198);
             this.panelPeta.Name = "panelPeta";
@@ -313,7 +314,7 @@
             // 
             this.pbPetaLantai.BackColor = System.Drawing.Color.White;
             this.pbPetaLantai.Image = ((System.Drawing.Image)(resources.GetObject("pbPetaLantai.Image")));
-            this.pbPetaLantai.Location = new System.Drawing.Point(3, 3);
+            this.pbPetaLantai.Location = new System.Drawing.Point(2, -1);
             this.pbPetaLantai.Name = "pbPetaLantai";
             this.pbPetaLantai.Size = new System.Drawing.Size(810, 540);
             this.pbPetaLantai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -324,6 +325,7 @@
             // 
             this.buttonBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBack.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.ForeColor = System.Drawing.Color.White;
             this.buttonBack.Location = new System.Drawing.Point(1260, 42);
             this.buttonBack.Name = "buttonBack";
@@ -335,7 +337,7 @@
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRefresh.Location = new System.Drawing.Point(342, 764);
             this.buttonRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRefresh.Name = "buttonRefresh";
@@ -391,24 +393,24 @@
             // labelNamaLantai
             // 
             this.labelNamaLantai.AutoSize = true;
-            this.labelNamaLantai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNamaLantai.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNamaLantai.ForeColor = System.Drawing.Color.White;
-            this.labelNamaLantai.Location = new System.Drawing.Point(159, 58);
+            this.labelNamaLantai.Location = new System.Drawing.Point(155, 41);
             this.labelNamaLantai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNamaLantai.Name = "labelNamaLantai";
-            this.labelNamaLantai.Size = new System.Drawing.Size(125, 20);
+            this.labelNamaLantai.Size = new System.Drawing.Size(234, 45);
             this.labelNamaLantai.TabIndex = 17;
             this.labelNamaLantai.Text = "Nama Lantai  :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1047, 58);
+            this.label6.Location = new System.Drawing.Point(1043, 41);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 20);
+            this.label6.Size = new System.Drawing.Size(271, 45);
             this.label6.TabIndex = 18;
             this.label6.Text = "Lantai Berapa Ini";
             // 

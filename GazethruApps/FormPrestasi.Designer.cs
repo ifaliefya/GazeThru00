@@ -84,10 +84,10 @@
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Location = new System.Drawing.Point(1620, 900);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(104, 39);
+            this.btnHome.Size = new System.Drawing.Size(155, 56);
             this.btnHome.TabIndex = 28;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -98,10 +98,10 @@
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(300, 900);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(104, 39);
+            this.btnBack.Size = new System.Drawing.Size(155, 56);
             this.btnBack.TabIndex = 27;
             this.btnBack.Text = "Kembali";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -161,15 +161,15 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(533, 135);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(881, 500);
+            this.panel3.Size = new System.Drawing.Size(1048, 590);
             this.panel3.TabIndex = 38;
             // 
             // textBoxIsi
             // 
             this.textBoxIsi.BackColor = System.Drawing.Color.White;
             this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIsi.Location = new System.Drawing.Point(407, 67);
+            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIsi.Location = new System.Drawing.Point(417, 67);
             this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.ReadOnly = true;
@@ -182,7 +182,7 @@
             this.lblJudul.AutoSize = true;
             this.lblJudul.BackColor = System.Drawing.Color.White;
             this.lblJudul.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJudul.Location = new System.Drawing.Point(401, 15);
+            this.lblJudul.Location = new System.Drawing.Point(412, 19);
             this.lblJudul.Name = "lblJudul";
             this.lblJudul.Size = new System.Drawing.Size(457, 30);
             this.lblJudul.TabIndex = 38;
@@ -191,9 +191,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 480);
+            this.pictureBox1.Size = new System.Drawing.Size(380, 570);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;

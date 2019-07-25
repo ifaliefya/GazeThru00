@@ -68,9 +68,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 29);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(268, 130);
+            this.pictureBox1.Size = new System.Drawing.Size(225, 130);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -80,8 +80,9 @@
             this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.Home.FlatAppearance.BorderSize = 0;
             this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home.ForeColor = System.Drawing.Color.White;
-            this.Home.Location = new System.Drawing.Point(51, 613);
+            this.Home.Location = new System.Drawing.Point(75, 621);
             this.Home.Margin = new System.Windows.Forms.Padding(2);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(134, 44);
