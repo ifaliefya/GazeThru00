@@ -43,8 +43,9 @@
             // 
             this.ShowHide.AutoSize = true;
             this.ShowHide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ShowHide.ForeColor = System.Drawing.Color.White;
             this.ShowHide.Location = new System.Drawing.Point(313, 24);
-            this.ShowHide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShowHide.Margin = new System.Windows.Forms.Padding(2);
             this.ShowHide.Name = "ShowHide";
             this.ShowHide.Size = new System.Drawing.Size(78, 17);
             this.ShowHide.TabIndex = 15;
@@ -53,18 +54,23 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(313, 591);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.buttonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdate.ForeColor = System.Drawing.Color.White;
+            this.buttonUpdate.Location = new System.Drawing.Point(156, 604);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(77, 32);
+            this.buttonUpdate.Size = new System.Drawing.Size(156, 32);
             this.buttonUpdate.TabIndex = 14;
             this.buttonUpdate.Text = "UPDATE";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // TanggalNOW
             // 
             this.TanggalNOW.AutoSize = true;
+            this.TanggalNOW.ForeColor = System.Drawing.Color.White;
             this.TanggalNOW.Location = new System.Drawing.Point(122, 24);
             this.TanggalNOW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TanggalNOW.Name = "TanggalNOW";
@@ -75,6 +81,7 @@
             // labelTgl
             // 
             this.labelTgl.AutoSize = true;
+            this.labelTgl.ForeColor = System.Drawing.Color.White;
             this.labelTgl.Location = new System.Drawing.Point(67, 24);
             this.labelTgl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTgl.Name = "labelTgl";
@@ -85,6 +92,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(67, 62);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -94,20 +102,21 @@
             // 
             // textBoxJudul
             // 
+            this.textBoxJudul.ForeColor = System.Drawing.Color.White;
             this.textBoxJudul.Location = new System.Drawing.Point(120, 60);
-            this.textBoxJudul.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxJudul.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxJudul.Name = "textBoxJudul";
             this.textBoxJudul.Size = new System.Drawing.Size(270, 20);
             this.textBoxJudul.TabIndex = 10;
             // 
             // buttonBrowsePict
             // 
-            this.buttonBrowsePict.Location = new System.Drawing.Point(71, 591);
-            this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBrowsePict.Location = new System.Drawing.Point(70, 541);
+            this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
-            this.buttonBrowsePict.Size = new System.Drawing.Size(77, 32);
+            this.buttonBrowsePict.Size = new System.Drawing.Size(127, 32);
             this.buttonBrowsePict.TabIndex = 9;
-            this.buttonBrowsePict.Text = "Browse";
+            this.buttonBrowsePict.Text = "UNGGAH GAMBAR";
             this.buttonBrowsePict.UseVisualStyleBackColor = true;
             this.buttonBrowsePict.Click += new System.EventHandler(this.buttonBrowsePict_Click);
             // 
@@ -115,7 +124,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox1.Location = new System.Drawing.Point(70, 93);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(320, 480);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,6 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(472, 681);
             this.Controls.Add(this.ShowHide);
             this.Controls.Add(this.buttonUpdate);
@@ -137,7 +147,7 @@
             this.Controls.Add(this.buttonBrowsePict);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "AdminSlideEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

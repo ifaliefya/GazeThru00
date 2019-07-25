@@ -52,13 +52,15 @@
             // 
             // buttonBrowsePict
             // 
-            this.buttonBrowsePict.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonBrowsePict.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonBrowsePict.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonBrowsePict.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBrowsePict.Location = new System.Drawing.Point(70, 541);
             this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
-            this.buttonBrowsePict.Size = new System.Drawing.Size(77, 32);
+            this.buttonBrowsePict.Size = new System.Drawing.Size(127, 32);
             this.buttonBrowsePict.TabIndex = 1;
-            this.buttonBrowsePict.Text = "Browse";
+            this.buttonBrowsePict.Text = "UNGGAH GAMBAR";
             this.buttonBrowsePict.UseVisualStyleBackColor = false;
             this.buttonBrowsePict.Click += new System.EventHandler(this.buttonBrowsePict_Click);
             // 
@@ -106,13 +108,16 @@
             // 
             // buttonInsert
             // 
-            this.buttonInsert.Location = new System.Drawing.Point(263, 591);
+            this.buttonInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(186)))));
+            this.buttonInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInsert.ForeColor = System.Drawing.Color.White;
+            this.buttonInsert.Location = new System.Drawing.Point(156, 604);
             this.buttonInsert.Margin = new System.Windows.Forms.Padding(2);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(127, 32);
+            this.buttonInsert.Size = new System.Drawing.Size(156, 32);
             this.buttonInsert.TabIndex = 6;
-            this.buttonInsert.Text = "Simpan";
-            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Text = "SIMPAN";
+            this.buttonInsert.UseVisualStyleBackColor = false;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // ShowHide
@@ -131,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(186)))));
             this.ClientSize = new System.Drawing.Size(472, 681);
             this.Controls.Add(this.ShowHide);
             this.Controls.Add(this.buttonInsert);

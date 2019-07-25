@@ -52,10 +52,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(272, 171);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(376, 173);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(511, 379);
+            this.pictureBox1.Size = new System.Drawing.Size(810, 540);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -64,19 +64,19 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 171);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(95, 171);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(235, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(277, 542);
             this.dataGridView1.TabIndex = 4;
             // 
             // NoInfo
             // 
             this.NoInfo.AutoSize = true;
             this.NoInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoInfo.Location = new System.Drawing.Point(829, 122);
+            this.NoInfo.Location = new System.Drawing.Point(1272, 124);
             this.NoInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NoInfo.Name = "NoInfo";
             this.NoInfo.Size = new System.Drawing.Size(0, 17);
@@ -86,7 +86,7 @@
             // 
             this.labelNo.AutoSize = true;
             this.labelNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNo.Location = new System.Drawing.Point(796, 122);
+            this.labelNo.Location = new System.Drawing.Point(1239, 124);
             this.labelNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNo.Name = "labelNo";
             this.labelNo.Size = new System.Drawing.Size(38, 17);
@@ -97,7 +97,7 @@
             // 
             this.labelJudul.AutoSize = true;
             this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudul.Location = new System.Drawing.Point(46, 75);
+            this.labelJudul.Location = new System.Drawing.Point(97, 80);
             this.labelJudul.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJudul.Name = "labelJudul";
             this.labelJudul.Size = new System.Drawing.Size(50, 17);
@@ -106,8 +106,8 @@
             // 
             // textBoxIsi
             // 
-            this.textBoxIsi.Location = new System.Drawing.Point(796, 360);
-            this.textBoxIsi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxIsi.Location = new System.Drawing.Point(1239, 362);
+            this.textBoxIsi.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.Size = new System.Drawing.Size(251, 146);
             this.textBoxIsi.TabIndex = 10;
@@ -117,7 +117,7 @@
             // 
             this.labelIsi.AutoSize = true;
             this.labelIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIsi.Location = new System.Drawing.Point(796, 341);
+            this.labelIsi.Location = new System.Drawing.Point(1239, 343);
             this.labelIsi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelIsi.Name = "labelIsi";
             this.labelIsi.Size = new System.Drawing.Size(91, 17);
@@ -127,8 +127,8 @@
             // buttonBrowsePict
             // 
             this.buttonBrowsePict.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBrowsePict.Location = new System.Drawing.Point(961, 307);
-            this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBrowsePict.Location = new System.Drawing.Point(1404, 309);
+            this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
             this.buttonBrowsePict.Size = new System.Drawing.Size(77, 32);
             this.buttonBrowsePict.TabIndex = 13;
@@ -137,8 +137,8 @@
             // 
             // GambarTempat
             // 
-            this.GambarTempat.Location = new System.Drawing.Point(796, 202);
-            this.GambarTempat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GambarTempat.Location = new System.Drawing.Point(1239, 204);
+            this.GambarTempat.Margin = new System.Windows.Forms.Padding(2);
             this.GambarTempat.Name = "GambarTempat";
             this.GambarTempat.Size = new System.Drawing.Size(242, 136);
             this.GambarTempat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,7 +149,7 @@
             // 
             this.labelLoc.AutoSize = true;
             this.labelLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoc.Location = new System.Drawing.Point(880, 122);
+            this.labelLoc.Location = new System.Drawing.Point(1323, 124);
             this.labelLoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLoc.Name = "labelLoc";
             this.labelLoc.Size = new System.Drawing.Size(57, 17);
@@ -159,8 +159,8 @@
             // buttonUpdate
             // 
             this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdate.Location = new System.Drawing.Point(272, 136);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonUpdate.Location = new System.Drawing.Point(376, 137);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(77, 32);
             this.buttonUpdate.TabIndex = 16;
@@ -170,8 +170,8 @@
             // textBoxJudul
             // 
             this.textBoxJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxJudul.Location = new System.Drawing.Point(94, 72);
-            this.textBoxJudul.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxJudul.Location = new System.Drawing.Point(145, 77);
+            this.textBoxJudul.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxJudul.Name = "textBoxJudul";
             this.textBoxJudul.Size = new System.Drawing.Size(551, 23);
             this.textBoxJudul.TabIndex = 8;
@@ -179,8 +179,8 @@
             // textBoxNama
             // 
             this.textBoxNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNama.Location = new System.Drawing.Point(796, 171);
-            this.textBoxNama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNama.Location = new System.Drawing.Point(1239, 173);
+            this.textBoxNama.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(243, 23);
             this.textBoxNama.TabIndex = 17;
@@ -189,7 +189,7 @@
             // 
             this.labelNama.AutoSize = true;
             this.labelNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNama.Location = new System.Drawing.Point(795, 152);
+            this.labelNama.Location = new System.Drawing.Point(1238, 154);
             this.labelNama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNama.Name = "labelNama";
             this.labelNama.Size = new System.Drawing.Size(105, 17);
@@ -199,8 +199,8 @@
             // textBoxLok
             // 
             this.textBoxLok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLok.Location = new System.Drawing.Point(936, 119);
-            this.textBoxLok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxLok.Location = new System.Drawing.Point(1379, 121);
+            this.textBoxLok.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLok.Name = "textBoxLok";
             this.textBoxLok.Size = new System.Drawing.Size(42, 23);
             this.textBoxLok.TabIndex = 19;
@@ -208,8 +208,8 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(796, 518);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(1239, 520);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 32);
             this.button1.TabIndex = 20;
@@ -219,7 +219,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(982, 119);
+            this.textBox1.Location = new System.Drawing.Point(1425, 121);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(42, 23);
@@ -229,6 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxLok);
@@ -246,9 +247,9 @@
             this.Controls.Add(this.labelNo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPetaEdit";
-            this.Size = new System.Drawing.Size(1087, 603);
+            this.Size = new System.Drawing.Size(1769, 1041);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GambarTempat)).EndInit();

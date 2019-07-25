@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelJudulPeta = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -41,31 +40,20 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(55, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(136, 179);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(511, 379);
+            this.pictureBox1.Size = new System.Drawing.Size(720, 480);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "PETA";
-            // 
             // labelJudulPeta
             // 
             this.labelJudulPeta.AutoSize = true;
             this.labelJudulPeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudulPeta.Location = new System.Drawing.Point(51, 94);
+            this.labelJudulPeta.Location = new System.Drawing.Point(133, 141);
             this.labelJudulPeta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJudulPeta.Name = "labelJudulPeta";
             this.labelJudulPeta.Size = new System.Drawing.Size(74, 24);
@@ -75,51 +63,55 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(582, 123);
+            this.dataGridView1.Location = new System.Drawing.Point(936, 179);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(318, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(353, 480);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(780, 84);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(1169, 128);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 34);
             this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Baru";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Text = "BARU";
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // buttonEdit
+            // label2
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(656, 84);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(120, 34);
-            this.buttonEdit.TabIndex = 5;
-            this.buttonEdit.Text = "Edit";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.button1_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(133, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(249, 37);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Tentang DTETI";
             // 
             // AdminPetaAwal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonEdit);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelJudulPeta);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPetaAwal";
-            this.Size = new System.Drawing.Size(1087, 603);
+            this.Size = new System.Drawing.Size(1920, 811);
             this.Load += new System.EventHandler(this.AdminPetaAwal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -131,10 +123,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelJudulPeta;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Label label2;
     }
 }

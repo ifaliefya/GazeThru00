@@ -46,6 +46,7 @@
             // 
             this.labelNo.AutoSize = true;
             this.labelNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNo.ForeColor = System.Drawing.Color.White;
             this.labelNo.Location = new System.Drawing.Point(50, 43);
             this.labelNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNo.Name = "labelNo";
@@ -57,6 +58,7 @@
             // 
             this.NoInfo.AutoSize = true;
             this.NoInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoInfo.ForeColor = System.Drawing.Color.White;
             this.NoInfo.Location = new System.Drawing.Point(82, 43);
             this.NoInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NoInfo.Name = "NoInfo";
@@ -67,6 +69,7 @@
             // 
             this.labelJudul.AutoSize = true;
             this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJudul.ForeColor = System.Drawing.Color.White;
             this.labelJudul.Location = new System.Drawing.Point(254, 43);
             this.labelJudul.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJudul.Name = "labelJudul";
@@ -88,6 +91,7 @@
             // 
             this.labelGambar.AutoSize = true;
             this.labelGambar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGambar.ForeColor = System.Drawing.Color.White;
             this.labelGambar.Location = new System.Drawing.Point(49, 90);
             this.labelGambar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGambar.Name = "labelGambar";
@@ -97,7 +101,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(52, 119);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -111,6 +115,7 @@
             // 
             this.labelIsi.AutoSize = true;
             this.labelIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIsi.ForeColor = System.Drawing.Color.White;
             this.labelIsi.Location = new System.Drawing.Point(300, 90);
             this.labelIsi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelIsi.Name = "labelIsi";
@@ -131,16 +136,15 @@
             // buttonInsert
             // 
             this.buttonInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
-            this.buttonInsert.FlatAppearance.BorderSize = 0;
             this.buttonInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInsert.ForeColor = System.Drawing.Color.White;
-            this.buttonInsert.Location = new System.Drawing.Point(740, 470);
+            this.buttonInsert.Location = new System.Drawing.Point(654, 480);
             this.buttonInsert.Margin = new System.Windows.Forms.Padding(2);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(77, 32);
+            this.buttonInsert.Size = new System.Drawing.Size(156, 32);
             this.buttonInsert.TabIndex = 8;
-            this.buttonInsert.Text = "Simpan";
+            this.buttonInsert.Text = "SIMPAN";
             this.buttonInsert.UseVisualStyleBackColor = false;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
@@ -148,13 +152,13 @@
             // 
             this.buttonBrowsePict.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonBrowsePict.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrowsePict.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBrowsePict.Location = new System.Drawing.Point(114, 470);
+            this.buttonBrowsePict.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBrowsePict.Location = new System.Drawing.Point(53, 417);
             this.buttonBrowsePict.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowsePict.Name = "buttonBrowsePict";
-            this.buttonBrowsePict.Size = new System.Drawing.Size(77, 32);
+            this.buttonBrowsePict.Size = new System.Drawing.Size(124, 32);
             this.buttonBrowsePict.TabIndex = 11;
-            this.buttonBrowsePict.Text = "Browse";
+            this.buttonBrowsePict.Text = "UNGGAH GAMBAR";
             this.buttonBrowsePict.UseVisualStyleBackColor = false;
             this.buttonBrowsePict.Click += new System.EventHandler(this.buttonBrowsePict_Click);
             // 
@@ -164,6 +168,7 @@
             this.ShowHide.Checked = true;
             this.ShowHide.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ShowHide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowHide.ForeColor = System.Drawing.Color.White;
             this.ShowHide.Location = new System.Drawing.Point(153, 42);
             this.ShowHide.Margin = new System.Windows.Forms.Padding(2);
             this.ShowHide.Name = "ShowHide";
@@ -176,7 +181,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 534);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            this.ClientSize = new System.Drawing.Size(866, 546);
             this.Controls.Add(this.ShowHide);
             this.Controls.Add(this.buttonBrowsePict);
             this.Controls.Add(this.buttonInsert);
@@ -188,7 +194,9 @@
             this.Controls.Add(this.labelJudul);
             this.Controls.Add(this.NoInfo);
             this.Controls.Add(this.labelNo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "AdminInfoNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tambahkan Konten Baru";
