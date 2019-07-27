@@ -64,7 +64,7 @@ namespace GazethruApps
         {
             AddEditView(false, false, false);
             GetLastID(con);
-            labelIDNow.Text = "0";
+
         }
 
         public void LoadPointer (int IDLantai)
@@ -109,8 +109,10 @@ namespace GazethruApps
             Pointer.Name = name;
             Pointer.Size = new Size(22, 30);
             Pointer.Location = new System.Drawing.Point(x, y);
+            Bitmap bmp = new Bitmap(Properties.Resources.kuning);
+            Pointer.Image = bmp;
             Pointer.BackColor = Color.Transparent;
-            Pointer.BorderStyle = BorderStyle.FixedSingle;
+            //Pointer.BorderStyle = BorderStyle.FixedSingle;
 
             return Pointer;
         }
@@ -158,6 +160,14 @@ namespace GazethruApps
             CreateDeleteButton();
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //Load first
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.Rows[0].Selected = true;
+                string Pname = dataGridView1.Rows[0].Cells["Pointer"].Value.ToString();
+                labelIDNow.Text = Pname;
+                PreviewDetail(Pname);
+            }
         }
 
 
@@ -222,8 +232,11 @@ namespace GazethruApps
             Pointer.Size = new Size(22, 30);
             Pointer.Top = pbPetaLantai.Top + 10;
             Pointer.Left = pbPetaLantai.Left + 10;
+
+            Bitmap bmp = new Bitmap(Properties.Resources.kuning);
+            Pointer.Image = bmp;
             Pointer.BackColor = Color.Transparent;
-            Pointer.BorderStyle = BorderStyle.FixedSingle;
+            //Pointer.BorderStyle = BorderStyle.FixedSingle;
             currentPLocX = Pointer.Location.X;
             currentPLocY = Pointer.Location.Y;
 
@@ -265,15 +278,20 @@ namespace GazethruApps
             //    BelomDisimpan();
             //}
             PreviewDetail(Pname);
+            labelIDNow.Text = Pname;
         }
 
         //PointerChoosen dipanggil dari dalam PreviewDetail
         void PointerChoosen(string Pname)
         {
-            foreach (Control item in pbPetaLantai.Controls)
+            foreach (Pointer item in pbPetaLantai.Controls)
                 if (item.Name == Pname)
                 {
-                    item.BackColor = Color.Black;
+                    item.Size = new Size(25, 33);
+                    //item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage; 
+                    Bitmap bmp = new Bitmap(Properties.Resources.biru);
+                    item.Image = bmp;
+                    item.BackColor = Color.Transparent;
                     currentPLocX = item.Location.X;
                     currentPLocY = item.Location.Y;
                     tbLocX.Text = currentPLocX.ToString();
@@ -281,6 +299,8 @@ namespace GazethruApps
                 }
                 else
                 {
+                    Bitmap bmp = new Bitmap(Properties.Resources.kuning);
+                    item.Image = bmp;
                     item.BackColor = Color.Transparent;
                 }
 
@@ -466,6 +486,7 @@ namespace GazethruApps
 
             con.Close();
             ListPoint(NoLantai);
+            LoadPointer(NoLantai);
             GetLastID(con);
             AddEditView(false, false, false);
             pictureBoxRuang.Image = null;
@@ -509,6 +530,7 @@ namespace GazethruApps
             {
                 AddEditView(true, false, true);
                 PreviewDetail(Pselected);
+                //labelIDNow.Text = Pselected;
             }
         }
 
@@ -517,7 +539,7 @@ namespace GazethruApps
             PointerChoosen(Pname);
 
             con.Open();
-            string SelectQuery = "SELECT Id, LocX, LocY, Judul, Isi, Gambar FROM Ruang WHERE PetaID=" + NoLantai + "AND Pointer ='" + Pname + "'";
+            string SelectQuery = "SELECT Id, LocX, LocY, Judul, Isi, Gambar, Pointer FROM Ruang WHERE PetaID=" + NoLantai + "AND Pointer ='" + Pname + "'";
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
             if (read.Read())
@@ -558,50 +580,51 @@ namespace GazethruApps
             //adminPetaNew Close
         }
 
+        int SelectedRow;
+
         private void buttonPrev_Click(object sender, EventArgs e)
         {
             if (NotSave == true)
             {
                 BelomDisimpan();
             }
-            --counter;
             buttonNext.Enabled = true;
-            if (counter <= 0)
+            SelectedRow = dataGridView1.SelectedCells[0].OwningRow.Index;
+            if (SelectedRow > 0)
             {
-                buttonPrev.Enabled = false;
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[SelectedRow - 1].Selected = true;
+                string SelectedPointer = dataGridView1.Rows[SelectedRow].Cells["Pointer"].Value.ToString();
+                labelIDNow.Text = SelectedPointer;
+                PreviewDetail(SelectedPointer);
             }
             else
             {
-                string PrevP = AllPointer[counter].Name;
-                PreviewDetail(PrevP);
-                AddEditView(true, false, true);
-                int Counterlabel = counter + 1;
-                labelIDNow.Text = Counterlabel.ToString();
+                buttonPrev.Enabled = false;
             }
 
         }
-
+        
         private void buttonNext_Click(object sender, EventArgs e)
         {
             if (NotSave == true)
             {
                 BelomDisimpan();
             }
-            ++counter;
             buttonPrev.Enabled = true;
-            if (counter > LastPointer)
+            SelectedRow = dataGridView1.SelectedCells[0].OwningRow.Index;
+            if (SelectedRow < dataGridView1.Rows.Count -1)
             {
-                buttonNext.Enabled = false;
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[SelectedRow + 1].Selected = true;
+                string SelectedPointer = dataGridView1.Rows[SelectedRow].Cells["Pointer"].Value.ToString();
+                labelIDNow.Text = SelectedPointer;
+                PreviewDetail(SelectedPointer);
             }
             else
             {
-                string NextP = AllPointer[counter].Name;
-                PreviewDetail(NextP);
-                AddEditView(true, false, true);
-                int Counterlabel = counter + 1;
-                labelIDNow.Text = Counterlabel.ToString();
+                buttonNext.Enabled = false;
             }
-
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)

@@ -439,6 +439,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BluePointer.jpg" />
+    <None Include="Resources\biru.png" />
+    <None Include="Resources\kuning.png" />
     <Content Include="Tobii.EyeX.Client.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
