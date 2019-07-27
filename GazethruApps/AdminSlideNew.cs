@@ -31,6 +31,8 @@ namespace GazethruApps
 
         private void AdminSlideNew_Load(object sender, EventArgs e)
         {
+            Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
+            pictureBox1.Image = bmp;
             GetLastID(con);
         }
 

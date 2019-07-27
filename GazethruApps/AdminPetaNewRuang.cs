@@ -109,7 +109,7 @@ namespace GazethruApps
             Pointer.Name = name;
             Pointer.Size = new Size(22, 30);
             Pointer.Location = new System.Drawing.Point(x, y);
-            Bitmap bmp = new Bitmap(Properties.Resources.kuning);
+            Bitmap bmp = new Bitmap(Properties.Resources.biru);
             Pointer.Image = bmp;
             Pointer.BackColor = Color.Transparent;
             //Pointer.BorderStyle = BorderStyle.FixedSingle;
@@ -233,7 +233,7 @@ namespace GazethruApps
             Pointer.Top = pbPetaLantai.Top + 10;
             Pointer.Left = pbPetaLantai.Left + 10;
 
-            Bitmap bmp = new Bitmap(Properties.Resources.kuning);
+            Bitmap bmp = new Bitmap(Properties.Resources.biru);
             Pointer.Image = bmp;
             Pointer.BackColor = Color.Transparent;
             //Pointer.BorderStyle = BorderStyle.FixedSingle;
@@ -287,11 +287,10 @@ namespace GazethruApps
             foreach (Pointer item in pbPetaLantai.Controls)
                 if (item.Name == Pname)
                 {
-                    item.Size = new Size(25, 33);
-                    //item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage; 
-                    Bitmap bmp = new Bitmap(Properties.Resources.biru);
+                    item.Size = new Size(45, 45);
+                    item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    Bitmap bmp = new Bitmap(Properties.Resources.kuning52px);
                     item.Image = bmp;
-                    item.BackColor = Color.Transparent;
                     currentPLocX = item.Location.X;
                     currentPLocY = item.Location.Y;
                     tbLocX.Text = currentPLocX.ToString();
@@ -299,9 +298,8 @@ namespace GazethruApps
                 }
                 else
                 {
-                    Bitmap bmp = new Bitmap(Properties.Resources.kuning);
+                    Bitmap bmp = new Bitmap(Properties.Resources.biru);
                     item.Image = bmp;
-                    item.BackColor = Color.Transparent;
                 }
 
         }
@@ -643,18 +641,18 @@ namespace GazethruApps
     public class Pointer : PictureBox
 
     {
-        protected override void OnMouseHover(System.EventArgs e)
-        {
-            float fontSize = Font.SizeInPoints;
-            fontSize += 1;
-            System.Drawing.Size buttonSize = Size;
-            this.Font = new System.Drawing.Font(
-                Font.FontFamily, fontSize, Font.Style);
+        //protected override void OnMouseHover(System.EventArgs e)
+        //{
+        //    float fontSize = Font.SizeInPoints;
+        //    fontSize += 1;
+        //    System.Drawing.Size buttonSize = Size;
+        //    this.Font = new System.Drawing.Font(
+        //        Font.FontFamily, fontSize, Font.Style);
 
-            Size = new System.Drawing.Size(Size.Width + 5, Size.Height + 5);
+        //    Size = new System.Drawing.Size(Size.Width + 5, Size.Height + 5);
 
-            base.OnMouseHover(e);
-        }
+        //    base.OnMouseHover(e);
+        //}
 
         protected override void OnMouseLeave(System.EventArgs e)
         {
