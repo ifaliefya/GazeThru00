@@ -30,13 +30,14 @@ namespace GazethruApps
         }
 
         public static int infoIDchoose;
-        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string Category = AdminAwal.Category;
+        //public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
+        //SqlConnection con = new SqlConnection(connectionString);
 
-        SqlConnection con = new SqlConnection(connectionString);
-
-
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         private void AdminInformasi_Load(object sender, EventArgs e)
         {
+            dataGridView1.Columns.Clear();
             InfoContent("");
         }
 
@@ -61,7 +62,7 @@ namespace GazethruApps
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
+                
         private void CreateImageColumn()
         {
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
@@ -112,7 +113,7 @@ namespace GazethruApps
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AdminInfoNew addInfo = new AdminInfoNew(this);
+            AdminInfoNew addInfo = new AdminInfoNew("Info");
             addInfo.Show();
         }
 
@@ -129,7 +130,7 @@ namespace GazethruApps
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
 
-                AdminInfoEdit editInfo = new AdminInfoEdit(this);
+                AdminInfoEdit editInfo = new AdminInfoEdit(infoIDchoose, "Info");
                 editInfo.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
@@ -183,7 +184,6 @@ namespace GazethruApps
 
             con.Close();
             InfoContent("");
-
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -213,7 +213,7 @@ namespace GazethruApps
                 infoIDchoose = selected;
 
                 SqlCommand command = new SqlCommand("UPDATE Info SET Show=@show WHERE No=" + infoIDchoose, con);
-                Boolean check = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value.ToString());
+                Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
 
                 if (check == true)
                 {
@@ -226,6 +226,11 @@ namespace GazethruApps
                     ExecMyQuery(command, "Data Hide");
                 }
             }
+        }
+
+        private void textBoxIsi_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

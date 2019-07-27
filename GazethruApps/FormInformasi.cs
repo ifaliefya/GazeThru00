@@ -32,14 +32,14 @@ namespace GazethruApps
             wx.Add(0); //add btHome
             wy.Add(0);
 
-            wx[0] = 100; //posisi awal btnTentang
+            wx[0] = 300; //posisi awal btnTentang
             wy[0] = 200;
-            wx[1] = 1080; //posisi awal btnKegiatan
+            wx[1] = 1620; //posisi awal btnKegiatan
             wy[1] = 470;
-            wx[2] = 480; //posisi awal btnPrestasi
-            wy[2] = 250;
-            wx[3] = 500; //posisi awal btnhome
-            wy[3] = 620;
+            wx[2] = 700; //posisi awal btnPrestasi 700; 300
+            wy[2] = 300;
+            wx[3] = 1100; //posisi awal btnhome
+            wy[3] = 900;
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnHome, new FungsiTombol(HomeTekan));
@@ -77,7 +77,7 @@ namespace GazethruApps
                 wy[1]--;
                 wx[2]++;
                 wy[2] = wy[2] - 0.60f;
-                wx[3]++;
+                wx[3]--;
             }
             if (lap == 1)
             {
@@ -85,14 +85,14 @@ namespace GazethruApps
                 wy[1]++;
                 wx[2]--;
                 wy[2] = wy[2] + 0.60f;
-                wx[3]--;
+                wx[3]++;
             }
 
-            if (wx[3] == 730)
+            if (wx[3] == 770)
             {
                 lap = 1;
             }
-            if (wx[3] == 500)
+            if (wx[3] == 1100)
             {
                 lap = 0;
             }

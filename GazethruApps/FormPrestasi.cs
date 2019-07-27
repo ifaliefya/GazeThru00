@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
+
 
 namespace GazethruApps
 {
@@ -16,11 +19,23 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
+        List<int> ShowID = new List<int>();
+        int counter = 0;
+        int maxCounter;
+        int nowShowing;
+        Object[] numb;
+
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         KendaliTombol kendali;
 
         public formPrestasi()
         {
             InitializeComponent();
+
+            PopulateViewID();
+            PopulateButton();
+            LoadContent(nowShowing);
+
             wx = new List<double>();
             wy = new List<double>();
             wx.Add(0); //prev
@@ -32,14 +47,14 @@ namespace GazethruApps
             wx.Add(0); //home
             wy.Add(0);
 
-            wx[0] = 70; //prev
+            wx[0] = 230;//posisi awal btnPrev 
             wy[0] = 170;
-            wx[1] = 1080; //next
+            wx[1] = 1620; //posisi awal btnNext
             wy[1] = 400;
-            wx[2] = 100; //back
-            wy[2] = 620;
-            wx[3] = 1080; //home
-            wy[3] = 620;
+            wx[2] = 300; //posisi awal btnBack 
+            wy[2] = 900;
+            wx[3] = 1620; //posisi awal btnHome
+            wy[3] = 900;
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnBack, new FungsiTombol(BackTekan));
@@ -64,12 +79,87 @@ namespace GazethruApps
             return Instance;
         }
 
+        public void PopulateViewID()
+        {
+            con.Open();
+            string SelectQuery = "SELECT No FROM Prestasi WHERE Show = 1;";
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            while (read.Read())
+            {
+                numb = new object[read.FieldCount];
+                ShowID.Add((int)read.GetValue(0));
+            }
+            con.Close();
+            nowShowing = ShowID[0];
+            maxCounter = ShowID.Count;
+
+        }
+
+        public void PopulateButton()
+        {
+            if (maxCounter == 1)
+            {
+                btnPrev.Visible = false;
+                btnNext.Visible = false;
+            }
+            else if (counter == 0)
+            {
+                btnPrev.Visible = false;
+                btnNext.Visible = true;
+            }
+            else if (counter == maxCounter - 1)
+            {
+                btnNext.Visible = false;
+                btnPrev.Visible = true;
+            }
+            else
+            {
+                btnNext.Visible = true;
+                btnPrev.Visible = true;
+            }
+        }
+
+        public void LoadContent(int ViewShow)
+        {
+            con.Open();
+            string SelectQuery = "SELECT * FROM Prestasi WHERE No = " + ViewShow;
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+
+            if (read.Read())
+            {
+                lblJudul.Text = read["Judul"].ToString();
+                textBoxIsi.Text = read["Isi"].ToString();
+
+                if (!Convert.IsDBNull(read["Gambar"]))
+                {
+                    Byte[] img = (Byte[])(read["Gambar"]);
+                    MemoryStream ms = new MemoryStream(img);
+                    pictureBox1.Image = Image.FromStream(ms);
+                }
+                else
+                {
+                    pictureBox1.Image = null; //gambar default
+                }
+
+            }
+            else
+            {
+                lblJudul.Text = "";
+                textBoxIsi.Text = "";
+                pictureBox1.Image = null;
+            }
+            con.Close();
+
+        }
+
         private void formPrestasi_Load(object sender, EventArgs e)
         {
             timer1.Interval = 1;
             timer1.Start();
         }
-
+           
         private void timer1_Tick(object sender, EventArgs e)
         {
             btnPrev.Location = new Point((int)wx[0], (int)wy[0]);
@@ -142,14 +232,20 @@ namespace GazethruApps
 
             if (e.status)
             {
-                prestasi21.BringToFront();
+                ++counter;
+                nowShowing = ShowID[counter];
+                PopulateButton();
+                LoadContent(nowShowing);
             }
         }
         private void PrevTekan(ArgumenKendaliTombol e)
         {
             if (e.status)
             {
-                prestasi11.BringToFront();
+                --counter;
+                nowShowing = ShowID[counter];
+                PopulateButton();
+                LoadContent(nowShowing);
             }
         }
 
@@ -169,12 +265,18 @@ namespace GazethruApps
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            prestasi21.BringToFront();
+            ++counter;
+            nowShowing = ShowID[counter];
+            PopulateButton();
+            LoadContent(nowShowing);
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            prestasi11.BringToFront();
+            --counter;
+            nowShowing = ShowID[counter];
+            PopulateButton();
+            LoadContent(nowShowing);
         }
     }
 }

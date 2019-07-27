@@ -34,15 +34,16 @@ namespace GazethruApps
         public static int PreviewID;
         public static int LastID;
         public static int FirstID;
-        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
-        SqlConnection con = new SqlConnection(connectionString);
+
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
 
         private void AdminSlideshow_Load(object sender, EventArgs e)
         {
             SlideList("");
+            GetFirstID(con);
             GetLastID(con);
 
-            PreviewID = 0;
+            PreviewID = FirstID;
             PreviewImage();
         }
 
@@ -132,21 +133,17 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int first = 1;
             //disable edit on datagridview
             this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
             this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
             this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out first);
-            FirstID = first;
 
             int selected = 0;
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
                 infoIDchoose = selected;
-                AdminSlideEdit editInfo = new AdminSlideEdit(this);
+                AdminSlideEdit editInfo = new AdminSlideEdit(this, infoIDchoose);
                 editInfo.Show();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
@@ -206,7 +203,7 @@ namespace GazethruApps
                 infoIDchoose = selected;
 
                 SqlCommand command = new SqlCommand("UPDATE Slider SET Show=@show WHERE No=" + infoIDchoose, con);
-                Boolean check = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value.ToString());
+                Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
 
                 if (check == true)
                 {
@@ -238,7 +235,6 @@ namespace GazethruApps
 
         public void GetLastID(SqlConnection connection)
         {
-            
             SqlCommand command = new SqlCommand(
               "SELECT MAX(No) FROM Slider", connection);
             connection.Open();
@@ -249,6 +245,28 @@ namespace GazethruApps
                 while (reader.Read())
                 {
                     LastID = reader.GetInt32(0);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No rows found.");
+            }
+            reader.Close();
+            connection.Close();
+        }
+
+        public void GetFirstID(SqlConnection connection)
+        {
+            SqlCommand command = new SqlCommand(
+              "SELECT MIN(No) FROM Slider", connection);
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    FirstID = reader.GetInt32(0);
                 }
             }
             else

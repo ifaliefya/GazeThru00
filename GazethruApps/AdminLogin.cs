@@ -27,8 +27,8 @@ namespace GazethruApps
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30");
-
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
+            
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Uname='" + textBoxUname.Text + "' and Password = '" + textBoxPsswrd.Text + "'", con);
 
             DataTable dt = new DataTable();

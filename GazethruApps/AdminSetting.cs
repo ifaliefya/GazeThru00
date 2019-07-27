@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GazethruApps
 {
-    public partial class VisiTeti : UserControl
+    public partial class AdminSetting : UserControl
     {
-        public VisiTeti()
+        public AdminSetting()
         {
             InitializeComponent();
         }

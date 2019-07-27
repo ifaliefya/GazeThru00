@@ -31,14 +31,14 @@ namespace GazethruApps
             wx.Add(0); //Home
             wy.Add(0);
 
-            wx[0] = 100; //lantai 1
+            wx[0] = 300; //lantai 1
             wy[0] = 200;
-            wx[1] = 500; //lantai 2
-            wy[1] = 250;
-            wx[2] = 1080; //lantai3
+            wx[1] = 700; //lantai 2
+            wy[1] = 300;
+            wx[2] = 1620; //lantai3
             wy[2] = 430;
-            wx[3] = 500; //home
-            wy[3] = 620;
+            wx[3] = 1100; //home
+            wy[3] = 900;
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnHome, new FungsiTombol(TombolHomeTekan));
@@ -96,7 +96,7 @@ namespace GazethruApps
                 wx[1]++;
                 wy[1] = wy[1] - 0.60f;
                 wy[2]--;
-                wx[3]++;
+                wx[3]--;
             }
             if(lap==1)
             {
@@ -104,13 +104,13 @@ namespace GazethruApps
                 wx[1]--;
                 wy[1] = wy[1] + 0.60f;
                 wy[2]++;
-                wx[3]--;
+                wx[3]++;
             }
-            if(wx[3]==730)
+            if(wx[3]==770)
             {
                 lap = 1;
             }
-            if(wx[3]==500)
+            if(wx[3]==1100)
             {
                 lap = 0;
             }
@@ -121,22 +121,28 @@ namespace GazethruApps
         private void btnSatu_Click(object sender, EventArgs e)
         {
             formLantai1 FormLantai1 = new formLantai1();
-            FormLantai1.Show();
             this.Close();
+            FormLantai1.Show();
+            FormLantai1.GetLantaiPic(1);
+            FormLantai1.LoadPointer(1);
         }
 
         private void btnDua_Click(object sender, EventArgs e)
         {
-            formLantai2 FormLantai2 = new formLantai2();
-            FormLantai2.Show();
+            formLantai1 FormLantai1 = new formLantai1();
             this.Close();
+            FormLantai1.Show();
+            FormLantai1.GetLantaiPic(2);
+            FormLantai1.LoadPointer(2);
         }
 
         private void btnTiga_Click(object sender, EventArgs e)
         {
-            formLantai3 FormLantai3 = new formLantai3();
-            FormLantai3.Show();
+            formLantai1 FormLantai1 = formLantai1.getInstance();
             this.Close();
+            FormLantai1.Show();
+            FormLantai1.GetLantaiPic(3);
+            FormLantai1.LoadPointer(3);
         }
 
         private void TombolHomeTekan(ArgumenKendaliTombol e)

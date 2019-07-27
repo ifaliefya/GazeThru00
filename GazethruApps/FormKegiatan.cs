@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace GazethruApps
 {
@@ -16,11 +18,23 @@ namespace GazethruApps
         List<double> wy;
         int lap = 0;
 
+        List<int> ShowID = new List<int>();
+        int counter = 0;
+        int maxCounter;
+        int nowShowing;
+        Object[] numb;
+
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         KendaliTombol kendali;
 
         public formKegiatan()
         {
             InitializeComponent();
+
+            PopulateViewID();
+            PopulateButton();
+            LoadContent(nowShowing);
+
             wx = new List<double>();
             wy = new List<double>();
             wx.Add(0); //add btnPrev
@@ -32,14 +46,14 @@ namespace GazethruApps
             wx.Add(0); //add btnHome
             wy.Add(0);
 
-            wx[0] = 70;//posisi awal btnPrev
+            wx[0] = 230;//posisi awal btnPrev 
             wy[0] = 170;
-            wx[1] = 1080; //posisi awal btnNext
+            wx[1] = 1620; //posisi awal btnNext
             wy[1] = 400;
-            wx[2] = 100; //posisi awal btnBack
-            wy[2] = 620;
-            wx[3] = 1080; //posisi awal btnHome
-            wy[3] = 620;
+            wx[2] = 300; //posisi awal btnBack 
+            wy[2] = 900;
+            wx[3] = 1620; //posisi awal btnHome
+            wy[3] = 900;
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnBack, new FungsiTombol(TombolBackTekan));
@@ -61,6 +75,80 @@ namespace GazethruApps
                 Instance.BringToFront();
             }
             return Instance;
+        }
+
+        public void PopulateViewID()
+        {
+            con.Open();
+            string SelectQuery = "SELECT No FROM Kegiatan WHERE Show = 1;";
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            while (read.Read())
+            {
+                numb = new object[read.FieldCount];
+                ShowID.Add((int)read.GetValue(0));
+            }
+            con.Close();
+            nowShowing = ShowID[0];
+            maxCounter = ShowID.Count;
+
+        }
+
+        public void PopulateButton()
+        {
+            if (maxCounter == 1)
+            {
+                btnPrev.Visible = false;
+                btnNext.Visible = false;
+            }
+            else if (counter == 0)
+            {
+                btnPrev.Visible = false;
+                btnNext.Visible = true;
+            }
+            else if (counter == maxCounter-1)
+            {
+                btnNext.Visible = false;
+                btnPrev.Visible = true;
+            }
+            else
+            {
+                btnNext.Visible = true;
+                btnPrev.Visible = true;
+            }
+        }
+
+        public void LoadContent(int ViewShow)
+        {
+            con.Open();
+            string SelectQuery = "SELECT * FROM Kegiatan WHERE No = " + ViewShow;
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+
+            if (read.Read())
+            {
+                lblJudul.Text = read["Judul"].ToString();
+                textBoxIsi.Text = read["Isi"].ToString();
+
+                if (!Convert.IsDBNull(read["Gambar"]))
+                {
+                    Byte[] img = (Byte[])(read["Gambar"]);
+                    MemoryStream ms = new MemoryStream(img);
+                    pictureBox1.Image = Image.FromStream(ms);
+                }
+                else
+                {
+                    pictureBox1.Image = null; //gambar default
+                }
+            }
+            else
+            {
+                lblJudul.Text = "";
+                textBoxIsi.Text = "";
+                pictureBox1.Image = null;
+            }
+            con.Close();
+
         }
 
         private void formKegiatan_Load(object sender, EventArgs e)
@@ -123,12 +211,18 @@ namespace GazethruApps
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            kegiatan21.BringToFront();
+            ++counter;
+            nowShowing = ShowID[counter];
+            PopulateButton();
+            LoadContent(nowShowing);
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            kegiatan11.BringToFront();
+            --counter;
+            nowShowing = ShowID[counter];
+            PopulateButton();
+            LoadContent(nowShowing);
         }
 
         private void TombolBackTekan(ArgumenKendaliTombol e)
@@ -174,8 +268,12 @@ namespace GazethruApps
 
             if (e.status)
             {
-                kegiatan21.BringToFront();
                 kendali.Close();
+
+                ++counter;
+                nowShowing = ShowID[counter];
+                PopulateButton();
+                LoadContent(nowShowing);
             }
         }
 
@@ -188,8 +286,12 @@ namespace GazethruApps
 
             if (e.status)
             {
-                kegiatan11.BringToFront();
                 kendali.Close();
+
+                --counter;
+                nowShowing = ShowID[counter];
+                PopulateButton();
+                LoadContent(nowShowing);
             }
         }
     }

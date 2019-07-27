@@ -14,18 +14,23 @@ namespace GazethruApps
 {
     public partial class AdminInfoNew : Form
     {
-        private readonly  AdminInformasi _InfoAwal;
-        public AdminInfoNew(AdminInformasi InfoAwal)
+        //private readonly  AdminInformasi _InfoAwal;
+        //private readonly AdminPrestasi _PrestasiAwal;
+        //private readonly AdminKegiatan _KegiatanAwal;
+        public string Category;
+        public static int infoIDlast;
+
+        public AdminInfoNew(string Kategori)
         {
-            _InfoAwal = InfoAwal;
+            //_InfoAwal = InfoAwal;
+            Category = Kategori;
             InitializeComponent();
+            this.Text = "Konten Baru " + Category;
             ShowHide.Checked = true;
         }
 
-        public static int infoIDlast;
-        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
-        SqlConnection con = new SqlConnection(connectionString);
-        
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
+
         private void buttonBrowsePict_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -46,7 +51,7 @@ namespace GazethruApps
         public void GetLastID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM Info", connection);
+              "SELECT MAX(No) FROM " + Category, connection);
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
@@ -82,8 +87,8 @@ namespace GazethruApps
         {
             int last = infoIDlast - 1; 
             string InsertQuery =
-                "DBCC CHECKIDENT (Info, RESEED," + last + "); " + //DBCC adalah menyalahi aturan increment dan unique, semoga tidak error
-                "INSERT INTO Info(Judul, Isi, Show, Gambar) VALUES (@judul , @isi, @show, @gambar);";
+                "DBCC CHECKIDENT (" + Category + ", RESEED," + last + "); " + //DBCC adalah menyalahi aturan increment dan unique, semoga tidak error
+                "INSERT INTO "+ Category +"(Judul, Isi, Show, Gambar) VALUES (@judul , @isi, @show, @gambar);";
             SqlCommand command = new SqlCommand(InsertQuery, con);
 
             command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
@@ -115,7 +120,19 @@ namespace GazethruApps
             }
 
             con.Close();
-            _InfoAwal.InfoContent("");
+            //_InfoAwal.InfoContent("");
+            if (Category == "Info")
+            {
+                AdminInformasi.Instance.InfoContent("");
+            }
+            else if (Category == "Prestasi")
+            {
+                AdminPrestasi.Instance.PrestasiContent("");
+            }
+            else
+            {
+                AdminKegiatan.Instance.KegiatanContent("");
+            }
             this.Close();
         }
     }

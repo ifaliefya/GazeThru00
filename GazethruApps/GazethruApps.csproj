@@ -88,11 +88,65 @@
     <Compile Include="AdminInformasi.Designer.cs">
       <DependentUpon>AdminInformasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminKegiatan.Designer.cs">
+      <DependentUpon>AdminKegiatan.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaAwal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPetaAwal.Designer.cs">
+      <DependentUpon>AdminPetaAwal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPetaEdit.Designer.cs">
+      <DependentUpon>AdminPetaEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaNewLantai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPetaNewLantai.Designer.cs">
+      <DependentUpon>AdminPetaNewLantai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPetaNew.Designer.cs">
+      <DependentUpon>AdminPetaNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaNewLantaiDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPetaNewLantaiDetail.Designer.cs">
+      <DependentUpon>AdminPetaNewLantaiDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPetaNewRuang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPetaNewRuang.Designer.cs">
+      <DependentUpon>AdminPetaNewRuang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPrestasi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPrestasi.Designer.cs">
+      <DependentUpon>AdminPrestasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminSetting.Designer.cs">
+      <DependentUpon>AdminSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminSlideEdit.cs">
       <SubType>Form</SubType>
@@ -243,12 +297,6 @@
     <Compile Include="VisiElektro.Designer.cs">
       <DependentUpon>VisiElektro.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisiTeti.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VisiTeti.Designer.cs">
-      <DependentUpon>VisiTeti.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,8 +312,35 @@
     <EmbeddedResource Include="AdminInformasi.resx">
       <DependentUpon>AdminInformasi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminKegiatan.resx">
+      <DependentUpon>AdminKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaAwal.resx">
+      <DependentUpon>AdminPetaAwal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaEdit.resx">
+      <DependentUpon>AdminPetaEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaNewLantai.resx">
+      <DependentUpon>AdminPetaNewLantai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaNew.resx">
+      <DependentUpon>AdminPetaNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaNewLantaiDetail.resx">
+      <DependentUpon>AdminPetaNewLantaiDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPetaNewRuang.resx">
+      <DependentUpon>AdminPetaNewRuang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPrestasi.resx">
+      <DependentUpon>AdminPrestasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSetting.resx">
+      <DependentUpon>AdminSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminSlideEdit.resx">
       <DependentUpon>AdminSlideEdit.cs</DependentUpon>
@@ -350,11 +425,8 @@
     <EmbeddedResource Include="VisiElektro.resx">
       <DependentUpon>VisiElektro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisiTeti.resx">
-      <DependentUpon>VisiTeti.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -367,6 +439,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BluePointer.jpg" />
+    <None Include="Resources\biru.png" />
+    <None Include="Resources\kuning.png" />
     <Content Include="Tobii.EyeX.Client.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
