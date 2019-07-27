@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Diagnostics;
 using EyeXFramework;
+using Tobii.EyeX;
 using Tobii.EyeX.Framework;
 using System.Windows.Forms;
 
@@ -21,8 +22,10 @@ namespace GazethruApps
         public bool status;
         public int? mataX;
         public int? mataY;
+        public int DataKor;
+        public bool CekMata;
 
-        public ArgumenKendaliTombol(double corx, double cory, double dist, bool state, int? gazeX, int? gazeY)
+        public ArgumenKendaliTombol(double corx, double cory, double dist, bool state, int? gazeX, int? gazeY, int datakorelasi, bool Presence)
         {
             korelasiX = corx;
             korelasiY = cory;
@@ -30,6 +33,8 @@ namespace GazethruApps
             status = state;
             mataX = gazeX;
             mataY = gazeY;
+            DataKor = datakorelasi;
+            CekMata = Presence;
         }
     }
 
@@ -39,16 +44,19 @@ namespace GazethruApps
         int ukuranFilterMata = 30;
 
         double ThresholdJarak = 250;
-        double ThresholdKorelasi = 0.7;
+        double ThresholdKorelasi = 0.8;
 
-        int DurasiJarakEuclidean = 140;
-        int DurasiKorelasiPearson = 140;
+        int DurasiJarakEuclidean = 120;
+        int DurasiKorelasiPearson = 80;
 
         EyeXHost Host;
         GazePointDataStream DataStream;
 
         int[][] PosisiMata;
         int[][] PosisiMataAsli;
+
+        double[] KorX;
+        double[] KorY;
 
         List<Control> DaftarTombol;
         List<FungsiTombol> DaftarFungsi;
@@ -66,6 +74,12 @@ namespace GazethruApps
         int? posisimataX;
         int? posisimataY;
 
+        int DataKorelasi;
+
+        int jumlahSama = 0;
+        int posisiTerakhirMataX;
+        int posisiTerakhirMataY;
+
         public KendaliTombol()
         {
             DaftarTombol = new List<Control>();
@@ -79,6 +93,9 @@ namespace GazethruApps
             PosisiMataAsli = new int[2][];
             PosisiMataAsli[0] = new int[ukuranFilterMata];
             PosisiMataAsli[1] = new int[ukuranFilterMata];
+
+            KorX = new double[ukuranKorelasi];
+            KorY = new double[ukuranKorelasi];
 
             HasilJarakEuclidean = new List<int>();
             HasilKorelasiPearson = new List<int>();
@@ -213,7 +230,25 @@ namespace GazethruApps
         {
             SimpanPosisiTombol();
 
-            for(int i = 0; i < DaftarTombol.Count; i++)
+            if(posisiTerakhirMataX == PosisiMata[0][0] && posisiTerakhirMataY == PosisiMata[1][0]) // Cek posisi mata sama dengan sebelumnya (User Presence)
+            {
+                jumlahSama++;
+            }
+            else
+            {
+                jumlahSama = 0;
+            }
+
+            posisiTerakhirMataX = PosisiMata[0][0];
+            posisiTerakhirMataY = PosisiMata[1][0];
+
+            if (jumlahSama > 5)
+            {
+                return;
+            }
+
+            // jika User Presence lolos
+            for (int i = 0; i < DaftarTombol.Count; i++)
             {
                 posisimataX = PosisiMata[0][0];
                 posisimataY = PosisiMata[1][0];
@@ -223,12 +258,14 @@ namespace GazethruApps
                 HasilJarakEuclidean[i] = jarak < ThresholdJarak ? HasilJarakEuclidean[i] + 1 : 0;
 
                 double korelasix = KorelasiPearson(DaftarPosisiTombol[i][0], PosisiMata[0]);
-                double korelasiy = KorelasiPearson(DaftarPosisiTombol[i][1], PosisiMata[1]);
-
+                double korelasiy = KorelasiPearson(DaftarPosisiTombol[i][1], PosisiMata[1]);                  
+                
                 HasilKorelasiX[i] = (korelasix > ThresholdKorelasi) ? HasilKorelasiX[i] + 1 : 0;
                 HasilKorelasiY[i] = (korelasiy > ThresholdKorelasi) ? HasilKorelasiY[i] + 1 : 0;                              
 
                 HasilKorelasiPearson[i] = (korelasix > ThresholdKorelasi || korelasiy > ThresholdKorelasi) ? HasilKorelasiPearson[i] + 1 : 0;
+                
+                DataKorelasi = HasilKorelasiPearson[i];
 
                 bool statusjarak = HasilJarakEuclidean[i] >= DurasiJarakEuclidean;
                 bool statuskorelasi = HasilKorelasiPearson[i] >= DurasiKorelasiPearson;
@@ -243,9 +280,11 @@ namespace GazethruApps
                     HasilKorelasiPearson[i] = 0;
                 }
 
-                ArgumenKendaliTombol e = new ArgumenKendaliTombol(korelasix, korelasiy, jarak, statuskorelasi, posisimataX, posisimataY);  //hanya untuk ppmc
+                bool UserPresence = jumlahSama == 0;
+
+                ArgumenKendaliTombol e = new ArgumenKendaliTombol(korelasix, korelasiy, jarak, statuskorelasi, posisimataX, posisimataY, DataKorelasi, UserPresence);  //hanya untuk ppmc
                 
-                DaftarFungsi[i](e);
+                DaftarFungsi[i](e);                
             }
         }
 
@@ -255,9 +294,13 @@ namespace GazethruApps
         }
 
         public void NoLook()
-        {          
-            posisimataX = 0;
-            posisimataY = 0;
-        }
+        {
+            for (int i = 0; i < DaftarTombol.Count; i++)
+            {
+                HasilKorelasiPearson[i] = 0;
+            }
+
+
+        }               
     }
 }

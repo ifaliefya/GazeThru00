@@ -94,12 +94,12 @@ namespace GazethruApps
 
             if (lap == 0) //titik awal
             {
-                wx[0]++;         
+                wx[0] ++;         
             }
 
             if (lap == 1) //titik akhir, balik
             {
-                wx[0]--;
+                wx[0] --;
             }
 
             if (wx[0] == 1000)
@@ -107,7 +107,7 @@ namespace GazethruApps
                 lap = 1; //titik akhir
             }
 
-            if (wx[0] == 770)
+            if (wx[0] == 801)
             {
                 lap = 0;
             }
@@ -116,6 +116,14 @@ namespace GazethruApps
         }
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
         {
+            //Console.WriteLine(eawal.korelasiX + "  " + eawal.korelasiY + "  " + eawal.DataKor + "  " + eawal.mataX + "  " + eawal.mataY);
+            Console.WriteLine(eawal.DataKor);
+            Presencecek.Visible = false;
+            if (eawal.CekMata)
+            {
+                Presencecek.Visible = true;
+            }
+
             if (eawal.mataX == null || eawal.mataY == null)
             {
                 kendali.NoLook();
@@ -124,8 +132,7 @@ namespace GazethruApps
             if (eawal.status)
             {
                 formUser FormUser = formUser.getInstance();
-                FormUser.Show();
-                timer1.Stop();                
+                FormUser.Show();                               
                 this.Hide();                
             }            
         }

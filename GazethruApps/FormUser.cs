@@ -118,6 +118,7 @@ namespace GazethruApps
 
         private void InfoTekan(ArgumenKendaliTombol e)
         {
+            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
             if (e.mataX == null || e.mataY == null)
             {
                 kendaliuser.NoLook();
@@ -134,6 +135,7 @@ namespace GazethruApps
         }
         private void PetaTekan(ArgumenKendaliTombol e)
         {
+            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
             if (e.mataX == null || e.mataY == null)
             {
                 kendaliuser.NoLook();
@@ -150,6 +152,7 @@ namespace GazethruApps
         }
         private void BackTekan(ArgumenKendaliTombol e)
         {
+            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
             if (e.mataX == null || e.mataY == null)
             {
                 kendaliuser.NoLook();
