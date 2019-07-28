@@ -61,7 +61,7 @@ namespace GazethruApps
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnBack, new FungsiTombol(TombolBackTekan));
-            kendali.TambahTombol(btnNext2, new FungsiTombol(TombolNextTekan));
+            kendali.TambahTombol(btnNext, new FungsiTombol(TombolNextTekan));
             kendali.TambahTombol(btnPrev, new FungsiTombol(TombolPrevTekan));
             kendali.Start();
         }
@@ -89,7 +89,7 @@ namespace GazethruApps
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            btnNext2.Location = new Point((int)wx[0], (int)wy[0]);
+            btnNext.Location = new Point((int)wx[0], (int)wy[0]);
             btnPrev.Location = new Point((int)wx[1], (int)wy[1]);
             btnBack.Location = new Point((int)wx[2], (int)wy[2]);
 
@@ -141,6 +141,12 @@ namespace GazethruApps
 
         private void TombolBackTekan(ArgumenKendaliTombol e)
         {
+            PresenceCheck.Visible = false;
+            if (e.CekMata)
+            {
+                PresenceCheck.Visible = true;
+            }
+
             if (e.mataX == null || e.mataY == null)
             {
                 kendali.NoLook();
@@ -165,9 +171,7 @@ namespace GazethruApps
 
             if (e.status)
             {
-                ++counter;
-                PreviewDetail(AllPointer[counter].Name);
-                PopulateButton();
+                
             }
         }
 
@@ -191,21 +195,21 @@ namespace GazethruApps
             if (maxCounter == 1)
             {
                 btnPrev.Visible = false;
-                btnNext2.Visible = false;
+                btnNext.Visible = false;
             }
             else if (counter == 0)
             {
                 btnPrev.Visible = false;
-                btnNext2.Visible = true;
+                btnNext.Visible = true;
             }
             else if (counter == maxCounter - 1)
             {
-                btnNext2.Visible = false;
+                btnNext.Visible = false;
                 btnPrev.Visible = true;
             }
             else
             {
-                btnNext2.Visible = true;
+                btnNext.Visible = true;
                 btnPrev.Visible = true;
             }
         }
@@ -265,8 +269,8 @@ namespace GazethruApps
 
             con.Close();
 
-            PopulateButton();
             PreviewDetail(AllPointer[0].Name);
+            PopulateButton();
         }
 
         Pointer ReadPointer(int x, int y, string name)
@@ -275,26 +279,22 @@ namespace GazethruApps
             Pointer.Name = name;
             Pointer.Size = new Size(22, 30);
             Pointer.Location = new System.Drawing.Point(x, y);
-            Bitmap bmp = new Bitmap(Properties.Resources.biru);
-            Pointer.Image = bmp;
             Pointer.BackColor = Color.Transparent;
+            Pointer.BorderStyle = BorderStyle.FixedSingle;
 
             return Pointer;
         }
 
         void PointerChoosen(string Pname)
         {
-            foreach (Pointer item in pbPetaLantai.Controls)
+            foreach (Control item in pbPetaLantai.Controls)
                 if (item.Name == Pname)
                 {
-                    item.Size = new Size(52, 52);
-                    Bitmap bmp = new Bitmap(Properties.Resources.kuning52px);
-                    item.Image = bmp;
+                    item.BackColor = Color.Black;
                 }
                 else
                 {
-                    Bitmap bmp = new Bitmap(Properties.Resources.biru);
-                    item.Image = bmp;
+                    item.BackColor = Color.Transparent;
                 }
         }
 
@@ -329,13 +329,6 @@ namespace GazethruApps
                 pictureBoxRuang.Image = null;
             }
             con.Close();
-        }
-
-        private void btnNext2_Click(object sender, EventArgs e)
-        {
-            ++counter;
-            PreviewDetail(AllPointer[counter].Name);
-            PopulateButton();
         }
     }
 }
