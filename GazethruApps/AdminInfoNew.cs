@@ -43,6 +43,8 @@ namespace GazethruApps
 
         private void AdminInfoNew_Load(object sender, EventArgs e)
         {
+            Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
+            pictureBox1.Image = bmp;
             GetLastID(con);
             NoInfo.Text = infoIDlast.ToString();
         }
