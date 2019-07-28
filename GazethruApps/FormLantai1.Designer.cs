@@ -43,7 +43,7 @@
             this.panelPeta = new System.Windows.Forms.Panel();
             this.pbPetaLantai = new System.Windows.Forms.PictureBox();
             this.PresenceCheck = new System.Windows.Forms.Panel();
-            this.btnNext = new System.Windows.Forms.Button();
+            //this.btnNext = new System.Windows.Forms.Button();
             this.btnNext2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -189,17 +189,17 @@
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(1620, 456);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(40, 40);
-            this.btnNext.TabIndex = 25;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            //this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            //this.btnNext.FlatAppearance.BorderSize = 0;
+            //this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.btnNext.ForeColor = System.Drawing.Color.White;
+            //this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            //this.btnNext.Location = new System.Drawing.Point(1620, 456);
+            //this.btnNext.Name = "btnNext";
+            //this.btnNext.Size = new System.Drawing.Size(40, 40);
+            //this.btnNext.TabIndex = 25;
+            //this.btnNext.UseVisualStyleBackColor = false;
+            //this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnNext2
             // 
