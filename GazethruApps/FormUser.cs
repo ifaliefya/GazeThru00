@@ -118,6 +118,12 @@ namespace GazethruApps
 
         private void InfoTekan(ArgumenKendaliTombol e)
         {
+            PresenceCheck.Visible = false;
+            if (e.CekMata)
+            {
+                PresenceCheck.Visible = true;
+            }
+
             //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
             if (e.mataX == null || e.mataY == null)
             {

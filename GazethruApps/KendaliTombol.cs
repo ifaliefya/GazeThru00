@@ -46,8 +46,8 @@ namespace GazethruApps
         double ThresholdJarak = 250;
         double ThresholdKorelasi = 0.8;
 
-        int DurasiJarakEuclidean = 120;
-        int DurasiKorelasiPearson = 80;
+        int DurasiJarakEuclidean = 100;
+        int DurasiKorelasiPearson = 100;
 
         EyeXHost Host;
         GazePointDataStream DataStream;
@@ -242,7 +242,7 @@ namespace GazethruApps
             posisiTerakhirMataX = PosisiMata[0][0];
             posisiTerakhirMataY = PosisiMata[1][0];
 
-            if (jumlahSama > 5)
+            if (jumlahSama > 5) //// NO PRESENCE
             {
                 return;
             }

@@ -114,6 +114,12 @@ namespace GazethruApps
 
         private void TombolBackTekan(ArgumenKendaliTombol e)
         {
+            PresenceCheck.Visible = false;
+            if (e.CekMata)
+            {
+                PresenceCheck.Visible = true;
+            }
+
             if (e.mataX == null || e.mataY == null)
             {
                 kendali.NoLook();

@@ -127,6 +127,12 @@ namespace GazethruApps
         }
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
         {
+            PresenceCheck.Visible = false;
+            if (eawal.CekMata)
+            {
+                PresenceCheck.Visible = true;
+            }
+
             if (eawal.mataX == null || eawal.mataY == null)
             {
                 kendali.NoLook();
@@ -135,8 +141,7 @@ namespace GazethruApps
             if (eawal.status)
             {
                 formUser FormUser = formUser.getInstance();
-                FormUser.Show();
-                timer1.Stop();                
+                FormUser.Show();                                
                 this.Hide();                
             }            
         }
