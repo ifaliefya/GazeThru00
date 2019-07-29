@@ -73,9 +73,39 @@ namespace GazethruApps.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap defaultPic {
+            get {
+                object obj = ResourceManager.GetObject("defaultPic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap defaultPicRuang {
+            get {
+                object obj = ResourceManager.GetObject("defaultPicRuang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kuning {
             get {
                 object obj = ResourceManager.GetObject("kuning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kuning52px {
+            get {
+                object obj = ResourceManager.GetObject("kuning52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -309,6 +309,19 @@ namespace GazethruApps
                 pictureBox1.Image = null;
             }
             con.Close();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                int Read = (int)row.Cells["No"].Value;
+                if (Read == PreviewID)
+                {
+                    row.Selected = true;
+                }
+                else
+                {
+                    row.Selected = false;
+                }
+            }
         }
     }
 

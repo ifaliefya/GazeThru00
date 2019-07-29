@@ -35,7 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNamaLantai = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnNext = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxIsi = new System.Windows.Forms.TextBox();
@@ -44,6 +43,8 @@
             this.panelPeta = new System.Windows.Forms.Panel();
             this.pbPetaLantai = new System.Windows.Forms.PictureBox();
             this.PresenceCheck = new System.Windows.Forms.Panel();
+            //this.btnNext = new System.Windows.Forms.Button();
+            this.btnNext2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRuang)).BeginInit();
@@ -103,20 +104,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(1620, 400);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(40, 40);
-            this.btnNext.TabIndex = 25;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // panel3
             // 
@@ -200,12 +187,41 @@
             this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
             this.PresenceCheck.TabIndex = 56;
             // 
+            // btnNext
+            // 
+            //this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            //this.btnNext.FlatAppearance.BorderSize = 0;
+            //this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.btnNext.ForeColor = System.Drawing.Color.White;
+            //this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            //this.btnNext.Location = new System.Drawing.Point(1620, 456);
+            //this.btnNext.Name = "btnNext";
+            //this.btnNext.Size = new System.Drawing.Size(40, 40);
+            //this.btnNext.TabIndex = 25;
+            //this.btnNext.UseVisualStyleBackColor = false;
+            //this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnNext2
+            // 
+            this.btnNext2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            this.btnNext2.FlatAppearance.BorderSize = 0;
+            this.btnNext2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext2.ForeColor = System.Drawing.Color.White;
+            this.btnNext2.Image = ((System.Drawing.Image)(resources.GetObject("btnNext2.Image")));
+            this.btnNext2.Location = new System.Drawing.Point(1620, 456);
+            this.btnNext2.Name = "btnNext2";
+            this.btnNext2.Size = new System.Drawing.Size(40, 40);
+            this.btnNext2.TabIndex = 57;
+            this.btnNext2.UseVisualStyleBackColor = false;
+            this.btnNext2.Click += new System.EventHandler(this.btnNext2_Click);
+            // 
             // formLantai1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.btnNext2);
             this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.panelPeta);
             this.Controls.Add(this.panel2);
@@ -236,7 +252,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelNamaLantai;
-        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBoxRuang;
@@ -245,5 +260,7 @@
         private System.Windows.Forms.Panel panelPeta;
         private System.Windows.Forms.PictureBox pbPetaLantai;
         private System.Windows.Forms.Panel PresenceCheck;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnNext2;
     }
 }

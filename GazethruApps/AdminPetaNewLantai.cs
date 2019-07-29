@@ -70,6 +70,8 @@ namespace GazethruApps
             }
             else
             {
+                Bitmap bmp = new Bitmap(Properties.Resources.defaultPicRuang);
+                pictureBox1.Image = bmp;
                 GetLastID(con);
                 NoInfo.Text = LastID.ToString();
             }
