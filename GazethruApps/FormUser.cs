@@ -83,7 +83,7 @@ namespace GazethruApps
                 wy[1]++;
                 wx[2]--;
             }
-            if (wy[0] == 430)
+            if (wy[0] == 500)
             {
                 lap = 1;
             }
