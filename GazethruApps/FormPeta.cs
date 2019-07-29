@@ -36,8 +36,8 @@ namespace GazethruApps
             wx[1] = 700; //lantai 2
             wy[1] = 300;
             wx[2] = 1620; //lantai3
-            wy[2] = 430;
-            wx[3] = 1100; //home
+            wy[2] = 470;
+            wx[3] = 1170; //home
             wy[3] = 900;
 
             kendali = new KendaliTombol();
@@ -110,7 +110,7 @@ namespace GazethruApps
             {
                 lap = 1;
             }
-            if(wx[3]==1100)
+            if(wx[3]==1170)
             {
                 lap = 0;
             }

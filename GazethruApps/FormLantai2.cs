@@ -31,7 +31,7 @@ namespace GazethruApps
             wy.Add(0);
 
             wx[0] = 1620; //next
-            wy[0] = 400;
+            wy[0] = 470;
             wx[1] = 300; //prev
             wy[1] = 170;
             wx[2] = 1100; //back
@@ -89,7 +89,7 @@ namespace GazethruApps
                 wy[1]--;
                 wx[2]++;
             }
-            if (wy[0] == 400)
+            if (wy[0] == 470)
             {
                 lap = 1;
             }

@@ -38,7 +38,7 @@ namespace GazethruApps
             wy[1] = 470;
             wx[2] = 700; //posisi awal btnPrestasi 700; 300
             wy[2] = 300;
-            wx[3] = 1100; //posisi awal btnhome
+            wx[3] = 1130; //posisi awal btnhome
             wy[3] = 900;
 
             kendali = new KendaliTombol();
@@ -88,11 +88,11 @@ namespace GazethruApps
                 wx[3]++;
             }
 
-            if (wx[3] == 770)
+            if (wx[3] == 730)
             {
                 lap = 1;
             }
-            if (wx[3] == 1100)
+            if (wx[3] == 1130)
             {
                 lap = 0;
             }

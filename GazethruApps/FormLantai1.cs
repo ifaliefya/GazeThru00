@@ -109,7 +109,7 @@ namespace GazethruApps
             {
                 lap = 1;
             }
-            if(wy[0]==370)
+            if(wy[0]==440)
             {
                 lap = 0;
             }
