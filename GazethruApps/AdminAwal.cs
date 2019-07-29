@@ -12,13 +12,11 @@ namespace GazethruApps
 {
     public partial class AdminAwal : Form
     {
-        //private readonly formAwal _Home;
         public static string Category;
 
         public AdminAwal()
         {
             InitializeComponent();
-            //_Home = Home;
             Sidepanel.Height = btn_Slideshow.Height;
             Sidepanel.Top = btn_Slideshow.Top;
             if (!panelUC.Controls.Contains(AdminSlideshow.Instance))
@@ -57,9 +55,6 @@ namespace GazethruApps
             Sidepanel.Height = btn_Tentang.Height;
             Sidepanel.Top = btn_Tentang.Top;
 
-            //adminInformasi1.BringToFront();
-            //AdminInformasi Tentang = new AdminInformasi();
-            //Tentang.InfoContent("");
             if (!panelUC.Controls.Contains(AdminInformasi.Instance)||Category!="Info")
             {
                 Category = "Info";
@@ -120,10 +115,25 @@ namespace GazethruApps
                 AdminPetaAwal.Instance.Dock = DockStyle.Fill;
                 AdminPetaAwal.Instance.BringToFront();
                 AdminPetaAwal Peta = new AdminPetaAwal();
-                //Peta.KegiatanContent("");
             }
             else
                 AdminPetaAwal.Instance.BringToFront();
+        }
+
+        private void btn_Password_Click(object sender, EventArgs e)
+        {
+            Sidepanel.Height = btn_Password.Height;
+            Sidepanel.Top = btn_Password.Top;
+
+            if (!panelUC.Controls.Contains(AdminSetting.Instance))
+            {
+                panelUC.Controls.Add(AdminSetting.Instance);
+                AdminSetting.Instance.Dock = DockStyle.Fill;
+                AdminSetting.Instance.BringToFront();
+                AdminSetting Peta = new AdminSetting();
+            }
+            else
+                AdminSetting.Instance.BringToFront();
         }
 
         private void Home_Click(object sender, EventArgs e)

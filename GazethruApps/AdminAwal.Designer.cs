@@ -42,6 +42,7 @@
             this.btnTutup = new System.Windows.Forms.Button();
             this.btnMini = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Password = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -53,6 +54,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.Home);
             this.panel1.Controls.Add(this.Sidepanel);
+            this.panel1.Controls.Add(this.btn_Password);
             this.panel1.Controls.Add(this.btn_Peta);
             this.panel1.Controls.Add(this.btn_Kegiatan);
             this.panel1.Controls.Add(this.btn_Prestasi);
@@ -82,7 +84,7 @@
             this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Home.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home.ForeColor = System.Drawing.Color.White;
-            this.Home.Location = new System.Drawing.Point(75, 621);
+            this.Home.Location = new System.Drawing.Point(75, 698);
             this.Home.Margin = new System.Windows.Forms.Padding(2);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(134, 44);
@@ -97,7 +99,7 @@
             this.Sidepanel.Location = new System.Drawing.Point(1, 273);
             this.Sidepanel.Margin = new System.Windows.Forms.Padding(2);
             this.Sidepanel.Name = "Sidepanel";
-            this.Sidepanel.Size = new System.Drawing.Size(8, 49);
+            this.Sidepanel.Size = new System.Drawing.Size(10, 63);
             this.Sidepanel.TabIndex = 1;
             // 
             // btn_Peta
@@ -107,10 +109,10 @@
             this.btn_Peta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Peta.Image = ((System.Drawing.Image)(resources.GetObject("btn_Peta.Image")));
             this.btn_Peta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Peta.Location = new System.Drawing.Point(8, 488);
+            this.btn_Peta.Location = new System.Drawing.Point(11, 525);
             this.btn_Peta.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Peta.Name = "btn_Peta";
-            this.btn_Peta.Size = new System.Drawing.Size(229, 49);
+            this.btn_Peta.Size = new System.Drawing.Size(282, 63);
             this.btn_Peta.TabIndex = 0;
             this.btn_Peta.Text = "   Peta";
             this.btn_Peta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -124,10 +126,10 @@
             this.btn_Kegiatan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Kegiatan.Image = ((System.Drawing.Image)(resources.GetObject("btn_Kegiatan.Image")));
             this.btn_Kegiatan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Kegiatan.Location = new System.Drawing.Point(8, 434);
+            this.btn_Kegiatan.Location = new System.Drawing.Point(8, 462);
             this.btn_Kegiatan.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Kegiatan.Name = "btn_Kegiatan";
-            this.btn_Kegiatan.Size = new System.Drawing.Size(229, 49);
+            this.btn_Kegiatan.Size = new System.Drawing.Size(282, 63);
             this.btn_Kegiatan.TabIndex = 0;
             this.btn_Kegiatan.Text = "   Kegiatan";
             this.btn_Kegiatan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,10 +143,10 @@
             this.btn_Prestasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Prestasi.Image = ((System.Drawing.Image)(resources.GetObject("btn_Prestasi.Image")));
             this.btn_Prestasi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Prestasi.Location = new System.Drawing.Point(8, 381);
+            this.btn_Prestasi.Location = new System.Drawing.Point(8, 399);
             this.btn_Prestasi.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Prestasi.Name = "btn_Prestasi";
-            this.btn_Prestasi.Size = new System.Drawing.Size(229, 49);
+            this.btn_Prestasi.Size = new System.Drawing.Size(282, 63);
             this.btn_Prestasi.TabIndex = 0;
             this.btn_Prestasi.Text = "   Prestasi";
             this.btn_Prestasi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -158,10 +160,10 @@
             this.btn_Tentang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Tentang.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tentang.Image")));
             this.btn_Tentang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Tentang.Location = new System.Drawing.Point(8, 327);
+            this.btn_Tentang.Location = new System.Drawing.Point(8, 336);
             this.btn_Tentang.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Tentang.Name = "btn_Tentang";
-            this.btn_Tentang.Size = new System.Drawing.Size(229, 49);
+            this.btn_Tentang.Size = new System.Drawing.Size(282, 63);
             this.btn_Tentang.TabIndex = 0;
             this.btn_Tentang.Text = "   Tentang DTETI";
             this.btn_Tentang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -178,7 +180,7 @@
             this.btn_Slideshow.Location = new System.Drawing.Point(8, 273);
             this.btn_Slideshow.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Slideshow.Name = "btn_Slideshow";
-            this.btn_Slideshow.Size = new System.Drawing.Size(229, 49);
+            this.btn_Slideshow.Size = new System.Drawing.Size(282, 63);
             this.btn_Slideshow.TabIndex = 0;
             this.btn_Slideshow.Text = "   Slideshow";
             this.btn_Slideshow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -230,6 +232,23 @@
             this.panel2.Size = new System.Drawing.Size(1920, 47);
             this.panel2.TabIndex = 36;
             // 
+            // btn_Password
+            // 
+            this.btn_Password.FlatAppearance.BorderSize = 0;
+            this.btn_Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Password.Image = ((System.Drawing.Image)(resources.GetObject("btn_Password.Image")));
+            this.btn_Password.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Password.Location = new System.Drawing.Point(11, 592);
+            this.btn_Password.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Password.Name = "btn_Password";
+            this.btn_Password.Size = new System.Drawing.Size(282, 63);
+            this.btn_Password.TabIndex = 0;
+            this.btn_Password.Text = "   Ubah Password";
+            this.btn_Password.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Password.UseVisualStyleBackColor = true;
+            this.btn_Password.Click += new System.EventHandler(this.btn_Password_Click);
+            // 
             // AdminAwal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -266,5 +285,6 @@
         private System.Windows.Forms.Button btnMini;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_Password;
     }
 }

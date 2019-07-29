@@ -129,6 +129,8 @@ namespace GazethruApps
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             SlideList("");
+            PreviewID = 1; //belum handle if kosong
+            PreviewImage();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
