@@ -52,7 +52,7 @@ namespace GazethruApps
             wx.Add(0); //kembali
             wy.Add(0);
 
-            wx[0] = 1030; //next
+            wx[0] = 1620; //next
             wy[0] = 370;
             wx[1] = 255; //prev
             wy[1] = 140;
