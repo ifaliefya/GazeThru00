@@ -151,13 +151,8 @@ namespace GazethruApps
             formUser FormUser = formUser.getInstance();
             FormUser.Show();
             this.Hide();
-        }
 
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
-            AdminLogin LoginAdmin = new AdminLogin();
-            LoginAdmin.Show();
-            this.Hide();
+            //this.Controls.Remove(btnUser);
         }
 
         private void buttonAdmin2_Click(object sender, EventArgs e)

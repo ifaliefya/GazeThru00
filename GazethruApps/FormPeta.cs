@@ -162,6 +162,7 @@ namespace GazethruApps
             {
                 formUser Home = formUser.getInstance();
                 Home.Show();
+                //Home.Controls.Add(btnUser);
                 timer1.Stop();
                 kendali.Close();
                 this.Close();

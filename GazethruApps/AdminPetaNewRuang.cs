@@ -582,11 +582,11 @@ namespace GazethruApps
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            //adminPetaNew Close
+            //AdminPetaNew NewPeta = new AdminPetaNew();
+            //NewPeta.Close();
         }
 
         int SelectedRow;
-
         private void buttonPrev_Click(object sender, EventArgs e)
         {
             if (NotSave == true)
