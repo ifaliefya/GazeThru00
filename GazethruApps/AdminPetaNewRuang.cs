@@ -493,42 +493,49 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (NotSave == true)
+            try
             {
-                BelomDisimpan();
-            }
-            this.dataGridView1.Rows[e.RowIndex].Cells["Id"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            int selected = (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value;
-            IDChoose = selected;
-            string Pselected = (string)dataGridView1.Rows[e.RowIndex].Cells["Pointer"].Value;
-
-            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
-            {
-                AddEditView(true, true, false);
-                PreviewDetail(Pselected);
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
-                SqlCommand command = new SqlCommand("DELETE FROM Ruang WHERE Id=" + IDChoose, con);
-
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (NotSave == true)
                 {
-                    ExecMyQuery(command, "Data Deleted");
-                    foreach (Control item in pbPetaLantai.Controls)
-                        if (item.Name == Pselected)
-                        {
-                            pbPetaLantai.Controls.Remove(item);
-                            break;
-                        }
+                    BelomDisimpan();
+                }
+                this.dataGridView1.Rows[e.RowIndex].Cells["Id"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
+
+                int selected = (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value;
+                IDChoose = selected;
+                string Pselected = (string)dataGridView1.Rows[e.RowIndex].Cells["Pointer"].Value;
+
+                if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+                {
+                    AddEditView(true, true, false);
+                    PreviewDetail(Pselected);
+                }
+                else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM Ruang WHERE Id=" + IDChoose, con);
+
+                    if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ExecMyQuery(command, "Data Deleted");
+                        foreach (Control item in pbPetaLantai.Controls)
+                            if (item.Name == Pselected)
+                            {
+                                pbPetaLantai.Controls.Remove(item);
+                                break;
+                            }
+                    }
+                }
+                else
+                {
+                    AddEditView(true, false, true);
+                    PreviewDetail(Pselected);
+                    //labelIDNow.Text = Pselected;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                AddEditView(true, false, true);
-                PreviewDetail(Pselected);
-                //labelIDNow.Text = Pselected;
+                MessageBox.Show("Klik pada salah satu baris konten");
             }
         }
 

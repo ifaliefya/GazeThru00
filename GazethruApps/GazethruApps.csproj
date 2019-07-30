@@ -124,12 +124,6 @@
     <Compile Include="AdminPetaNew.Designer.cs">
       <DependentUpon>AdminPetaNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPetaNewLantaiDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminPetaNewLantaiDetail.Designer.cs">
-      <DependentUpon>AdminPetaNewLantaiDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminPetaNewRuang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -329,9 +323,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPetaNew.resx">
       <DependentUpon>AdminPetaNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminPetaNewLantaiDetail.resx">
-      <DependentUpon>AdminPetaNewLantaiDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPetaNewRuang.resx">
       <DependentUpon>AdminPetaNewRuang.cs</DependentUpon>

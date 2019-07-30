@@ -124,29 +124,37 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            PetaIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
-            if (e.ColumnIndex == dataGridView1.Columns["Detail"].Index && e.RowIndex >= 0)
+            try
             {
-                AdminPetaNew addNewLantai = new AdminPetaNew();
-                addNewLantai.Show();
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
-                SqlCommand command = new SqlCommand("DELETE FROM Peta WHERE No=" + PetaIDchoose, con);
+                this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
 
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                PetaIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
+                if (e.ColumnIndex == dataGridView1.Columns["Detail"].Index && e.RowIndex >= 0)
                 {
-                    ExecMyQuery(command, "Data Deleted");
-                    GetLastID(con);
+                    AdminPetaNew addNewLantai = new AdminPetaNew();
+                    addNewLantai.Show();
+                }
+                else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM Peta WHERE No=" + PetaIDchoose, con);
+
+                    if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ExecMyQuery(command, "Data Deleted");
+                        GetLastID(con);
+                    }
+                }
+                else
+                {
+                    PreviewImage(PetaIDchoose);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                PreviewImage(PetaIDchoose);
+                MessageBox.Show("Klik pada salah satu baris konten");
             }
+
         }
 
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
