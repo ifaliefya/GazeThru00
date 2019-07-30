@@ -257,11 +257,17 @@ namespace GazethruApps
         {
             if (e.status)
             {
-              
-                ++counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
+                try
+                {
+                    ++counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
 
@@ -269,11 +275,17 @@ namespace GazethruApps
         {
             if (e.status)
             {
-                --counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
-            }
+                try
+                {
+                    --counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
         }
     }
 }

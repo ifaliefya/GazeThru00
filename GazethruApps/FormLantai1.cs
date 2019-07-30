@@ -125,17 +125,31 @@ namespace GazethruApps
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            --counter;
-            PreviewDetail(AllPointer[counter].Name);
-            PopulateButton();
+            try
+            {
+                --counter;
+                PreviewDetail(AllPointer[counter].Name);
+                PopulateButton();
+            }
+            catch
+            {
+                MessageBox.Show("Coba lagi :)");
+            }
         }
 
 
         private void btnNext2_Click(object sender, EventArgs e)
         {
-            ++counter;
-            PreviewDetail(AllPointer[counter].Name);
-            PopulateButton();
+            try
+            {
+                ++counter;
+                PreviewDetail(AllPointer[counter].Name);
+                PopulateButton();
+            }
+            catch
+            {
+                MessageBox.Show("Coba lagi :)");
+            }
         }
 
         private void TombolBackTekan(ArgumenKendaliTombol e)
