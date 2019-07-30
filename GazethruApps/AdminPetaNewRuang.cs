@@ -432,7 +432,7 @@ namespace GazethruApps
                 command.Parameters.Add("@locx", SqlDbType.Int).Value = currentPLocX;
                 command.Parameters.Add("@locy", SqlDbType.Int).Value = currentPLocY;
                 command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
-                command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxJudul.Text;
+                command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
                 command.Parameters.Add("@pointer", SqlDbType.VarChar).Value = NewPName;
 
                 if (pictureBoxRuang.Image == null)
@@ -455,7 +455,7 @@ namespace GazethruApps
                 command.Parameters.Add("@locx", SqlDbType.Int).Value = currentPLocX;
                 command.Parameters.Add("@locy", SqlDbType.Int).Value = currentPLocY;
                 command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
-                command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxJudul.Text;
+                command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
 
 
                 if (pictureBoxRuang.Image == null)

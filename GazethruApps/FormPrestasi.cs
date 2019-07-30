@@ -199,59 +199,56 @@ namespace GazethruApps
                 PresenceCheck.Visible = true;
             }
 
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formInformasi FormInformasi = formInformasi.getInstance();
                 FormInformasi.Show();
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
         }
         private void HomeTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formUser Home = formUser.getInstance();
                 Home.Show();
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
         }
         private void NextTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
-                ++counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
+                try
+                {
+                    ++counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
         private void PrevTekan(ArgumenKendaliTombol e)
         {
             if (e.status)
             {
-                --counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
+                try
+                {
+                    --counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch
+                {
+                    MessageBox.Show("Coba lagi :)"); 
+                }
             }
         }
 

@@ -232,17 +232,10 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formInformasi formInformasi = formInformasi.getInstance();
                 formInformasi.Show();
-                kendali.Close();
                 timer1.Stop();
                 this.Close();
             }
@@ -250,16 +243,11 @@ namespace GazethruApps
 
         private void TombolHomeTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
+           
             if (e.status)
             {
                 formUser Home = formUser.getInstance();
-                Home.Show();                
-                kendali.Close();
+                Home.Show(); 
                 timer1.Stop();
                 this.Close();
             }
@@ -267,38 +255,37 @@ namespace GazethruApps
 
         private void TombolNextTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
-                kendali.Close();
-
-                ++counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
+                try
+                {
+                    ++counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
 
         private void TombolPrevTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
-                kendali.Close();
-
-                --counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
-            }
+                try
+                {
+                    --counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
         }
     }
 }

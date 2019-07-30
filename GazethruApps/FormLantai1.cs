@@ -125,17 +125,31 @@ namespace GazethruApps
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            --counter;
-            PreviewDetail(AllPointer[counter].Name);
-            PopulateButton();
+            try
+            {
+                --counter;
+                PreviewDetail(AllPointer[counter].Name);
+                PopulateButton();
+            }
+            catch
+            {
+                MessageBox.Show("Coba lagi :)");
+            }
         }
 
 
         private void btnNext2_Click(object sender, EventArgs e)
         {
-            ++counter;
-            PreviewDetail(AllPointer[counter].Name);
-            PopulateButton();
+            try
+            {
+                ++counter;
+                PreviewDetail(AllPointer[counter].Name);
+                PopulateButton();
+            }
+            catch
+            {
+                MessageBox.Show("Coba lagi :)");
+            }
         }
 
         private void TombolBackTekan(ArgumenKendaliTombol e)
@@ -145,29 +159,17 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formPeta FormPeta = formPeta.getInstance();
                 FormPeta.Show();
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
         }
 
         private void TombolNextTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 ++counter;
@@ -178,11 +180,6 @@ namespace GazethruApps
 
         void TombolPrevTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 --counter;
