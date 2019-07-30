@@ -119,12 +119,6 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formPeta FormPeta = formPeta.getInstance();
@@ -136,11 +130,6 @@ namespace GazethruApps
 
         private void TombolNextTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 lantai3_021.BringToFront();
@@ -150,11 +139,6 @@ namespace GazethruApps
 
         private void TombolPrevTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                // lantai3_011.BringToFront();

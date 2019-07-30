@@ -127,16 +127,12 @@ namespace GazethruApps
         }
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
         {
+            //Console.WriteLine(eawal.DataKor);
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {
                 PresenceCheck.Visible = true;
-            }
-
-            if (eawal.mataX == null || eawal.mataY == null)
-            {
-                kendali.NoLook();
-            }
+            }                       
 
             if (eawal.status)
             {

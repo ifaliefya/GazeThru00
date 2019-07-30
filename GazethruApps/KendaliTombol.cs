@@ -46,8 +46,8 @@ namespace GazethruApps
         double ThresholdJarak = 250;
         double ThresholdKorelasi = 0.8;
 
-        int DurasiJarakEuclidean = 100;
-        int DurasiKorelasiPearson = 100;
+        int DurasiJarakEuclidean = 90;
+        int DurasiKorelasiPearson = 90;
 
         EyeXHost Host;
         GazePointDataStream DataStream;
@@ -254,14 +254,14 @@ namespace GazethruApps
                 posisimataY = PosisiMata[1][0];
 
                 double jarak = JarakEuclidean(DaftarPosisiTombol[i][0][0], DaftarPosisiTombol[i][1][0], PosisiMata[0][0], PosisiMata[1][0]);
-                DaftarJarakEuclidean[i][HasilJarakEuclidean[i]] = jarak;
-                HasilJarakEuclidean[i] = jarak < ThresholdJarak ? HasilJarakEuclidean[i] + 1 : 0;
+                /*DaftarJarakEuclidean[i][HasilJarakEuclidean[i]] = jarak;
+                HasilJarakEuclidean[i] = jarak < ThresholdJarak ? HasilJarakEuclidean[i] + 1 : 0;*/
 
                 double korelasix = KorelasiPearson(DaftarPosisiTombol[i][0], PosisiMata[0]);
                 double korelasiy = KorelasiPearson(DaftarPosisiTombol[i][1], PosisiMata[1]);                  
                 
-                HasilKorelasiX[i] = (korelasix > ThresholdKorelasi) ? HasilKorelasiX[i] + 1 : 0;
-                HasilKorelasiY[i] = (korelasiy > ThresholdKorelasi) ? HasilKorelasiY[i] + 1 : 0;                              
+                /*HasilKorelasiX[i] = (korelasix > ThresholdKorelasi) ? HasilKorelasiX[i] + 1 : 0;
+                HasilKorelasiY[i] = (korelasiy > ThresholdKorelasi) ? HasilKorelasiY[i] + 1 : 0;        */                      
 
                 HasilKorelasiPearson[i] = (korelasix > ThresholdKorelasi || korelasiy > ThresholdKorelasi) ? HasilKorelasiPearson[i] + 1 : 0;
                 
@@ -287,7 +287,7 @@ namespace GazethruApps
                 DaftarFungsi[i](e);                
             }
         }
-
+        /*
         public void Close()
         {
             Host.Dispose();
@@ -301,6 +301,6 @@ namespace GazethruApps
             }
 
 
-        }               
+        } */              
     }
 }
