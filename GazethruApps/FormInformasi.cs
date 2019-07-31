@@ -76,7 +76,6 @@ namespace GazethruApps
                 wy[0]++;
                 wy[1]--;
                 wx[2]++;
-                wy[2] = wy[2] - 0.60f;
                 wx[3]--;
             }
             if (lap == 1)
@@ -84,7 +83,6 @@ namespace GazethruApps
                 wy[0]--;
                 wy[1]++;
                 wx[2]--;
-                wy[2] = wy[2] + 0.60f;
                 wx[3]++;
             }
 

@@ -94,7 +94,6 @@ namespace GazethruApps
             {
                 wy[0]++;
                 wx[1]++;
-                wy[1] = wy[1] - 0.60f;
                 wy[2]--;
                 wx[3]--;
             }
@@ -102,7 +101,6 @@ namespace GazethruApps
             {
                 wy[0]--;
                 wx[1]--;
-                wy[1] = wy[1] + 0.60f;
                 wy[2]++;
                 wx[3]++;
             }
