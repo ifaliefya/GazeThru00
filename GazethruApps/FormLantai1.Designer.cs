@@ -128,13 +128,13 @@
             // 
             this.textBoxIsi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIsi.ForeColor = System.Drawing.Color.White;
-            this.textBoxIsi.Location = new System.Drawing.Point(539, 74);
+            this.textBoxIsi.Location = new System.Drawing.Point(539, 85);
             this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.ReadOnly = true;
-            this.textBoxIsi.Size = new System.Drawing.Size(522, 168);
+            this.textBoxIsi.Size = new System.Drawing.Size(880, 157);
             this.textBoxIsi.TabIndex = 40;
             this.textBoxIsi.Text = resources.GetString("textBoxIsi.Text");
             // 
@@ -142,11 +142,11 @@
             // 
             this.labelJudul.AutoSize = true;
             this.labelJudul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJudul.ForeColor = System.Drawing.Color.White;
             this.labelJudul.Location = new System.Drawing.Point(534, 32);
             this.labelJudul.Name = "labelJudul";
-            this.labelJudul.Size = new System.Drawing.Size(211, 29);
+            this.labelJudul.Size = new System.Drawing.Size(242, 31);
             this.labelJudul.TabIndex = 41;
             this.labelJudul.Text = "Ruang Tata Usaha";
             // 
@@ -182,7 +182,7 @@
             // PresenceCheck
             // 
             this.PresenceCheck.BackColor = System.Drawing.Color.Maroon;
-            this.PresenceCheck.Location = new System.Drawing.Point(955, 535);
+            this.PresenceCheck.Location = new System.Drawing.Point(955, 1070);
             this.PresenceCheck.Name = "PresenceCheck";
             this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
             this.PresenceCheck.TabIndex = 56;
