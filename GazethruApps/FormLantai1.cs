@@ -172,9 +172,16 @@ namespace GazethruApps
         {
             if (e.status)
             {
-                ++counter;
-                PreviewDetail(AllPointer[counter].Name);
-                PopulateButton();
+                try
+                {
+                    ++counter;
+                    PreviewDetail(AllPointer[counter].Name);
+                    PopulateButton();
+                }
+                catch
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
 
@@ -182,9 +189,16 @@ namespace GazethruApps
         {
             if (e.status)
             {
-                --counter;
-                PreviewDetail(AllPointer[counter].Name);
-                PopulateButton();
+                try
+                {
+                    --counter;
+                    PreviewDetail(AllPointer[counter].Name);
+                    PopulateButton();
+                }
+                catch
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
 
