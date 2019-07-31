@@ -47,7 +47,7 @@ namespace GazethruApps
             wy[0] = 900;
 
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
-
+            timer1.Start();
             kendali.Start();
         }
 
@@ -138,7 +138,8 @@ namespace GazethruApps
             {
                 formUser FormUser = formUser.getInstance();
                 FormUser.Show();                                
-                this.Hide();                
+                this.Hide();
+                timer1.Stop();
             }            
         }
 
