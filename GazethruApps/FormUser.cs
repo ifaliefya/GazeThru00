@@ -71,6 +71,10 @@ namespace GazethruApps
             btnPeta.Location = new Point((int)wx[1], (int)wy[1]);
             btnBack.Location = new Point((int)wx[2], (int)wy[2]);
 
+            progressBarInfo.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBarPeta.Location = new Point((int)wx[1], (int)wy[1]);
+            progressBarBack.Location = new Point((int)wx[2], (int)wy[2]);
+
             if (lap == 0)
             {
                 wy[0]++;
@@ -123,9 +127,8 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
             
+            //Console.WriteLine(e.korelasiX + "       " + e.korelasiY + "       " + e.DataKor);
 
             if (e.status)
             {
@@ -134,10 +137,13 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarInfo.Value = e.DataKor;
         }
         private void PetaTekan(ArgumenKendaliTombol e)
         {
-            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);           
+
+            //Console.WriteLine(e.korelasiX + "       " + e.korelasiY + "       " + e.DataKor);        
             if (e.status)
             {
                 formPeta FormPeta = formPeta.getInstance();
@@ -145,11 +151,12 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarPeta.Value = e.DataKor;
         }
         private void BackTekan(ArgumenKendaliTombol e)
         {
-            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
-            
+            //Console.WriteLine(e.korelasiX + "       " + e.korelasiY + "       " + e.DataKor);
             if (e.status)
             {
                 formAwal FormHome = formAwal.getInstance();
@@ -157,6 +164,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarBack.Value = e.DataKor;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

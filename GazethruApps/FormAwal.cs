@@ -102,6 +102,7 @@ namespace GazethruApps
         private void timer1_Tick(object sender, EventArgs e)
         {
             btnUser.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBarMulai.Location = new Point((int)wx[0], (int)wy[0]);
 
             if (lap == 0) //titik awal
             {
@@ -127,7 +128,7 @@ namespace GazethruApps
         }
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
         {
-            //Console.WriteLine(eawal.DataKor);
+            //Console.WriteLine(eawal.korelasiX+"       "+eawal.korelasiY+"       "+eawal.DataKor);
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {
@@ -140,7 +141,9 @@ namespace GazethruApps
                 FormUser.Show();                                
                 this.Hide();
                 timer1.Stop();
-            }            
+            }
+
+            progressBarMulai.Value = eawal.DataKor;
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -211,4 +214,3 @@ namespace GazethruApps
         }
     }           
 }
-
