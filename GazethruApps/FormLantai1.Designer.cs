@@ -37,7 +37,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxIsi = new System.Windows.Forms.TextBox();
+            this.textBoxIsi = new System.Windows.Forms.RichTextBox();
             this.labelJudul = new System.Windows.Forms.Label();
             this.pictureBoxRuang = new System.Windows.Forms.PictureBox();
             this.panelPeta = new System.Windows.Forms.Panel();
@@ -70,12 +70,16 @@
             this.btnPrev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnPrev.FlatAppearance.BorderSize = 0;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrev.ForeColor = System.Drawing.Color.White;
             this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.Location = new System.Drawing.Point(300, 145);
+            this.btnPrev.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrev.Location = new System.Drawing.Point(353, 145);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(40, 40);
+            this.btnPrev.Size = new System.Drawing.Size(180, 40);
             this.btnPrev.TabIndex = 24;
+            this.btnPrev.Text = "Ruang Sebelumnya";
+            this.btnPrev.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
@@ -131,7 +135,6 @@
             this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIsi.ForeColor = System.Drawing.Color.White;
             this.textBoxIsi.Location = new System.Drawing.Point(539, 85);
-            this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.ReadOnly = true;
             this.textBoxIsi.Size = new System.Drawing.Size(880, 157);
@@ -192,12 +195,16 @@
             this.btnNext2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.btnNext2.FlatAppearance.BorderSize = 0;
             this.btnNext2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext2.ForeColor = System.Drawing.Color.White;
             this.btnNext2.Image = ((System.Drawing.Image)(resources.GetObject("btnNext2.Image")));
-            this.btnNext2.Location = new System.Drawing.Point(1620, 456);
+            this.btnNext2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext2.Location = new System.Drawing.Point(1381, 456);
             this.btnNext2.Name = "btnNext2";
-            this.btnNext2.Size = new System.Drawing.Size(40, 40);
+            this.btnNext2.Size = new System.Drawing.Size(180, 40);
             this.btnNext2.TabIndex = 57;
+            this.btnNext2.Text = "Ruang Selanjutnya";
+            this.btnNext2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNext2.UseVisualStyleBackColor = false;
             this.btnNext2.Click += new System.EventHandler(this.btnNext2_Click);
             // 
@@ -240,7 +247,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBoxRuang;
-        private System.Windows.Forms.TextBox textBoxIsi;
+        private System.Windows.Forms.RichTextBox textBoxIsi;
         private System.Windows.Forms.Label labelJudul;
         private System.Windows.Forms.Panel panelPeta;
         private System.Windows.Forms.PictureBox pbPetaLantai;

@@ -204,11 +204,6 @@ namespace GazethruApps
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             ++counter;
@@ -266,7 +261,7 @@ namespace GazethruApps
                 }
                 catch
                 {
-                    MessageBox.Show("Coba lagi :)");
+                    return;
                 }
             }
         }
@@ -284,7 +279,7 @@ namespace GazethruApps
                 }
                 catch
                 {
-                    MessageBox.Show("Coba lagi :)");
+                    return;
                 }
             }
         }
