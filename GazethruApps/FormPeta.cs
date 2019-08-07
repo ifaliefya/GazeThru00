@@ -90,7 +90,12 @@ namespace GazethruApps
             btnTiga.Location = new Point((int)wx[2], (int)wy[2]);
             btnHome.Location = new Point((int)wx[3], (int)wy[3]);
 
-            if(lap==0)
+            progressBarSatu.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBarDua.Location = new Point((int)wx[1], (int)wy[1]);
+            progressBarTiga.Location = new Point((int)wx[2], (int)wy[2]);
+            progressBarHome.Location = new Point((int)wx[3], (int)wy[3]);
+
+            if (lap==0)
             {
                 wy[0]++;
                 wx[1]++;
@@ -158,6 +163,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarHome.Value = e.DataKor;
         }
 
         private void TombolSatuTekan(ArgumenKendaliTombol e)
@@ -171,6 +178,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarSatu.Value = e.DataKor;
         }
 
         private void TombolDuaTekan(ArgumenKendaliTombol e)
@@ -184,7 +193,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
-                
+
+            progressBarDua.Value = e.DataKor;    
         }
 
         private void TombolTigaTekan(ArgumenKendaliTombol e)
@@ -198,6 +208,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarTiga.Value = e.DataKor;
         }
     }
 }

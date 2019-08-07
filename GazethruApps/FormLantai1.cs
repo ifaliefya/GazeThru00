@@ -92,6 +92,10 @@ namespace GazethruApps
             btnPrev.Location = new Point((int)wx[1], (int)wy[1]);
             btnBack.Location = new Point((int)wx[2], (int)wy[2]);
 
+            progressBarNext.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBarPrev.Location = new Point((int)wx[1], (int)wy[1]);
+            progressBarBack.Location = new Point((int)wx[2], (int)wy[2]);
+
             if (lap==0)
             {
                 wy[0]--;
@@ -155,6 +159,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarBack.Value = e.DataKor;
         }
 
         private void TombolNextTekan(ArgumenKendaliTombol e)
@@ -172,6 +178,8 @@ namespace GazethruApps
                     return;
                 }
             }
+
+            progressBarNext.Value = e.DataKor;
         }
 
         void TombolPrevTekan(ArgumenKendaliTombol e)
@@ -189,6 +197,8 @@ namespace GazethruApps
                     return;
                 }
             }
+
+            progressBarPrev.Value = e.DataKor;
         }
 
         public void PopulateButton()
@@ -197,21 +207,29 @@ namespace GazethruApps
             {
                 btnPrev.Visible = false;
                 btnNext2.Visible = false;
+                progressBarPrev.Visible = false;
+                progressBarNext.Visible = false;
             }
             else if (counter == 0)
             {
                 btnPrev.Visible = false;
                 btnNext2.Visible = true;
+                progressBarPrev.Visible = false;
+                progressBarNext.Visible = true;
             }
             else if (counter == maxCounter - 1)
             {
                 btnNext2.Visible = false;
                 btnPrev.Visible = true;
+                progressBarPrev.Visible = true;
+                progressBarNext.Visible = false;
             }
             else
             {
                 btnNext2.Visible = true;
                 btnPrev.Visible = true;
+                progressBarPrev.Visible = true;
+                progressBarNext.Visible = true;
             }
         }
 
