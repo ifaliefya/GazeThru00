@@ -223,11 +223,6 @@ namespace GazethruApps
             LoadContent(nowShowing);
         }
 
-        private void visiElektro2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void TombolBackTekan(ArgumenKendaliTombol e)
         {
             PresenceCheck.Visible = false;
@@ -268,7 +263,7 @@ namespace GazethruApps
                 }
                 catch
                 {
-                    MessageBox.Show("Coba lagi :)");
+                    return;
                 }
             }
         }
@@ -286,7 +281,7 @@ namespace GazethruApps
                 }
                 catch
                 {
-                    MessageBox.Show("Coba lagi :)");
+                    return;
                 }
             }
         }

@@ -230,7 +230,7 @@ namespace GazethruApps
                 }
                 catch
                 {
-                    MessageBox.Show("Coba lagi :)");
+                    return;
                 }
             }
         }
@@ -247,7 +247,7 @@ namespace GazethruApps
                 }
                 catch
                 {
-                    MessageBox.Show("Coba lagi :)"); 
+                    return; 
                 }
             }
         }

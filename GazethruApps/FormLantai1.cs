@@ -125,31 +125,20 @@ namespace GazethruApps
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            try
-            {
-                --counter;
-                PreviewDetail(AllPointer[counter].Name);
-                PopulateButton();
-            }
-            catch
-            {
-                MessageBox.Show("Coba lagi :)");
-            }
+            --counter;
+            PreviewDetail(AllPointer[counter].Name);
+            PopulateButton();
+
         }
 
 
         private void btnNext2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ++counter;
-                PreviewDetail(AllPointer[counter].Name);
-                PopulateButton();
-            }
-            catch
-            {
-                MessageBox.Show("Coba lagi :)");
-            }
+
+            ++counter;
+            PreviewDetail(AllPointer[counter].Name);
+            PopulateButton();
+
         }
 
         private void TombolBackTekan(ArgumenKendaliTombol e)
@@ -180,7 +169,7 @@ namespace GazethruApps
                 }
                 catch
                 {
-                    MessageBox.Show("Coba lagi :)");
+                    return;
                 }
             }
         }
@@ -197,7 +186,7 @@ namespace GazethruApps
                 }
                 catch
                 {
-                    MessageBox.Show("Coba lagi :)");
+                    return;
                 }
             }
         }
