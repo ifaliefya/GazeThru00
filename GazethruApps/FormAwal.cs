@@ -128,7 +128,7 @@ namespace GazethruApps
         }
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
         {
-            //Console.WriteLine(eawal.korelasiX+"       "+eawal.korelasiY+"       "+eawal.DataKor);
+            Console.WriteLine(eawal.korelasiX+"       "+eawal.korelasiY+"       "+eawal.DataKor);
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {

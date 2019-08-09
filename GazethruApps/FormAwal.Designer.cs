@@ -209,7 +209,7 @@
             this.progressBarMulai.Location = new System.Drawing.Point(1220, 900);
             this.progressBarMulai.Maximum = 80;
             this.progressBarMulai.Name = "progressBarMulai";
-            this.progressBarMulai.Size = new System.Drawing.Size(174, 3);
+            this.progressBarMulai.Size = new System.Drawing.Size(174, 5);
             this.progressBarMulai.TabIndex = 36;
             // 
             // formAwal

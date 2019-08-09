@@ -214,7 +214,7 @@
             this.progressBarPrev.Location = new System.Drawing.Point(230, 170);
             this.progressBarPrev.Maximum = 80;
             this.progressBarPrev.Name = "progressBarPrev";
-            this.progressBarPrev.Size = new System.Drawing.Size(104, 3);
+            this.progressBarPrev.Size = new System.Drawing.Size(104, 5);
             this.progressBarPrev.TabIndex = 40;
             // 
             // progressBarNext
@@ -222,7 +222,7 @@
             this.progressBarNext.Location = new System.Drawing.Point(1620, 400);
             this.progressBarNext.Maximum = 80;
             this.progressBarNext.Name = "progressBarNext";
-            this.progressBarNext.Size = new System.Drawing.Size(104, 3);
+            this.progressBarNext.Size = new System.Drawing.Size(104, 5);
             this.progressBarNext.TabIndex = 41;
             // 
             // progressBarHome
@@ -230,7 +230,7 @@
             this.progressBarHome.Location = new System.Drawing.Point(1620, 900);
             this.progressBarHome.Maximum = 80;
             this.progressBarHome.Name = "progressBarHome";
-            this.progressBarHome.Size = new System.Drawing.Size(155, 3);
+            this.progressBarHome.Size = new System.Drawing.Size(155, 5);
             this.progressBarHome.TabIndex = 42;
             // 
             // progressBarBack
@@ -238,7 +238,7 @@
             this.progressBarBack.Location = new System.Drawing.Point(300, 900);
             this.progressBarBack.Maximum = 80;
             this.progressBarBack.Name = "progressBarBack";
-            this.progressBarBack.Size = new System.Drawing.Size(155, 3);
+            this.progressBarBack.Size = new System.Drawing.Size(155, 5);
             this.progressBarBack.TabIndex = 43;
             // 
             // formPrestasi
